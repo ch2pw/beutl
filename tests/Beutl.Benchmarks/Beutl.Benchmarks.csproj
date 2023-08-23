@@ -8,6 +8,11 @@
     <Compile Remove="$(MSBuildThisFileDirectory)\..\ArtifactProvider.cs" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <EmbeddedResource Include="images\*.jpg" />
+  </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="BenchmarkDotNet" />
   </ItemGroup>

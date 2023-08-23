@@ -1,3 +1,4 @@
 ﻿using BenchmarkDotNet.Running;
 
-BenchmarkRunner.Run<EnumToStringBenchmark>();
+BenchmarkRunner.Run<RenderCacheBenchmark>();
+//BenchmarkRunner.Run<EnumToStringBenchmark>();
