@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -192,20 +193,22 @@ public readonly struct ColorMatrix : IEquatable<ColorMatrix>
         array[19] = M45 * 255;
     }
 
-    public static bool operator ==(in ColorMatrix value1, in ColorMatrix value2) => value1.Equals(value2);
+    public static bool operator ==(in ColorMatrix value1, in ColorMatrix value2) => value1.EqualsRef(in value2);
 
-    public static bool operator !=(in ColorMatrix value1, in ColorMatrix value2) => !value1.Equals(value2);
+    public static bool operator !=(in ColorMatrix value1, in ColorMatrix value2) => !value1.EqualsRef(in value2);
 
     public static Color operator *(in ColorMatrix left, Color right)
     {
-        float r = right.R / 255f;
-        float g = right.G / 255f;
-        float b = right.B / 255f;
-        float a = right.A / 255f;
-        float newR = left.M11 * r + left.M12 * g + left.M13 * b + left.M14 * a + left.M15;
-        float newG = left.M21 * r + left.M22 * g + left.M23 * b + left.M24 * a + left.M25;
-        float newB = left.M31 * r + left.M32 * g + left.M33 * b + left.M34 * a + left.M35;
-        float newA = left.M41 * r + left.M42 * g + left.M43 * b + left.M44 * a + left.M45;
+        var vector = new Vector4(right.R / 255f, right.G / 255f, right.B / 255f, right.A / 255f);
+
+        var x = new Vector4(left.M11, left.M12, left.M13, left.M14);
+        var y = new Vector4(left.M21, left.M22, left.M23, left.M24);
+        var z = new Vector4(left.M31, left.M32, left.M33, left.M34);
+        var w = new Vector4(left.M41, left.M42, left.M43, left.M44);
+        float newR = Vector4.Dot(x, vector) + left.M15;
+        float newG = Vector4.Dot(y, vector) + left.M25;
+        float newB = Vector4.Dot(z, vector) + left.M35;
+        float newA = Vector4.Dot(w, vector) + left.M45;
 
         return Color.FromArgb(
             (byte)MathF.Round(newA * 255),
@@ -227,27 +230,23 @@ public readonly struct ColorMatrix : IEquatable<ColorMatrix>
         return obj is ColorMatrix matrix && Equals(matrix);
     }
 
-    public bool Equals(ColorMatrix other) =>
-        M11 == other.M11
-        && M12 == other.M12
-        && M13 == other.M13
-        && M14 == other.M14
-        && M15 == other.M15
-        && M21 == other.M21
-        && M22 == other.M22
-        && M23 == other.M23
-        && M24 == other.M24
-        && M25 == other.M25
-        && M31 == other.M31
-        && M32 == other.M32
-        && M33 == other.M33
-        && M34 == other.M34
-        && M35 == other.M35
-        && M41 == other.M41
-        && M42 == other.M42
-        && M43 == other.M43
-        && M44 == other.M44
-        && M45 == other.M45;
+    public unsafe bool Equals(ColorMatrix other)
+    {
+        return EqualsRef(in other);
+    }
+    
+    public unsafe bool EqualsRef(in ColorMatrix other)
+    {
+        ref ColorMatrix thisRef = ref Unsafe.AsRef(in this);
+        ref ColorMatrix otherRef = ref Unsafe.AsRef(in other);
+        void* thisPtr = Unsafe.AsPointer(ref thisRef);
+        void* otherPtr = Unsafe.AsPointer(ref otherRef);
+
+        var thisSpan = new ReadOnlySpan<float>(thisPtr, 20);
+        var otherSpan = new ReadOnlySpan<float>(otherPtr, 20);
+
+        return thisSpan.SequenceEqual(otherSpan);
+    }
 
     public override int GetHashCode()
     {
