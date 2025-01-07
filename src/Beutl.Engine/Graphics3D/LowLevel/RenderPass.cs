@@ -101,8 +101,26 @@ public unsafe class RenderPass : IDisposable
 
     public void BindIndexBuffer(BufferBinding bufferBinding, IndexElementSize indexElementSize)
     {
-        var n = bufferBinding.ToNative();
+        SDL_GPUBufferBinding n = bufferBinding.ToNative();
         SDL3.SDL_BindGPUIndexBuffer(Handle, &n, (SDL_GPUIndexElementSize)indexElementSize);
+    }
+
+    public void BindIndexBuffer<T>(BufferBinding<T> bufferBinding, IndexElementSize indexElementSize)
+        where T : unmanaged
+    {
+        SDL_GPUBufferBinding n = bufferBinding.ToNative();
+        SDL3.SDL_BindGPUIndexBuffer(Handle, &n, (SDL_GPUIndexElementSize)indexElementSize);
+    }
+
+    public void BindIndexBuffer<T>(BufferBinding<T> bufferBinding)
+        where T : unmanaged
+    {
+        SDL_GPUBufferBinding n = bufferBinding.ToNative();
+        SDL3.SDL_BindGPUIndexBuffer(Handle, &n, bufferBinding.Buffer.ElementSize == 2
+            ? SDL_GPUIndexElementSize.SDL_GPU_INDEXELEMENTSIZE_16BIT
+            : bufferBinding.Buffer.ElementSize == 4
+                ? SDL_GPUIndexElementSize.SDL_GPU_INDEXELEMENTSIZE_32BIT
+                : throw new InvalidOperationException($"Invalid index element size ({bufferBinding.Buffer.ElementSize * 8} bits)"));
     }
 
     public void BindVertexSamplers(

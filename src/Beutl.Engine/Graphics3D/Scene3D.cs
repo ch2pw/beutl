@@ -17,11 +17,11 @@ public class Scene3D : Drawable
     public static readonly CoreProperty<int> WidthProperty;
     public static readonly CoreProperty<int> HeightProperty;
     public static readonly CoreProperty<Camera?> CameraProperty;
-    public static readonly CoreProperty<Drawables3D> ChildrenProperty;
+    public static readonly CoreProperty<Drawable3DList> ChildrenProperty;
     private int _width = -1;
     private int _height = -1;
     private Camera? _camera;
-    private readonly Drawables3D _children = [];
+    private readonly Drawable3DList _children = [];
     private SceneNode? _root;
 
     static Scene3D()
@@ -40,7 +40,7 @@ public class Scene3D : Drawable
             .Accessor(o => o.Camera, (o, v) => o.Camera = v)
             .Register();
 
-        ChildrenProperty = ConfigureProperty<Drawables3D, Scene3D>(nameof(Children))
+        ChildrenProperty = ConfigureProperty<Drawable3DList, Scene3D>(nameof(Children))
             .Accessor(o => o.Children, (o, v) => o.Children = v)
             .Register();
 
@@ -79,7 +79,7 @@ public class Scene3D : Drawable
     }
 
     [NotAutoSerialized]
-    public Drawables3D Children
+    public Drawable3DList Children
     {
         get => _children;
         set => _children.Replace(value);
@@ -94,7 +94,7 @@ public class Scene3D : Drawable
     public override void Deserialize(ICoreSerializationContext context)
     {
         base.Deserialize(context);
-        if (context.GetValue<Drawables3D>(nameof(Children)) is { } children)
+        if (context.GetValue<Drawable3DList>(nameof(Children)) is { } children)
         {
             Children = children;
         }

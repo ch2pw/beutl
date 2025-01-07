@@ -1,4 +1,5 @@
 using System.Numerics;
+using Beutl.Media;
 
 namespace Beutl.Graphics3D.Meshes;
 
@@ -33,7 +34,7 @@ public class BallMesh : Mesh
                 z = MathF.Sin(phi) * MathF.Sin(theta);
 
                 var position = new Vector3(x, y, z) * radius;
-                var color = new Vector3(1.0f, 1.0f, 1.0f);
+                var color = Colors.White;
                 var normal = new Vector3(x, y, z);
                 var texCoord = new Vector2(s, t);
 

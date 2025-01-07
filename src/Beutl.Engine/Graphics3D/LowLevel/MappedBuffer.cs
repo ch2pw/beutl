@@ -5,7 +5,7 @@ namespace Beutl.Graphics3D;
 
 public unsafe class MappedBuffer : IDisposable
 {
-    private readonly TransferBuffer _transferBuffer;
+    internal readonly TransferBuffer _transferBuffer;
 
     internal MappedBuffer(IntPtr ptr, TransferBuffer transferBuffer)
     {
@@ -29,5 +29,22 @@ public unsafe class MappedBuffer : IDisposable
         if (Unmapped) return;
         SDL3.SDL_UnmapGPUTransferBuffer(_transferBuffer.Device.Handle, _transferBuffer.Handle);
         Unmapped = true;
+    }
+}
+
+public unsafe class MappedBuffer<T> : MappedBuffer
+    where T : unmanaged
+{
+    internal MappedBuffer(IntPtr ptr, TransferBuffer<T> transferBuffer)
+        : base(ptr, transferBuffer)
+    {
+    }
+
+    public new Span<T> Span => new(Ptr.ToPointer(), (int)((TransferBuffer<T>)_transferBuffer).ElementCount);
+
+    public new Span<T2> AsSpan<T2>()
+        where T2 : unmanaged
+    {
+        return MemoryMarshal.Cast<T, T2>(Span);
     }
 }

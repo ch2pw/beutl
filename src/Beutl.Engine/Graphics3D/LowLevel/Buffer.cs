@@ -2,11 +2,27 @@
 
 namespace Beutl.Graphics3D;
 
+public unsafe class Buffer<T> : Buffer 
+    where T : unmanaged
+{
+    internal Buffer(Device device, SDL_GPUBuffer* handle, BufferCreateInfo createInfo, uint elementCount)
+        : base(device, handle, createInfo)
+    {
+        ElementCount = elementCount;
+    }
+
+    public uint ElementCount { get; }
+
+    public int ElementSize => sizeof(T);
+
+    public static implicit operator BufferBinding<T>(Buffer<T> buffer) => new(buffer);
+}
+
 public unsafe class Buffer : GraphicsResource
 {
     private readonly BufferCreateInfo _createInfo;
 
-    private Buffer(Device device, SDL_GPUBuffer* handle, BufferCreateInfo createInfo) : base(device)
+    internal Buffer(Device device, SDL_GPUBuffer* handle, BufferCreateInfo createInfo) : base(device)
     {
         Handle = handle;
         _createInfo = createInfo;
@@ -18,16 +34,25 @@ public unsafe class Buffer : GraphicsResource
 
     internal SDL_GPUBuffer* Handle { get; }
 
-    public static Buffer Create<T>(
+    public static Buffer<T> Create<T>(
         Device device,
         BufferUsageFlags usageFlags,
         uint elementCount) where T : unmanaged
     {
-        return Create(device, new BufferCreateInfo
+        var createInfo = new BufferCreateInfo
         {
             Usage = usageFlags,
             Size = (uint)sizeof(T) * elementCount
-        });
+        };
+
+        var nativeInfo = createInfo.ToNative();
+        var handle = SDL3.SDL_CreateGPUBuffer(device.Handle, &nativeInfo);
+        if (handle == null)
+        {
+            throw new InvalidOperationException(SDL3.SDL_GetError());
+        }
+
+        return new Buffer<T>(device, handle, createInfo, elementCount);
     }
 
     public static Buffer Create(

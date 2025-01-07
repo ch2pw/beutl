@@ -2,11 +2,33 @@
 
 namespace Beutl.Graphics3D;
 
+public unsafe class TransferBuffer<T> : TransferBuffer
+    where T : unmanaged
+{
+    internal TransferBuffer(
+        Device device, SDL_GPUTransferBuffer* handle,
+        TransferBufferCreateInfo createInfo, uint elementCount)
+        : base(device, handle, createInfo)
+    {
+        ElementCount = elementCount;
+    }
+
+    public uint ElementCount { get; }
+
+    public int ElementSize => sizeof(T);
+
+    public new MappedBuffer<T> Map(bool cycle = false)
+    {
+        IntPtr ptr = SDL3.SDL_MapGPUTransferBuffer(Device.Handle, Handle, cycle);
+        return new MappedBuffer<T>(ptr, this);
+    }
+}
+
 public unsafe class TransferBuffer : GraphicsResource
 {
     private readonly TransferBufferCreateInfo _createInfo;
 
-    private TransferBuffer(Device device, SDL_GPUTransferBuffer* handle, TransferBufferCreateInfo createInfo)
+    internal TransferBuffer(Device device, SDL_GPUTransferBuffer* handle, TransferBufferCreateInfo createInfo)
         : base(device)
     {
         Handle = handle;
@@ -31,16 +53,25 @@ public unsafe class TransferBuffer : GraphicsResource
         return new TransferBuffer(device, handle, createInfo);
     }
 
-    public static TransferBuffer Create<T>(
+    public static TransferBuffer<T> Create<T>(
         Device device,
         TransferBufferUsage usage,
         uint elementCount) where T : unmanaged
     {
-        return Create(device, new TransferBufferCreateInfo
+        var createInfo = new TransferBufferCreateInfo
         {
             Usage = usage,
-            Size = (uint) (sizeof(T) * elementCount),
-        });
+            Size = (uint)sizeof(T) * elementCount
+        };
+
+        var nativeInfo = createInfo.ToNative();
+        var handle = SDL3.SDL_CreateGPUTransferBuffer(device.Handle, &nativeInfo);
+        if (handle == null)
+        {
+            throw new InvalidOperationException(SDL3.SDL_GetError());
+        }
+
+        return new TransferBuffer<T>(device, handle, createInfo, elementCount);
     }
 
     public MappedBuffer Map(bool cycle = false)

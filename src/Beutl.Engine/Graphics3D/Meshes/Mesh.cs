@@ -4,8 +4,6 @@ namespace Beutl.Graphics3D.Meshes;
 
 public class Mesh : CoreObject
 {
-    public int VertexArrayObject { get; private set; }
-
     public List<Vertex> Vertices { get; set; } = [];
 
     public int[]? Indices { get; set; }
@@ -38,10 +36,10 @@ public class Mesh : CoreObject
         if (n == Vector3.Zero)
             n = Vector3.Cross(v1.Position - v2.Position, v2.Position - v3.Position);
 
-        v1 = v1.WithNormal(n);
-        v2 = v2.WithNormal(n);
-        v3 = v3.WithNormal(n);
-        v4 = v4.WithNormal(n);
+        v1 = v1 with { Normal = n };
+        v2 = v2 with { Normal = n };
+        v3 = v3 with { Normal = n };
+        v4 = v4 with { Normal = n };
 
         AddFace(v1, v2, v3, v4);
     }
@@ -63,7 +61,7 @@ public class Mesh : CoreObject
         for (int i = 0; i < Vertices.Count; ++i)
         {
             Vertex v = Vertices[i];
-            v = v.WithPosition(v.Position * scale);
+            v = v with { Position = v.Position * scale };
             Vertices[i] = v;
         }
     }
