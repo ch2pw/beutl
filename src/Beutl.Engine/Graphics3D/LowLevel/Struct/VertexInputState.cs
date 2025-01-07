@@ -1,6 +1,6 @@
 namespace Beutl.Graphics3D;
 
-public readonly struct VertexInputState
+public readonly struct VertexInputState : IEquatable<VertexInputState>
 {
     public static readonly VertexInputState Empty = new()
     {
@@ -32,4 +32,18 @@ public readonly struct VertexInputState
 
         return new VertexInputState { VertexBufferDescriptions = [description], VertexAttributes = attributes };
     }
+
+    public bool Equals(VertexInputState other)
+    {
+        return VertexBufferDescriptions.SequenceEqual(other.VertexBufferDescriptions) &&
+               VertexAttributes.SequenceEqual(other.VertexAttributes);
+    }
+
+    public override bool Equals(object? obj) => obj is VertexInputState other && Equals(other);
+
+    public override int GetHashCode() => HashCode.Combine(VertexBufferDescriptions, VertexAttributes);
+
+    public static bool operator ==(VertexInputState left, VertexInputState right) => left.Equals(right);
+
+    public static bool operator !=(VertexInputState left, VertexInputState right) => !left.Equals(right);
 }

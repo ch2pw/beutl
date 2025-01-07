@@ -4,15 +4,45 @@ namespace Beutl.Graphics3D.Meshes;
 
 public class Mesh : CoreObject
 {
+    private MeshResource? _createdResource;
+    private int _referenceCount;
+
     public List<Vertex> Vertices { get; set; } = [];
 
-    public int[]? Indices { get; set; }
+    public uint[]? Indices { get; set; }
 
     public BoundingBox Bounds { get; protected set; }
 
-    public MeshResource CreateResource(Device device)
+    public MeshResource CreateResource(Device device, CopyPass pass)
     {
-        return new MeshResource(device, this);
+        lock (this)
+        {
+            if (_createdResource == null)
+            {
+                _createdResource = new MeshResource(device, this);
+                _createdResource.Update(pass);
+            }
+
+            _referenceCount++;
+            return _createdResource;
+        }
+    }
+
+    public void ReleaseResource()
+    {
+        lock (this)
+        {
+            if (_referenceCount > 0)
+            {
+                _referenceCount--;
+            }
+
+            if (_referenceCount == 0)
+            {
+                _createdResource?.Dispose();
+                _createdResource = null;
+            }
+        }
     }
 
     public void Clear()

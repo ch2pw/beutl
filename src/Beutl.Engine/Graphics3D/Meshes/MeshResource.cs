@@ -2,9 +2,9 @@
 
 namespace Beutl.Graphics3D.Meshes;
 
-public class MeshResource : IDisposable
+public class MeshResource : GraphicsResource
 {
-    public MeshResource(Device device, Mesh mesh)
+    public MeshResource(Device device, Mesh mesh) : base(device)
     {
         Mesh = mesh;
         VertexBuffer = Buffer.Create<Vertex>(
@@ -13,24 +13,24 @@ public class MeshResource : IDisposable
             device, TransferBufferUsage.Upload, (uint)mesh.Vertices.Count);
         if (mesh.Indices != null)
         {
-            IndexBuffer = Buffer.Create<int>(
+            IndexBuffer = Buffer.Create<uint>(
                 device, BufferUsageFlags.Index, (uint)mesh.Indices.Length);
-            IndexTransferBuffer = TransferBuffer.Create<int>(
+            IndexTransferBuffer = TransferBuffer.Create<uint>(
                 device, TransferBufferUsage.Upload, (uint)mesh.Indices.Length);
         }
     }
 
     public Buffer<Vertex> VertexBuffer { get; }
 
-    public Buffer<int>? IndexBuffer { get; }
+    public Buffer<uint>? IndexBuffer { get; }
 
     public TransferBuffer<Vertex> VertexTransferBuffer { get; }
 
-    public TransferBuffer<int>? IndexTransferBuffer { get; }
+    public TransferBuffer<uint>? IndexTransferBuffer { get; }
 
     public Mesh Mesh { get; }
 
-    public void OnCopyPass(CopyPass pass)
+    public void Update(CopyPass pass)
     {
         using (MappedBuffer<Vertex> vertexBuffer = VertexTransferBuffer.Map())
         {
@@ -41,7 +41,7 @@ public class MeshResource : IDisposable
 
         if (IndexBuffer != null && IndexTransferBuffer != null)
         {
-            using (MappedBuffer<int> indexBuffer = IndexTransferBuffer.Map())
+            using (MappedBuffer<uint> indexBuffer = IndexTransferBuffer.Map())
             {
                 Mesh.Indices!.AsSpan().CopyTo(indexBuffer.Span);
             }
@@ -50,16 +50,16 @@ public class MeshResource : IDisposable
         }
     }
 
-    public void OnRenderPass(RenderPass pass)
+    public void Bind(RenderPass pass)
     {
         pass.BindVertexBuffers(VertexBuffer);
         if (IndexBuffer != null)
         {
-            pass.BindIndexBuffer<int>(IndexBuffer);
+            pass.BindIndexBuffer<uint>(IndexBuffer);
         }
     }
 
-    public void Dispose()
+    protected override void Dispose(bool disposing)
     {
         VertexBuffer.Dispose();
         VertexTransferBuffer.Dispose();

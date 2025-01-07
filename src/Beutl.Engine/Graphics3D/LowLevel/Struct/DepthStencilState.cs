@@ -2,7 +2,7 @@ using SDL;
 
 namespace Beutl.Graphics3D;
 
-public readonly struct DepthStencilState
+public readonly struct DepthStencilState : IEquatable<DepthStencilState>
 {
     public static readonly DepthStencilState Disable = new()
     {
@@ -41,4 +41,14 @@ public readonly struct DepthStencilState
             enable_stencil_test = EnableStencilTest
         };
     }
+
+    public bool Equals(DepthStencilState other) => CompareOp == other.CompareOp && BackStencilState.Equals(other.BackStencilState) && FrontStencilState.Equals(other.FrontStencilState) && CompareMask == other.CompareMask && WriteMask == other.WriteMask && EnableDepthTest == other.EnableDepthTest && EnableDepthWrite == other.EnableDepthWrite && EnableStencilTest == other.EnableStencilTest;
+
+    public override bool Equals(object? obj) => obj is DepthStencilState other && Equals(other);
+
+    public override int GetHashCode() => HashCode.Combine((int)CompareOp, BackStencilState, FrontStencilState, CompareMask, WriteMask, EnableDepthTest, EnableDepthWrite, EnableStencilTest);
+
+    public static bool operator ==(DepthStencilState left, DepthStencilState right) => left.Equals(right);
+
+    public static bool operator !=(DepthStencilState left, DepthStencilState right) => !left.Equals(right);
 }

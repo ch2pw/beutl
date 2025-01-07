@@ -10,7 +10,7 @@ public class BallMesh : Mesh
         GenerateBall(1.0f, 32, 32);
     }
 
-    private void GenerateBall(float radius, int slices, int stacks)
+    private void GenerateBall(float radius, uint slices, int stacks)
     {
         float phi, theta;
         float x, y, z;
@@ -43,12 +43,12 @@ public class BallMesh : Mesh
             }
         }
 
-        Indices = new int[6 * slices * stacks];
-        int index = 0;
+        Indices = new uint[6 * slices * stacks];
+        uint index = 0;
 
-        for (int i = 0; i < stacks; i++)
+        for (uint i = 0; i < stacks; i++)
         {
-            for (int j = 0; j < slices; j++)
+            for (uint j = 0; j < slices; j++)
             {
                 Indices[index++] = (i + 1) * (slices + 1) + j;
                 Indices[index++] = i * (slices + 1) + j;

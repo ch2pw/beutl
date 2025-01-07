@@ -2,7 +2,7 @@ using SDL;
 
 namespace Beutl.Graphics3D;
 
-public readonly struct ColorTargetBlendState
+public readonly struct ColorTargetBlendState : IEquatable<ColorTargetBlendState>
 {
     public static readonly ColorTargetBlendState NoWrite = new()
     {
@@ -93,4 +93,34 @@ public readonly struct ColorTargetBlendState
             enable_color_write_mask = EnableColorWriteMask
         };
     }
+
+    public bool Equals(ColorTargetBlendState other)
+    {
+        return SrcColorBlendFactor == other.SrcColorBlendFactor && DstColorBlendFactor == other.DstColorBlendFactor &&
+               ColorBlendOp == other.ColorBlendOp && SrcAlphaBlendFactor == other.SrcAlphaBlendFactor &&
+               DstAlphaBlendFactor == other.DstAlphaBlendFactor && AlphaBlendOp == other.AlphaBlendOp &&
+               ColorWriteMask == other.ColorWriteMask && EnableBlend == other.EnableBlend &&
+               EnableColorWriteMask == other.EnableColorWriteMask;
+    }
+
+    public override bool Equals(object? obj) => obj is ColorTargetBlendState other && Equals(other);
+
+    public override int GetHashCode()
+    {
+        var hashCode = new HashCode();
+        hashCode.Add((int)SrcColorBlendFactor);
+        hashCode.Add((int)DstColorBlendFactor);
+        hashCode.Add((int)ColorBlendOp);
+        hashCode.Add((int)SrcAlphaBlendFactor);
+        hashCode.Add((int)DstAlphaBlendFactor);
+        hashCode.Add((int)AlphaBlendOp);
+        hashCode.Add((int)ColorWriteMask);
+        hashCode.Add(EnableBlend);
+        hashCode.Add(EnableColorWriteMask);
+        return hashCode.ToHashCode();
+    }
+
+    public static bool operator ==(ColorTargetBlendState left, ColorTargetBlendState right) => left.Equals(right);
+
+    public static bool operator !=(ColorTargetBlendState left, ColorTargetBlendState right) => !left.Equals(right);
 }

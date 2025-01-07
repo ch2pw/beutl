@@ -2,7 +2,7 @@ using SDL;
 
 namespace Beutl.Graphics3D;
 
-public readonly struct MultisampleState
+public readonly struct MultisampleState : IEquatable<MultisampleState>
 {
     public static readonly MultisampleState None = new() { SampleCount = SampleCount.One };
 
@@ -21,4 +21,14 @@ public readonly struct MultisampleState
             enable_mask = EnableMask
         };
     }
+
+    public bool Equals(MultisampleState other) => SampleCount == other.SampleCount && SampleMask == other.SampleMask && EnableMask == other.EnableMask;
+
+    public override bool Equals(object? obj) => obj is MultisampleState other && Equals(other);
+
+    public override int GetHashCode() => HashCode.Combine((int)SampleCount, SampleMask, EnableMask);
+
+    public static bool operator ==(MultisampleState left, MultisampleState right) => left.Equals(right);
+
+    public static bool operator !=(MultisampleState left, MultisampleState right) => !left.Equals(right);
 }

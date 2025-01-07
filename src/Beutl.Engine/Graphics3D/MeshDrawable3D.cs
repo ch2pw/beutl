@@ -1,5 +1,6 @@
 using Beutl.Animation;
 using Beutl.Graphics3D.Meshes;
+using Beutl.Graphics3D.Rendering;
 using Beutl.Media;
 
 namespace Beutl.Graphics3D;

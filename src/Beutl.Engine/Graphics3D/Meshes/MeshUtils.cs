@@ -1,16 +1,17 @@
 using System.Numerics;
+using Beutl.Media;
 
 namespace Beutl.Graphics3D.Meshes;
 
 public class MeshUtils
 {
-    public static void CreateLine(ref Mesh mesh, Vector3 point1, Vector3 point2, Vector3 color)
+    public static void CreateLine(ref Mesh mesh, Vector3 point1, Vector3 point2, Color color)
     {
         mesh.Vertices.Add(new Vertex(point1, color));
         mesh.Vertices.Add(new Vertex(point2, color));
     }
 
-    public static void CreateArrowCap(ref Mesh mesh, Vector3 point, Vector3 up, Vector3 dir, float size1, float size2, Vector3 color)
+    public static void CreateArrowCap(ref Mesh mesh, Vector3 point, Vector3 up, Vector3 dir, float size1, float size2, Color color)
     {
         dir = Vector3.Normalize(dir);
         up = Vector3.Normalize(up);

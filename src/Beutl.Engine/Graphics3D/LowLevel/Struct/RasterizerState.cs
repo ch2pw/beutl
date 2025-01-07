@@ -2,7 +2,7 @@ using SDL;
 
 namespace Beutl.Graphics3D;
 
-public readonly struct RasterizerState
+public readonly struct RasterizerState : IEquatable<RasterizerState>
 {
     public static readonly RasterizerState CW_CullFront = new()
     {
@@ -90,4 +90,20 @@ public readonly struct RasterizerState
             enable_depth_clip = EnableDepthClip
         };
     }
+
+    public bool Equals(RasterizerState other)
+    {
+        return FillMode == other.FillMode && CullMode == other.CullMode && FrontFace == other.FrontFace &&
+               DepthBiasConstantFactor.Equals(other.DepthBiasConstantFactor) &&
+               DepthBiasClamp.Equals(other.DepthBiasClamp) && DepthBiasSlopFactor.Equals(other.DepthBiasSlopFactor) &&
+               EnableDepthBias == other.EnableDepthBias && EnableDepthClip == other.EnableDepthClip;
+    }
+
+    public override bool Equals(object? obj) => obj is RasterizerState other && Equals(other);
+
+    public override int GetHashCode() => HashCode.Combine((int)FillMode, (int)CullMode, (int)FrontFace, DepthBiasConstantFactor, DepthBiasClamp, DepthBiasSlopFactor, EnableDepthBias, EnableDepthClip);
+
+    public static bool operator ==(RasterizerState left, RasterizerState right) => left.Equals(right);
+
+    public static bool operator !=(RasterizerState left, RasterizerState right) => !left.Equals(right);
 }
