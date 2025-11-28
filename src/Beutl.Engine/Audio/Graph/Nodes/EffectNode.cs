@@ -1,4 +1,4 @@
-using Beutl.Audio.Effects;
+﻿using Beutl.Audio.Effects;
 
 namespace Beutl.Audio.Graph.Nodes;
 

@@ -474,7 +474,7 @@ public abstract class GraphEditorViewModel : IDisposable
             }
 
             var keyTime = ConvertKeyTime(pointerPosition);
-            if (animation.KeyFrames.FirstOrDefault(k=>k.KeyTime == keyTime) is { } existingKeyFrame)
+            if (animation.KeyFrames.FirstOrDefault(k => k.KeyTime == keyTime) is { } existingKeyFrame)
             {
                 // イージングと値を変更
                 object? oldValue = existingKeyFrame.Value;

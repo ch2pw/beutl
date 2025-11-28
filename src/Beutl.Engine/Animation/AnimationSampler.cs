@@ -1,4 +1,4 @@
-using Beutl.Audio.Graph;
+﻿using Beutl.Audio.Graph;
 using Beutl.Media;
 
 namespace Beutl.Animation;
@@ -44,7 +44,7 @@ public sealed class AnimationSampler
                 output[i] = keyFrameAnimation.Interpolate(range.Start + TimeSpan.FromSeconds(i / (double)sampleRate));
             }
         }
-        else if(target is ICoreObject coreObject)
+        else if (target is ICoreObject coreObject)
         {
             output.Fill(coreObject.GetValue(property));
         }
@@ -52,7 +52,7 @@ public sealed class AnimationSampler
 
     public bool IsAnimated(IAnimatable? target, CoreProperty? property)
     {
-        if(target is null || property is null)
+        if (target is null || property is null)
         {
             return false;
         }

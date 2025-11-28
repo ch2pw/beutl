@@ -17,7 +17,7 @@ public static class CoreSerializerHelper
         using (ThreadLocalSerializationContext.Enter(context))
         {
             obj.Serialize(context);
-            var jsonObject =  context.GetJsonObject();
+            var jsonObject = context.GetJsonObject();
             jsonObject.WriteDiscriminator(obj.GetType());
             return jsonObject;
         }
