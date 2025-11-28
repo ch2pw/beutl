@@ -376,7 +376,8 @@ public sealed partial class EditViewModel : IEditorContext, ITimelineOptionsProv
             ["scale"] = Options.Value.Scale,
             ["offset"] = new JsonObject
             {
-                ["x"] = Options.Value.Offset.X, ["y"] = Options.Value.Offset.Y,
+                ["x"] = Options.Value.Offset.X,
+                ["y"] = Options.Value.Offset.Y,
             }
         };
 

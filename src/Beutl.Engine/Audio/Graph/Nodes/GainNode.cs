@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Beutl.Animation;
 
 namespace Beutl.Audio.Graph.Nodes;

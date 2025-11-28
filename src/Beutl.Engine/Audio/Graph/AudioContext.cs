@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -150,14 +150,14 @@ public sealed class AudioContext : IDisposable
     public ShiftNode CreateShiftNode(TimeSpan shift)
     {
         ThrowIfDisposed();
-        if(shift < TimeSpan.Zero)
+        if (shift < TimeSpan.Zero)
             throw new ArgumentOutOfRangeException(nameof(shift), "Shift must be non-negative.");
 
         // Try to reuse from previous nodes
         if (_previousNodes != null)
         {
             var existing = _previousNodes.OfType<ShiftNode>()
-                .FirstOrDefault(n => n.Shift==shift);
+                .FirstOrDefault(n => n.Shift == shift);
             if (existing != null)
             {
                 _previousNodes.Remove(existing);
