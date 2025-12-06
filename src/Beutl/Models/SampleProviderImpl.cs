@@ -70,7 +70,7 @@ public class SampleProviderImpl(Scene scene, SceneComposer composer, long sample
     {
         _lastPcm?.Dispose();
         _lastPcm = null;
-        var buffer = composer.Compose(new (TimeSpan.FromTicks(TimeSpan.TicksPerSecond * offset / sampleRate) + scene.Start,
+        var buffer = composer.Compose(new(TimeSpan.FromTicks(TimeSpan.TicksPerSecond * offset / sampleRate) + scene.Start,
                          TimeSpan.FromSeconds(1)))
                      ?? throw new InvalidOperationException("composer.Composeがnullを返しました。");
         var pcm = buffer.ToPcm();
