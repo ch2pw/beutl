@@ -265,7 +265,7 @@ public class Scene : ProjectItem, INotifyEdited
             FrameSize = new PixelSize(context.GetValue<int>("Width"), context.GetValue<int>("Height"));
         }
 
-        if (context.GetValue<JsonNode>(nameof(Elements)) is {  } elementsJson)
+        if (context.GetValue<JsonNode>(nameof(Elements)) is { } elementsJson)
         {
             if (elementsJson is JsonObject elementsObject)
             {

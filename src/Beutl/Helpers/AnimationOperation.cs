@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Beutl.Helpers;
 
-public class AnimationOperations
+public static class AnimationOperations
 {
     private static TimeSpan ConvertKeyTime(IKeyFrameAnimation animation, Scene? scene, Element? element,
         TimeSpan globalkeyTime, ILogger logger)
@@ -44,7 +44,9 @@ public class AnimationOperations
                 var (left, right) = SplineEasingHelper.SplitByT(existingEasing, t);
                 createdKeyFrame = new KeyFrame<T>
                 {
-                    Value = animation.Interpolate(keyTime), Easing = left, KeyTime = keyTime
+                    Value = animation.Interpolate(keyTime),
+                    Easing = left,
+                    KeyTime = keyTime
                 };
 
                 var oldNextEasing = nextKeyFrame.Easing;
@@ -67,7 +69,9 @@ public class AnimationOperations
                 easing ??= new SplineEasing();
                 createdKeyFrame = new KeyFrame<T>
                 {
-                    Value = animation.Interpolate(keyTime), Easing = easing, KeyTime = keyTime
+                    Value = animation.Interpolate(keyTime),
+                    Easing = easing,
+                    KeyTime = keyTime
                 };
 
                 RecordableCommands.Create(storables)

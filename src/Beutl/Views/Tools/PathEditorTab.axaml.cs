@@ -466,7 +466,8 @@ public partial class PathEditorTab : UserControl, IPathEditorView
         var flyout = new FAMenuFlyout();
         var delete = new MenuFlyoutItem
         {
-            Text = Strings.Delete, IconSource = new SymbolIconSource { Symbol = Symbol.Delete }
+            Text = Strings.Delete,
+            IconSource = new SymbolIconSource { Symbol = Symbol.Delete }
         };
         delete.Click += OnDeleteClicked;
         flyout.ItemsSource = new[] { delete };
@@ -538,7 +539,7 @@ public partial class PathEditorTab : UserControl, IPathEditorView
             {
                 PathFigure.Value: { } figure,
                 FigureContext.Value.Group.Value: { } group,
-                EditViewModel: {  } editViewModel
+                EditViewModel: { } editViewModel
             })
         {
             int index = figure.Segments.Count;

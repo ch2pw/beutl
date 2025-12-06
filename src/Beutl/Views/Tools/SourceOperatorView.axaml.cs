@@ -41,7 +41,7 @@ public sealed partial class SourceOperatorView : UserControl
 
     private void Drop(object? sender, DragEventArgs e)
     {
-        if (e.DataTransfer.TryGetValue(BeutlDataFormats.SourceOperator) is {  } typeName
+        if (e.DataTransfer.TryGetValue(BeutlDataFormats.SourceOperator) is { } typeName
             && TypeFormat.ToType(typeName) is { } item2
             && DataContext is SourceOperatorViewModel viewModel2)
         {
