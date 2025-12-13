@@ -9,9 +9,9 @@ using Beutl.Animation;
 using Beutl.Animation.Easings;
 using Beutl.Controls.PropertyEditors;
 using Beutl.Engine.Expressions;
-using Beutl.Media;
 using Beutl.Helpers;
 using Beutl.Logging;
+using Beutl.Media;
 using Beutl.ProjectSystem;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -462,7 +462,9 @@ public abstract class BaseEditorViewModel<T> : BaseEditorViewModel
             T initialValue = animatableProperty.GetValue()!;
             newAnimation.KeyFrames.Add(new KeyFrame<T>
             {
-                Value = initialValue, Easing = new SplineEasing(), KeyTime = TimeSpan.Zero
+                Value = initialValue,
+                Easing = new SplineEasing(),
+                KeyTime = TimeSpan.Zero
             });
 
             // Expressionを保存してnullに設定する
