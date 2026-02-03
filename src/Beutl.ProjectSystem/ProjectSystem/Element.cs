@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using Beutl.Audio.Composing;
 using Beutl.Collections.Pooled;
 using Beutl.Engine;
 using Beutl.Graphics.Rendering;
@@ -110,11 +111,11 @@ public class Element : Hierarchical, INotifyEdited
         context.Populate(nameof(Operation), Operation);
     }
 
-    public PooledList<EngineObject> Evaluate(EvaluationTarget target, IRenderer renderer)
+    public PooledList<EngineObject> Evaluate(EvaluationTarget target, IRenderer renderer, IComposer? composer = null)
     {
         lock (this)
         {
-            return Operation.Evaluate(target, renderer, this);
+            return Operation.Evaluate(target, renderer, this, composer);
         }
     }
 
