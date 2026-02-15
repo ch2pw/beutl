@@ -70,15 +70,18 @@ public class JsonSerializationTest
         var elm2 = new Element { ZIndex = 2 };
         CoreSerializer.StoreToUri(elm2, UriHelper.CreateFromPath(Path.Combine(basePath, $"1.layer")));
         scene.AddChild(elm2);
+        var nodeTreeOp = new NodeTreeOperator();
+        elm2.Operation.Children.Add(nodeTreeOp);
+        var nodeTreeModel = nodeTreeOp.Value.Model.CurrentValue!;
         var rectNode = new RectGeometryNode();
         var shapeNode = new GeometryShapeNode();
         var outNode = new OutputNode();
-        elm2.NodeTree.Nodes.Add(rectNode);
-        elm2.NodeTree.Nodes.Add(shapeNode);
-        elm2.NodeTree.Nodes.Add(outNode);
+        nodeTreeModel.Nodes.Add(rectNode);
+        nodeTreeModel.Nodes.Add(shapeNode);
+        nodeTreeModel.Nodes.Add(outNode);
 
-        elm2.NodeTree.Connect((IInputSocket)shapeNode.Items[1], rectNode.OutputSocket);
-        elm2.NodeTree.Connect((IInputSocket)outNode.Items[0], (IOutputSocket)shapeNode.Items[0]);
+        nodeTreeModel.Connect((IInputSocket)shapeNode.Items[1], rectNode.OutputSocket);
+        nodeTreeModel.Connect((IInputSocket)outNode.Items[0], (IOutputSocket)shapeNode.Items[0]);
     }
 
     // SaveReferencedObjectsのテスト
