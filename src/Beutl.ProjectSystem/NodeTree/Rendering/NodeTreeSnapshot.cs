@@ -19,7 +19,7 @@ public sealed class NodeTreeSnapshot : IDisposable
 
     public void MarkDirty() => _isDirty = true;
 
-    public void Build(NodeTreeModel model, IRenderer renderer)
+    public void Build(NodeTreeModel model, RenderContext context)
     {
         if (!_isDirty) return;
 
@@ -48,7 +48,7 @@ public sealed class NodeTreeSnapshot : IDisposable
         }
 
         // リソースとコンテキストを構築
-        var nodeToResourceIndex = BuildResourcesAndContexts(sorted, renderer);
+        var nodeToResourceIndex = BuildResourcesAndContexts(sorted, context);
 
         // ConnectionSnapshot を構築
         var connectionList = BuildConnectionSnapshots(model.AllConnections, nodeToResourceIndex);
@@ -137,7 +137,7 @@ public sealed class NodeTreeSnapshot : IDisposable
         return sorted;
     }
 
-    private Dictionary<Node, int> BuildResourcesAndContexts(List<Node> sorted, IRenderer renderer)
+    private Dictionary<Node, int> BuildResourcesAndContexts(List<Node> sorted, RenderContext context)
     {
         var nodeToResourceIndex = new Dictionary<Node, int>(sorted.Count);
         _resources = new Node.Resource[sorted.Count];
@@ -160,14 +160,13 @@ public sealed class NodeTreeSnapshot : IDisposable
             }
 
             // Resource を生成
-            var resource = node.ToResource(RenderContext.Default);
+            var resource = node.ToResource(context);
             resource.SlotIndex = i;
             resource.ItemValues = itemValues;
             resource.ItemIndexMap = itemIndexMap;
-            resource.Renderer = renderer;
             _resources[i] = resource;
 
-            _contexts[i] = new NodeRenderContext(renderer.Time) { Resource = resource, Snapshot = this };
+            _contexts[i] = new NodeRenderContext(context.Time) { Resource = resource, Snapshot = this };
         }
 
         return nodeToResourceIndex;
@@ -280,13 +279,12 @@ public sealed class NodeTreeSnapshot : IDisposable
         }
     }
 
-    public void Evaluate(EvaluationTarget target, IList<EngineObject> renderables, IRenderer renderer)
+    public void Evaluate(EvaluationTarget target, RenderContext context)
     {
         foreach (var ctx in _contexts)
         {
             ctx.Target = target;
-            ctx._renderables = renderables;
-            ctx.Time = renderer.Time;
+            ctx.Time = context.Time;
 
             // アニメーション/プロパティ値をロード
             LoadAnimatedValues(ctx.Resource, ctx.Time);

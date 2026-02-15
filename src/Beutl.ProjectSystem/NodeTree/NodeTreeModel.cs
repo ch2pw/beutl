@@ -7,7 +7,7 @@ using Beutl.Serialization;
 
 namespace Beutl.NodeTree;
 
-public abstract class NodeTreeModel : EngineObject
+public partial class NodeTreeModel : EngineObject
 {
     public static readonly CoreProperty<HierarchicalList<Node>> NodesProperty;
     public static readonly CoreProperty<HierarchicalList<Connection>> AllConnectionsProperty;

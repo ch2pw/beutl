@@ -1,0 +1,97 @@
+using System.Reactive;
+using Beutl.Engine;
+using Beutl.Graphics;
+using Beutl.Graphics.Rendering;
+using Beutl.NodeTree.Nodes;
+using Beutl.NodeTree.Rendering;
+
+namespace Beutl.NodeTree;
+
+[SuppressResourceClassGeneration]
+public sealed class NodeTreeDrawable : Drawable
+{
+    public IProperty<NodeTreeModel?> Model { get; } = Property.Create<NodeTreeModel?>();
+
+    public override Resource ToResource(RenderContext context)
+    {
+        bool updateOnly = false;
+        var resource = new Resource();
+        resource.Update(this, context, ref updateOnly);
+        return resource;
+    }
+
+    protected override Size MeasureCore(Size availableSize, Drawable.Resource resource) => availableSize;
+
+    protected override void OnDraw(GraphicsContext2D context, Drawable.Resource resource)
+    {
+    }
+
+    public override void Render(GraphicsContext2D context, Drawable.Resource resource)
+    {
+        var r = (Resource)resource;
+        foreach (var output in r.OutputRenderNode)
+        {
+            context.DrawNode(output, o => o, (o, _) => o.HasChanges);
+        }
+    }
+
+    public new sealed class Resource : Drawable.Resource
+    {
+        private readonly NodeTreeSnapshot _snapshot = new();
+        private NodeTreeModel? _model;
+
+        public List<RenderNode> OutputRenderNode { get; private set; } = [];
+
+        public override void Update(EngineObject obj, RenderContext context, ref bool updateOnly)
+        {
+            base.Update(obj, context, ref updateOnly);
+            OutputRenderNode.Clear();
+            if (obj is NodeTreeDrawable drawable)
+            {
+                _model = drawable.Model.CurrentValue;
+
+                if (_model != null)
+                {
+                    _snapshot.Build(_model, context);
+
+                    _snapshot.Evaluate(EvaluationTarget.Graphics, context);
+
+                    PullOutputValue(_model);
+
+                    Version++;
+                    updateOnly = true;
+                }
+            }
+        }
+
+        private void PullOutputValue(NodeTreeModel model)
+        {
+            foreach (var node in model.Nodes)
+            {
+                if (node is OutputNode outputNode)
+                {
+                    int slotIndex = _snapshot.FindSlotIndex(outputNode);
+                    if (slotIndex < 0) continue;
+
+                    var resource = _snapshot.GetResource(slotIndex);
+                    if (resource == null) continue;
+
+                    if (!resource.ItemIndexMap.TryGetValue(outputNode.InputSocket, out int itemIndex))
+                        continue;
+
+                    IItemValue? itemValue = _snapshot.GetItemValue(slotIndex, itemIndex);
+                    if (itemValue?.GetBoxed() is RenderNode renderNode)
+                    {
+                        OutputRenderNode.Add(renderNode);
+                    }
+                }
+            }
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing) _snapshot.Dispose();
+            base.Dispose(disposing);
+        }
+    }
+}

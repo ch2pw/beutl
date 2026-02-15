@@ -23,7 +23,7 @@ public partial class TextNode : Node
 
     public TextNode()
     {
-        Output = AddOutput<DrawableRenderNode>("Output");
+        Output = AddOutput<DrawableRenderNode?>("Output");
         Object = new TextBlock();
         Object.AlignmentX.CurrentValue = AlignmentX.Left;
         Object.AlignmentY.CurrentValue = AlignmentY.Top;
@@ -63,7 +63,6 @@ public partial class TextNode : Node
     {
         public override void Update(NodeRenderContext context)
         {
-            if (Renderer == null) return;
             var node = GetOriginal();
             var output = Output;
             if (output?.Drawable?.Resource is not TextBlock.Resource resource)
@@ -85,7 +84,8 @@ public partial class TextNode : Node
                 output.Update(resource);
             }
 
-            using (var gc2d = new GraphicsContext2D(output, Renderer.FrameSize))
+            Size size = node.Object.MeasureInternal(Size.Infinity, resource);
+            using (var gc2d = new GraphicsContext2D(output, PixelSize.FromSize(size, 1)))
             {
                 node.Object.Render(gc2d, resource);
             }

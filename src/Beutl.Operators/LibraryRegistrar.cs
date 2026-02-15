@@ -106,6 +106,11 @@ public static class LibraryRegistrar
         );
 
         LibraryService.Current
+            .AddMultiple(Strings.NodeTree, m => m
+                .BindSourceOperator<Source.NodeTreeOperator>()
+            );
+
+        LibraryService.Current
             .AddMultiple(Strings.Portal, m => m
                 .BindSourceOperator<TakeAfterOperator>()
             );
