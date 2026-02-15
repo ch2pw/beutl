@@ -2,6 +2,7 @@
 
 using Beutl.Collections.Pooled;
 using Beutl.NodeTree;
+using Beutl.Operation;
 using Beutl.ProjectSystem;
 
 using Microsoft.Extensions.DependencyInjection;
@@ -87,18 +88,22 @@ public sealed class NodeTreeTabViewModel : IToolContext
 
             if (v != null)
             {
-                NodeTree.Value = new NodeTreeViewModel(v.NodeTree, editorContext);
-                IObservable<string> name = v.GetObservable(CoreObject.NameProperty);
-                var fileName = Path.GetFileNameWithoutExtension(v.Uri!.LocalPath);
+                NodeTreeModel? nodeTreeModel = FindNodeTreeModel(v);
+                if (nodeTreeModel != null)
+                {
+                    NodeTree.Value = new NodeTreeViewModel(nodeTreeModel, editorContext);
+                    IObservable<string> name = v.GetObservable(CoreObject.NameProperty);
+                    var fileName = Path.GetFileNameWithoutExtension(v.Uri!.LocalPath);
 
-                Items.Add(new NodeTreeNavigationItem(
-                    viewModel: NodeTree.Value,
-                    nodeTree: v.NodeTree,
-                    name: name
-                        .Select(x => string.IsNullOrWhiteSpace(x) ? fileName : x)
-                        .ToReadOnlyReactivePropertySlim()!));
+                    Items.Add(new NodeTreeNavigationItem(
+                        viewModel: NodeTree.Value,
+                        nodeTree: nodeTreeModel,
+                        name: name
+                            .Select(x => string.IsNullOrWhiteSpace(x) ? fileName : x)
+                            .ToReadOnlyReactivePropertySlim()!));
 
-                RestoreState(v);
+                    RestoreState(v);
+                }
             }
         }).DisposeWith(_disposables);
     }
@@ -316,5 +321,16 @@ public sealed class NodeTreeTabViewModel : IToolContext
             return Element.Value;
 
         return _editorContext.GetService(serviceType);
+    }
+
+    internal static NodeTreeModel? FindNodeTreeModel(Element element)
+    {
+        foreach (var op in element.Operation.Children)
+        {
+            if (op is IPublishOperator { Value: NodeTreeDrawable drawable })
+                return drawable.Model.CurrentValue;
+        }
+
+        return null;
     }
 }

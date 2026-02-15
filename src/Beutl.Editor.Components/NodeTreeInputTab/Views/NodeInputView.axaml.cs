@@ -9,6 +9,9 @@ using Avalonia.Xaml.Interactivity;
 using Beutl.Controls;
 using Beutl.Controls.Behaviors;
 using Beutl.Editor.Components.NodeTreeInputTab.ViewModels;
+using Beutl.Editor.Components.NodeTreeTab.ViewModels;
+using Beutl.NodeTree;
+using Beutl.Operation;
 
 using Microsoft.Extensions.DependencyInjection;
 
@@ -70,7 +73,8 @@ public partial class NodeInputView : UserControl
                 HistoryManager history = viewModel.GetRequiredService<HistoryManager>();
                 oldIndex = viewModel.ConvertToOriginalIndex(oldIndex);
                 newIndex = viewModel.ConvertToOriginalIndex(newIndex);
-                viewModel.Model.NodeTree.Nodes.Move(oldIndex, newIndex);
+                NodeTreeModel? nodeTreeModel = NodeTreeTabViewModel.FindNodeTreeModel(viewModel.Model);
+                nodeTreeModel?.Nodes.Move(oldIndex, newIndex);
                 history.Commit(CommandNames.MoveNode);
             }
         }

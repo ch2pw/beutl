@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Specialized;
+using Beutl.Editor.Components.NodeTreeTab.ViewModels;
 using Beutl.Editor.Services;
 using Beutl.NodeTree;
 using Beutl.NodeTree.Nodes;
+using Beutl.Operation;
 using Microsoft.Extensions.DependencyInjection;
 using Reactive.Bindings;
 
@@ -12,7 +14,7 @@ public sealed class NodeInputViewModel : IDisposable, IPropertyEditorContextVisi
 {
     private readonly CompositeDisposable _disposables = [];
     private readonly string _defaultName;
-    private NodeTreeModel _nodeTree;
+    private NodeTreeModel? _nodeTree;
     private NodeTreeInputViewModel _parent;
 
     public NodeInputViewModel(LayerInputNode node, int originalIndex, NodeTreeInputViewModel parent)
@@ -20,7 +22,7 @@ public sealed class NodeInputViewModel : IDisposable, IPropertyEditorContextVisi
         Node = node;
         OriginalIndex = originalIndex;
         _parent = parent;
-        _nodeTree = parent.Model.NodeTree;
+        _nodeTree = NodeTreeTabViewModel.FindNodeTreeModel(parent.Model);
 
         Type nodeType = node.GetType();
         if (NodeRegistry.FindItem(nodeType) is { } regItem)
@@ -59,6 +61,8 @@ public sealed class NodeInputViewModel : IDisposable, IPropertyEditorContextVisi
 
     public void Remove()
     {
+        if (_nodeTree == null) return;
+
         Connection[] allConnections = Node.Items
             .SelectMany(i => i switch
             {
