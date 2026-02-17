@@ -76,6 +76,24 @@ public partial class NodeTreeView : UserControl
         }
     }
 
+    // VisualTreeからデタッチされて、再度アタッチされた後のレイアウトでZoomBorderのMatrixがリセットされてしまうため、レイアウト更新後にMatrixを再設定する
+    private Matrix? _initialMatrix;
+
+    protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
+    {
+        base.OnAttachedToVisualTree(e);
+        _initialMatrix = (DataContext as NodeTreeViewModel)?.Matrix.Value;
+        LayoutUpdated += OnLayoutUpdated;
+
+        void OnLayoutUpdated(object? sender, EventArgs eventArgs)
+        {
+            if (!_initialMatrix.HasValue) return;
+
+            zoomBorder.SetMatrix(_initialMatrix.Value, true);
+            LayoutUpdated -= OnLayoutUpdated;
+        }
+    }
+
     private void UpdateRangeSelection()
     {
         foreach ((NodeView? node, bool isSelectedOriginal) in _rangeSelection)
