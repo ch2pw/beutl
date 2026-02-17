@@ -31,7 +31,10 @@ public sealed class RenderNodeDrawable : Drawable
         var r = resource as Resource;
         if (r?.Node != null)
         {
-            context.DrawNode(r.Node, n => n, (n, _) => n.HasChanges);
+            context.DrawNode(
+                r.Node,
+                n => new ReferencesChildRenderNode(n),
+                (refNode, n) => refNode.Update(n));
         }
     }
 

@@ -13,6 +13,7 @@ public sealed class NodeTreeDrawable : Drawable
     public NodeTreeDrawable()
     {
         ScanProperties<NodeTreeDrawable>();
+        Model.CurrentValue = new NodeTreeModel();
     }
 
     public IProperty<NodeTreeModel?> Model { get; } = Property.Create<NodeTreeModel?>();
@@ -36,9 +37,10 @@ public sealed class NodeTreeDrawable : Drawable
         var r = (Resource)resource;
         foreach (var output in r.OutputRenderNode)
         {
-            context.DrawNode(output);
-            if (output.HasChanges)
-                context.MarkChanges();
+            context.DrawNode(
+                output,
+                n => new ReferencesChildRenderNode(n),
+                (refNode, n) => refNode.Update(n));
         }
     }
 
