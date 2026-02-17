@@ -36,7 +36,9 @@ public sealed class NodeTreeDrawable : Drawable
         var r = (Resource)resource;
         foreach (var output in r.OutputRenderNode)
         {
-            context.DrawNode(output, o => o, (o, _) => o.HasChanges);
+            context.DrawNode(output);
+            if (output.HasChanges)
+                context.MarkChanges();
         }
     }
 
