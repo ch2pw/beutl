@@ -72,7 +72,7 @@ public sealed partial class GeometryShapeNode : Node
                     geometryResource.Update(geometry, context, ref updateOnly);
                 }
 
-                if (fillResource?.GetOriginal() != fill || fill == null)
+                if (fill == null || fillResource?.GetOriginal() != fill)
                 {
                     fillResource?.Dispose();
                     fillResource = fill?.ToResource(context);
@@ -83,7 +83,7 @@ public sealed partial class GeometryShapeNode : Node
                     fillResource.Update(fill, context, ref updateOnly);
                 }
 
-                if (penResource?.GetOriginal() != pen || pen == null)
+                if (pen == null || penResource?.GetOriginal() != pen)
                 {
                     penResource?.Dispose();
                     penResource = pen?.ToResource(context);
