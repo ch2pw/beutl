@@ -53,7 +53,13 @@ public sealed class NodeTreeDrawable : Drawable
             OutputRenderNode.Clear();
             if (obj is NodeTreeDrawable drawable)
             {
-                _model = drawable.Model.CurrentValue;
+                if (_model != drawable.Model.CurrentValue)
+                {
+                    _model?.TopologyChanged -= OnModelTopologyChanged;
+                    _model = drawable.Model.CurrentValue;
+                    _model?.TopologyChanged += OnModelTopologyChanged;
+                    _snapshot.MarkDirty();
+                }
 
                 if (_model != null)
                 {
@@ -67,6 +73,16 @@ public sealed class NodeTreeDrawable : Drawable
                     updateOnly = true;
                 }
             }
+            else
+            {
+                _model?.TopologyChanged -= OnModelTopologyChanged;
+                _snapshot.MarkDirty();
+            }
+        }
+
+        private void OnModelTopologyChanged(object? sender, EventArgs e)
+        {
+            _snapshot.MarkDirty();
         }
 
         private void PullOutputValue(NodeTreeModel model)
@@ -95,6 +111,8 @@ public sealed class NodeTreeDrawable : Drawable
 
         protected override void Dispose(bool disposing)
         {
+            _model?.TopologyChanged -= OnModelTopologyChanged;
+            _model = null;
             if (disposing) _snapshot.Dispose();
             base.Dispose(disposing);
         }
