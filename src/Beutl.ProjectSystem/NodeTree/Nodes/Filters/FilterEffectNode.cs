@@ -56,7 +56,7 @@ public partial class FilterEffectNode<T> : ConfigureNode
             FilterEffect.Resource? resource;
             var output = OutputSocket;
 
-            if (output == null)
+            if (output == null || output.IsDisposed)
             {
                 resource = node.Object.ToResource(context);
                 OutputSocket = new FilterEffectRenderNode(resource);
@@ -68,6 +68,17 @@ public partial class FilterEffectNode<T> : ConfigureNode
                 resource.Update(node.Object, context, ref updateOnly);
                 fen.Update(resource);
             }
+        }
+
+        partial void PostDispose(bool disposing)
+        {
+            if (OutputSocket is FilterEffectRenderNode { FilterEffect.Resource: { } filterEffect })
+            {
+                filterEffect.Dispose();
+            }
+
+            OutputSocket?.Dispose();
+            OutputSocket = null;
         }
     }
 }

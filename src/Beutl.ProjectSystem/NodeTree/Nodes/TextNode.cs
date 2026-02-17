@@ -75,7 +75,7 @@ public partial class TextNode : Node
                 resource.Update(node.Object, context, ref updateOnly);
             }
 
-            if (output == null)
+            if (output == null || output.IsDisposed)
             {
                 output = new DrawableRenderNode(resource);
             }
@@ -91,6 +91,12 @@ public partial class TextNode : Node
             }
 
             Output = output;
+        }
+
+        partial void PostDispose(bool disposing)
+        {
+            Output?.Dispose();
+            Output = null;
         }
     }
 }
