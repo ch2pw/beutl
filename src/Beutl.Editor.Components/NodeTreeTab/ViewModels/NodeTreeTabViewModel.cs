@@ -1,12 +1,9 @@
 ﻿using System.Text.Json.Nodes;
-
 using Beutl.Collections.Pooled;
 using Beutl.NodeTree;
 using Beutl.Operation;
 using Beutl.ProjectSystem;
-
 using Microsoft.Extensions.DependencyInjection;
-
 using Reactive.Bindings;
 
 namespace Beutl.Editor.Components.NodeTreeTab.ViewModels;
@@ -63,49 +60,49 @@ public sealed class NodeTreeTabViewModel : IToolContext
     private readonly ReactiveProperty<bool> _isSelected = new(false);
     private readonly CompositeDisposable _disposables = [];
     private IEditorContext _editorContext;
-    private Element? _oldElement;
+    private NodeTreeModel? _oldModel;
 
     public NodeTreeTabViewModel(IEditorContext editorContext)
     {
         _editorContext = editorContext;
 
-        Element.Subscribe(v =>
-        {
-            if (_oldElement != null)
+        Model.CombineWithPrevious()
+            .Subscribe(t =>
             {
-                SaveState(_oldElement);
-            }
-            _oldElement = v;
-
-            foreach (NodeTreeNavigationItem item in Items)
-            {
-                item.Dispose();
-            }
-            Items.Clear();
-
-            NodeTree.Value?.Dispose();
-            NodeTree.Value = null;
-
-            if (v != null)
-            {
-                NodeTreeModel? nodeTreeModel = FindNodeTreeModel(v);
-                if (nodeTreeModel != null)
+                var oldModel = t.OldValue;
+                var newModel = t.NewValue;
+                if (oldModel != null)
                 {
-                    NodeTree.Value = new NodeTreeViewModel(nodeTreeModel, editorContext);
-                    IObservable<string> name = v.GetObservable(CoreObject.NameProperty);
-                    var fileName = Path.GetFileNameWithoutExtension(v.Uri!.LocalPath);
+                    SaveState(oldModel);
+                }
+
+                foreach (NodeTreeNavigationItem item in Items)
+                {
+                    item.Dispose();
+                }
+
+                Items.Clear();
+
+                NodeTree.Value?.Dispose();
+                NodeTree.Value = null;
+
+                if (newModel != null)
+                {
+                    NodeTree.Value = new NodeTreeViewModel(newModel, editorContext);
+                    var element = newModel.FindHierarchicalParent<Element>();
+                    IObservable<string> name = element?.GetObservable(CoreObject.NameProperty) ?? Observable.ReturnThenNever(string.Empty);
+                    string? fileName = Path.GetFileNameWithoutExtension(element?.Uri!.LocalPath);
 
                     Items.Add(new NodeTreeNavigationItem(
                         viewModel: NodeTree.Value,
-                        nodeTree: nodeTreeModel,
+                        nodeTree: newModel,
                         name: name
                             .Select(x => string.IsNullOrWhiteSpace(x) ? fileName : x)
                             .ToReadOnlyReactivePropertySlim()!));
 
-                    RestoreState(v);
+                    RestoreState(newModel);
                 }
-            }
-        }).DisposeWith(_disposables);
+            }).DisposeWith(_disposables);
     }
 
     public string Header => Strings.NodeTree;
@@ -120,10 +117,7 @@ public sealed class NodeTreeTabViewModel : IToolContext
     public IReactiveProperty<ToolTabExtension.TabDisplayMode> DisplayMode { get; } =
         new ReactivePropertySlim<ToolTabExtension.TabDisplayMode>();
 
-    public ReactivePropertySlim<Element?> Element { get; } = new();
-
-    [Obsolete("Use Element property instead.")]
-    public ReactivePropertySlim<Element?> Layer => Element;
+    public ReactivePropertySlim<NodeTreeModel?> Model { get; } = new();
 
     public ReactivePropertySlim<NodeTreeViewModel?> NodeTree { get; } = new();
 
@@ -131,7 +125,7 @@ public sealed class NodeTreeTabViewModel : IToolContext
 
     public void Dispose()
     {
-        Element.Value = null;
+        Model.Value = null;
 
         _disposables.Dispose();
         foreach (NodeTreeNavigationItem item in Items)
@@ -228,9 +222,10 @@ public sealed class NodeTreeTabViewModel : IToolContext
         }
     }
 
-    private static string ViewStateDirectory(Element element)
+    private string ViewStateDirectory()
     {
-        string directory = Path.GetDirectoryName(element.Uri!.LocalPath)!;
+        Scene scene = _editorContext.GetRequiredService<Scene>();
+        string directory = Path.GetDirectoryName(scene.Uri!.LocalPath)!;
 
         directory = Path.Combine(directory, Constants.BeutlFolder, Constants.ViewStateFolder);
         if (!Directory.Exists(directory))
@@ -241,36 +236,31 @@ public sealed class NodeTreeTabViewModel : IToolContext
         return directory;
     }
 
-    private void SaveState(Element element)
+    private void SaveState(NodeTreeModel model)
     {
-        string viewStateDir = ViewStateDirectory(element);
+        string viewStateDir = ViewStateDirectory();
 
         var itemsJson = new JsonObject();
-        foreach (NodeTreeNavigationItem item in Items.GetMarshal().Value)
+        foreach (NodeTreeNavigationItem item in Items)
         {
             var itemJson = new JsonObject();
             item.WriteToJson(itemJson);
             itemsJson[item.NodeTree.Id.ToString()] = itemJson;
         }
 
-        var json = new JsonObject
-        {
-            [nameof(Items)] = itemsJson
-        };
+        var json = new JsonObject { [nameof(Items)] = itemsJson };
         if (NodeTree.Value != null)
         {
             json["Selected"] = NodeTree.Value.NodeTree.Id;
         }
 
-        string name = Path.GetFileNameWithoutExtension(element.Uri!.LocalPath);
-        json.JsonSave(Path.Combine(viewStateDir, $"{name}.nodetree.config"));
+        json.JsonSave(Path.Combine(viewStateDir, $"{model.Id}.nodetree.config"));
     }
 
-    private void RestoreState(Element element)
+    private void RestoreState(NodeTreeModel model)
     {
-        string viewStateDir = ViewStateDirectory(element);
-        string name = Path.GetFileNameWithoutExtension(element.Uri!.LocalPath);
-        string viewStateFile = Path.Combine(viewStateDir, $"{name}.nodetree.config");
+        string viewStateDir = ViewStateDirectory();
+        string viewStateFile = Path.Combine(viewStateDir, $"{model.Id}.nodetree.config");
 
         if (File.Exists(viewStateFile))
         {
@@ -278,7 +268,7 @@ public sealed class NodeTreeTabViewModel : IToolContext
             JsonObject json = JsonNode.Parse(stream)!.AsObject();
             Guid? selected = (Guid?)json["Selected"];
             if (selected.HasValue
-                && element.FindById(selected.Value) is NodeTreeModel selectedModel)
+                && model.FindById(selected.Value) is NodeTreeModel selectedModel)
             {
                 NavigateTo(selectedModel);
             }
@@ -298,27 +288,27 @@ public sealed class NodeTreeTabViewModel : IToolContext
     public void ReadFromJson(JsonObject json)
     {
         Scene scene = _editorContext.GetRequiredService<Scene>();
-        if (Element.Value == null
-            && json?.TryGetPropertyValue("layer-filename", out JsonNode? filenameNode) == true
-            && (filenameNode as JsonValue)?.TryGetValue(out string? filename) == true
-            && filename != null)
+        if (Model.Value == null
+            && json.TryGetPropertyValue("ModelId", out JsonNode? idNode)
+            && (idNode as JsonValue)?.TryGetValue(out Guid id) == true)
         {
-            Element.Value = scene.Children.FirstOrDefault(x => x.Uri!.LocalPath == filename);
+            Model.Value = scene.FindById(id) as NodeTreeModel;
         }
     }
 
     public void WriteToJson(JsonObject json)
     {
-        if (Element.Value is { Uri: { } uri })
+        if (Model.Value != null)
         {
-            json["layer-filename"] = uri.LocalPath;
+            json["ModelId"] = Model.Value.Id;
+            SaveState(Model.Value);
         }
     }
 
     public object? GetService(Type serviceType)
     {
         if (serviceType == typeof(Element))
-            return Element.Value;
+            return Model.Value?.FindHierarchicalParent<Element>();
 
         return _editorContext.GetService(serviceType);
     }

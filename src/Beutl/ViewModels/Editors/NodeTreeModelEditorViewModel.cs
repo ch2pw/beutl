@@ -81,12 +81,12 @@ public sealed class NodeTreeModelEditorViewModel : ValueEditorViewModel<NodeTree
     {
         if (this.GetService<EditViewModel>() is not { } editViewModel) return;
         if (this.GetService<IEditorContext>() is not { } editorContext) return;
-        if (Value.Value?.FindHierarchicalParent<Element>() is not { } element) return;
+        if (Value.Value == null) return;
 
         NodeTreeTabViewModel tab = editViewModel.FindToolTab<NodeTreeTabViewModel>()
                                    ?? new NodeTreeTabViewModel(editorContext);
 
-        tab.Element.Value = element;
+        tab.Model.Value = Value.Value;
 
         editViewModel.OpenToolTab(tab);
     }
