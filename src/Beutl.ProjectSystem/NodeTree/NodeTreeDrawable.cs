@@ -10,6 +10,11 @@ namespace Beutl.NodeTree;
 [SuppressResourceClassGeneration]
 public sealed class NodeTreeDrawable : Drawable
 {
+    public NodeTreeDrawable()
+    {
+        ScanProperties<NodeTreeDrawable>();
+    }
+
     public IProperty<NodeTreeModel?> Model { get; } = Property.Create<NodeTreeModel?>();
 
     public override Resource ToResource(RenderContext context)
