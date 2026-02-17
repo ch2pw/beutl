@@ -79,16 +79,15 @@ public sealed class NodeTreeModelEditorViewModel : ValueEditorViewModel<NodeTree
 
     public void OpenNodeTreeTab()
     {
-        if (this.GetService<EditViewModel>() is not { } editViewModel) return;
         if (this.GetService<IEditorContext>() is not { } editorContext) return;
         if (Value.Value == null) return;
 
-        NodeTreeTabViewModel tab = editViewModel.FindToolTab<NodeTreeTabViewModel>()
+        NodeTreeTabViewModel tab = editorContext.FindToolTab<NodeTreeTabViewModel>()
                                    ?? new NodeTreeTabViewModel(editorContext);
 
         tab.Model.Value = Value.Value;
 
-        editViewModel.OpenToolTab(tab);
+        editorContext.OpenToolTab(tab);
     }
 
     protected override void Dispose(bool disposing)
