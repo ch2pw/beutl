@@ -397,7 +397,6 @@ public sealed partial class ElementView : UserControl
                     {
                         TimeSpan? originalLength = null;
                         if (clampToOriginal
-                            && !elem.Model.UseNode
                             && elem.Model.Operation.Children.FirstOrDefault(v => v.HasOriginalLength()) is { } op
                             && op.TryGetOriginalLength(out TimeSpan ts))
                         {
