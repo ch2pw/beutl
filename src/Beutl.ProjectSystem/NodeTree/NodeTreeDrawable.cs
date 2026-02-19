@@ -1,12 +1,15 @@
+using System.ComponentModel.DataAnnotations;
 using System.Reactive;
 using Beutl.Engine;
 using Beutl.Graphics;
 using Beutl.Graphics.Rendering;
+using Beutl.Language;
 using Beutl.NodeTree.Nodes;
 using Beutl.NodeTree.Rendering;
 
 namespace Beutl.NodeTree;
 
+[Display(Name = nameof(Strings.NodeTree), ResourceType = typeof(Strings))]
 [SuppressResourceClassGeneration]
 public sealed class NodeTreeDrawable : Drawable
 {

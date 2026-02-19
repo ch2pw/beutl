@@ -6,6 +6,7 @@ using Beutl.Graphics.Transformation;
 using Beutl.Graphics3D;
 using Beutl.Language;
 using Beutl.Media;
+using Beutl.NodeTree;
 // using Beutl.NodeTree.Nodes.Transform;
 using Beutl.Operation;
 using Beutl.Services;
@@ -108,6 +109,7 @@ public static class LibraryRegistrar
         LibraryService.Current
             .AddMultiple(Strings.NodeTree, m => m
                 .BindSourceOperator<Source.NodeTreeOperator>()
+                .BindDrawable<NodeTreeDrawable>()
             );
 
         LibraryService.Current
