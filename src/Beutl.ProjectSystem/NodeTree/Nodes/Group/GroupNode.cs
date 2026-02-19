@@ -295,7 +295,7 @@ public partial class GroupNode : Node
             var node = GetOriginal();
             node.Group.TopologyChanged += OnGroupTopologyChanged;
             _innerSnapshot = new NodeTreeSnapshot();
-            _innerSnapshot.Build(node.Group, Renderer!);
+            _innerSnapshot.Build(node.Group, context);
             _groupInputSlotIndex = _innerSnapshot.FindSlotIndex(node.Group.Input);
             _groupOutputSlotIndex = _innerSnapshot.FindSlotIndex(node.Group.Output);
         }
@@ -318,7 +318,7 @@ public partial class GroupNode : Node
         public override void Update(NodeRenderContext context)
         {
             var node = GetOriginal();
-            if (_innerSnapshot == null || context._renderables == null || Renderer == null) return;
+            if (_innerSnapshot == null) return;
 
             // GroupNodeの入力値からGroupInputの出力値に転送
             if (node.Group.Input != null && _groupInputSlotIndex >= 0)
@@ -341,7 +341,7 @@ public partial class GroupNode : Node
             }
 
             // 内部スナップショットを評価
-            _innerSnapshot.Evaluate(context.Target, context._renderables, Renderer);
+            _innerSnapshot.Evaluate(context.Target, context);
 
             // GroupOutputの入力値からGroupNodeの出力値に転送
             var outCount = node.Group.Output?.Items.Count ?? 0;

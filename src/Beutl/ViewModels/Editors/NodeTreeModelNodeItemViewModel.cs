@@ -1,26 +1,30 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Specialized;
+using Beutl.Editor;
 using Beutl.Editor.Services;
+using Beutl.Language;
 using Beutl.NodeTree;
 using Beutl.NodeTree.Nodes;
+using Beutl.Operation;
+using Beutl.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Reactive.Bindings;
 
-namespace Beutl.Editor.Components.NodeTreeInputTab.ViewModels;
+namespace Beutl.ViewModels.Editors;
 
-public sealed class NodeInputViewModel : IDisposable, IPropertyEditorContextVisitor, IServiceProvider
+public sealed class NodeTreeModelNodeItemViewModel : IDisposable, IPropertyEditorContextVisitor, IServiceProvider
 {
     private readonly CompositeDisposable _disposables = [];
     private readonly string _defaultName;
-    private NodeTreeModel _nodeTree;
-    private NodeTreeInputViewModel _parent;
+    private NodeTreeModel? _nodeTree;
+    private NodeTreeModelEditorViewModel _parent;
 
-    public NodeInputViewModel(LayerInputNode node, int originalIndex, NodeTreeInputViewModel parent)
+    public NodeTreeModelNodeItemViewModel(LayerInputNode node, int originalIndex, NodeTreeModel nodeTree, NodeTreeModelEditorViewModel parent)
     {
         Node = node;
         OriginalIndex = originalIndex;
+        _nodeTree = nodeTree;
         _parent = parent;
-        _nodeTree = parent.Model.NodeTree;
 
         Type nodeType = node.GetType();
         if (NodeRegistry.FindItem(nodeType) is { } regItem)
@@ -59,6 +63,10 @@ public sealed class NodeInputViewModel : IDisposable, IPropertyEditorContextVisi
 
     public void Remove()
     {
+        if (_nodeTree == null) return;
+        // 削除するとDisposeされるので、事前にHistoryManagerを取得しておく
+        var historyManager = _parent.GetRequiredService<HistoryManager>();
+
         Connection[] allConnections = Node.Items
             .SelectMany(i => i switch
             {
@@ -75,7 +83,7 @@ public sealed class NodeInputViewModel : IDisposable, IPropertyEditorContextVisi
             _nodeTree.Disconnect(connection);
         }
         _nodeTree.Nodes.Remove(Node);
-        _parent.GetRequiredService<HistoryManager>().Commit(CommandNames.RemoveNode);
+        historyManager.Commit(CommandNames.RemoveNode);
     }
 
     public void UpdateName(string? name)
@@ -160,7 +168,6 @@ public sealed class NodeInputViewModel : IDisposable, IPropertyEditorContextVisi
 
     private IPropertyEditorContext? CreatePropertyContext(IPropertyAdapter[] atmp, INodeItem item)
     {
-        IPropertyEditorFactory factory = this.GetRequiredService<IPropertyEditorFactory>();
         IPropertyEditorContext? context = null;
         if (item is LayerInputNode.ILayerInputSocket socket)
         {
@@ -168,7 +175,7 @@ public sealed class NodeInputViewModel : IDisposable, IPropertyEditorContextVisi
             if (aproperty != null)
             {
                 atmp[0] = aproperty;
-                (_, PropertyEditorExtension? ext) = factory.MatchProperty(atmp);
+                (_, PropertyEditorExtension? ext) = PropertyEditorService.MatchProperty(atmp);
                 ext?.TryCreateContext(atmp, out context);
 
                 context?.Accept(this);

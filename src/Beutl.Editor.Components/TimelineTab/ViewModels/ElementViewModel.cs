@@ -47,10 +47,6 @@ public sealed class ElementViewModel : IDisposable, IContextCommandHandler
             .ToReadOnlyReactivePropertySlim()
             .AddTo(_disposables);
 
-        UseNode = element.GetObservable(Element.UseNodeProperty)
-            .ToReadOnlyReactivePropertySlim()
-            .AddTo(_disposables);
-
         Name = element.GetObservable(CoreObject.NameProperty)
             .ToReactiveProperty()
             .AddTo(_disposables)!;
@@ -232,8 +228,6 @@ public sealed class ElementViewModel : IDisposable, IContextCommandHandler
     public Scene Scene { get; }
 
     public ReadOnlyReactivePropertySlim<bool> IsEnabled { get; }
-
-    public ReadOnlyReactivePropertySlim<bool> UseNode { get; }
 
     public ReactiveProperty<string> Name { get; }
 
@@ -714,8 +708,7 @@ public sealed class ElementViewModel : IDisposable, IContextCommandHandler
 
     private async void OnChangeToOriginalLength()
     {
-        if (!Model.UseNode
-            && Model.Operation.Children.FirstOrDefault(v => v.HasOriginalLength()) is { } op
+        if (Model.Operation.Children.FirstOrDefault(v => v.HasOriginalLength()) is { } op
             && op.TryGetOriginalLength(out TimeSpan timeSpan))
         {
             PrepareAnimationContext context = PrepareAnimation();
@@ -742,7 +735,7 @@ public sealed class ElementViewModel : IDisposable, IContextCommandHandler
 
     public bool HasOriginalLength()
     {
-        return !Model.UseNode && Model.Operation.Children.Any(v => v.HasOriginalLength());
+        return Model.Operation.Children.Any(v => v.HasOriginalLength());
     }
 
     public void Execute(ContextCommandExecution execution)
@@ -845,9 +838,6 @@ public sealed class ElementViewModel : IDisposable, IContextCommandHandler
 
     private IElementThumbnailsProvider? FindThumbnailsProvider()
     {
-        if (Model.UseNode)
-            return null;
-
         foreach (var child in Model.Operation.Children)
         {
             if (child is IElementThumbnailsProvider provider)

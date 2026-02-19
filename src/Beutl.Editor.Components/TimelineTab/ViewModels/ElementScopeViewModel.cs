@@ -18,10 +18,6 @@ public sealed class ElementScopeViewModel : IDisposable
     {
         Model = element;
         Parent = parent;
-        element.GetObservable(Element.UseNodeProperty)
-            .Subscribe(OnUseNodePropertyChanged)
-            .DisposeWith(_disposables);
-
         element.Operation.Children.Attached += OnChildrenAttached;
         element.Operation.Children.Detached += OnChildrenDetached;
         foreach (SourceOperator item in element.Operation.Children)
@@ -122,33 +118,25 @@ public sealed class ElementScopeViewModel : IDisposable
         }
     }
 
-    private void OnUseNodePropertyChanged(bool obj)
-    {
-        Update();
-    }
-
     private void Update()
     {
-        if (!Model.UseNode)
+        int maxCount = int.MinValue;
+        TakeAfterOperator? model = null;
+        foreach (SourceOperator item in Model.Operation.Children)
         {
-            int maxCount = int.MinValue;
-            TakeAfterOperator? model = null;
-            foreach (SourceOperator item in Model.Operation.Children)
+            if (item is TakeAfterOperator takeAfterOperator
+                && maxCount < takeAfterOperator.Count)
             {
-                if (item is TakeAfterOperator takeAfterOperator
-                    && maxCount < takeAfterOperator.Count)
-                {
-                    model = takeAfterOperator;
-                    maxCount = takeAfterOperator.Count;
-                }
+                model = takeAfterOperator;
+                maxCount = takeAfterOperator.Count;
             }
+        }
 
-            if (model != null)
-            {
-                _model = model;
-                Count.Value = maxCount;
-                return;
-            }
+        if (model != null)
+        {
+            _model = model;
+            Count.Value = maxCount;
+            return;
         }
 
         _model = null;

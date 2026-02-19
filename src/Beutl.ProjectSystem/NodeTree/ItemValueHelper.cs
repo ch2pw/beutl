@@ -128,12 +128,12 @@ public static class ItemValueHelper
             {
                 if (itemValue.Value is not RenderNodeDrawable renderNodeDrawable)
                 {
-                    itemValue.Value = renderNodeDrawable = new RenderNodeDrawable();
+                    renderNodeDrawable = new RenderNodeDrawable();
                     hierarchical.AddChild(renderNodeDrawable);
                 }
 
                 renderNodeDrawable.Node = node;
-
+                value = renderNodeDrawable;
                 return true;
             }
 
@@ -181,12 +181,12 @@ public static class ItemValueHelper
             {
                 if (itemValue.Value is not MatrixTransform matrixTransform)
                 {
-                    itemValue.Value = matrixTransform = new MatrixTransform();
+                    matrixTransform = new MatrixTransform();
                     hierarchical.AddChild(matrixTransform);
                 }
 
                 matrixTransform.Matrix.CurrentValue = matrix;
-
+                value = matrixTransform;
                 return true;
             }
 

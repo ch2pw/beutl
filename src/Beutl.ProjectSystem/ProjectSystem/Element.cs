@@ -5,7 +5,6 @@ using Beutl.Engine;
 using Beutl.Graphics.Rendering;
 using Beutl.Language;
 using Beutl.Media;
-using Beutl.NodeTree;
 using Beutl.Operation;
 using Beutl.Serialization;
 
@@ -19,13 +18,10 @@ public class Element : Hierarchical, INotifyEdited
     public static readonly CoreProperty<Color> AccentColorProperty;
     public static readonly CoreProperty<bool> IsEnabledProperty;
     public static readonly CoreProperty<SourceOperation> OperationProperty;
-    public static readonly CoreProperty<ElementNodeTreeModel> NodeTreeProperty;
-    public static readonly CoreProperty<bool> UseNodeProperty;
     private TimeSpan _start;
     private TimeSpan _length;
     private int _zIndex;
     private bool _isEnabled = true;
-    private bool _useNode;
 
     static Element()
     {
@@ -53,15 +49,6 @@ public class Element : Hierarchical, INotifyEdited
         OperationProperty = ConfigureProperty<SourceOperation, Element>(nameof(Operation))
             .Accessor(o => o.Operation, null)
             .Register();
-
-        NodeTreeProperty = ConfigureProperty<ElementNodeTreeModel, Element>(nameof(NodeTree))
-            .Accessor(o => o.NodeTree, null)
-            .Register();
-
-        UseNodeProperty = ConfigureProperty<bool, Element>(nameof(UseNode))
-            .Accessor(o => o.UseNode, (o, v) => o.UseNode = v)
-            .DefaultValue(false)
-            .Register();
     }
 
     public Element()
@@ -69,11 +56,7 @@ public class Element : Hierarchical, INotifyEdited
         Operation = new SourceOperation();
         Operation.Edited += (s, e) => Edited?.Invoke(s, e);
 
-        NodeTree = new ElementNodeTreeModel();
-        NodeTree.Edited += (s, e) => Edited?.Invoke(s, e);
-
         HierarchicalChildren.Add(Operation);
-        HierarchicalChildren.Add(NodeTree);
     }
 
     public event EventHandler? Edited;
@@ -115,40 +98,23 @@ public class Element : Hierarchical, INotifyEdited
 
     public SourceOperation Operation { get; }
 
-    public ElementNodeTreeModel NodeTree { get; }
-
-    public bool UseNode
-    {
-        get => _useNode;
-        set => SetAndRaise(UseNodeProperty, ref _useNode, value);
-    }
-
     public override void Serialize(ICoreSerializationContext context)
     {
         base.Serialize(context);
         context.SetValue(nameof(Operation), Operation);
-        context.SetValue(nameof(NodeTree), NodeTree);
     }
 
     public override void Deserialize(ICoreSerializationContext context)
     {
         base.Deserialize(context);
         context.Populate(nameof(Operation), Operation);
-        context.Populate(nameof(NodeTree), NodeTree);
     }
 
     public PooledList<EngineObject> Evaluate(EvaluationTarget target, IRenderer renderer)
     {
         lock (this)
         {
-            if (UseNode)
-            {
-                return NodeTree.Evaluate(target, renderer, this);
-            }
-            else
-            {
-                return Operation.Evaluate(target, renderer, this);
-            }
+            return Operation.Evaluate(target, renderer, this);
         }
     }
 
@@ -185,8 +151,7 @@ public class Element : Hierarchical, INotifyEdited
                 });
             }
             else if (e.Property == ZIndexProperty
-                || e.Property == IsEnabledProperty
-                || e.Property == UseNodeProperty)
+                || e.Property == IsEnabledProperty)
             {
                 Edited?.Invoke(this, EventArgs.Empty);
             }

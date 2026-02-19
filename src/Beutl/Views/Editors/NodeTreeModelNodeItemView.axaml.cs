@@ -1,44 +1,54 @@
-﻿using Avalonia;
+using Avalonia;
+using Avalonia.Animation;
 using Avalonia.Controls;
+using Avalonia.Controls.Primitives;
 using Avalonia.Data;
 using Avalonia.Data.Converters;
 using Avalonia.Interactivity;
-using Avalonia.Layout;
-using Avalonia.Xaml.Interactivity;
 
 using Beutl.Controls;
-using Beutl.Controls.Behaviors;
-using Beutl.Editor.Components.NodeTreeInputTab.ViewModels;
+using Beutl.ViewModels.Editors;
 
-using Microsoft.Extensions.DependencyInjection;
+namespace Beutl.Views.Editors;
 
-namespace Beutl.Editor.Components.NodeTreeInputTab.Views;
-
-public partial class NodeInputView : UserControl
+public partial class NodeTreeModelNodeItemView : UserControl
 {
-    public NodeInputView()
+    private static readonly CrossFade s_transition = new(TimeSpan.FromMilliseconds(167));
+    private CancellationTokenSource? _lastTransitionCts;
+
+    public NodeTreeModelNodeItemView()
     {
         Resources["ViewModelToViewConverter"] = ViewModelToViewConverter.Instance;
         InitializeComponent();
-        BehaviorCollection collection = Interaction.GetBehaviors(this);
-        collection.Add(new _DragBehavior()
-        {
-            Orientation = Orientation.Vertical,
-            DragControl = dragBorder
-        });
+        expandToggle.GetObservable(ToggleButton.IsCheckedProperty)
+            .Subscribe(async v =>
+            {
+                _lastTransitionCts?.Cancel();
+                _lastTransitionCts = new CancellationTokenSource();
+                CancellationToken localToken = _lastTransitionCts.Token;
+
+                if (v == true)
+                {
+                    await s_transition.Start(null, content, localToken);
+                }
+                else
+                {
+                    await s_transition.Start(content, null, localToken);
+                }
+            });
     }
 
     public void Remove_Click(object? sender, RoutedEventArgs e)
     {
-        if (DataContext is NodeInputViewModel viewModel2)
+        if (DataContext is NodeTreeModelNodeItemViewModel viewModel)
         {
-            viewModel2.Remove();
+            viewModel.Remove();
         }
     }
 
     private void RenameClick(object? sender, RoutedEventArgs e)
     {
-        if (DataContext is NodeInputViewModel viewModel)
+        if (DataContext is NodeTreeModelNodeItemViewModel viewModel)
         {
             var flyout = new RenameFlyout()
             {
@@ -54,25 +64,10 @@ public partial class NodeInputView : UserControl
     private void OnNameConfirmed(object? sender, string? e)
     {
         if (sender is RenameFlyout flyout
-            && DataContext is NodeInputViewModel viewModel)
+            && DataContext is NodeTreeModelNodeItemViewModel viewModel)
         {
             flyout.Confirmed -= OnNameConfirmed;
             viewModel.UpdateName(e);
-        }
-    }
-
-    private sealed class _DragBehavior : GenericDragBehavior
-    {
-        protected override void OnMoveDraggedItem(ItemsControl? itemsControl, int oldIndex, int newIndex)
-        {
-            if (itemsControl?.DataContext is NodeTreeInputTabViewModel { InnerViewModel.Value: { } viewModel })
-            {
-                HistoryManager history = viewModel.GetRequiredService<HistoryManager>();
-                oldIndex = viewModel.ConvertToOriginalIndex(oldIndex);
-                newIndex = viewModel.ConvertToOriginalIndex(newIndex);
-                viewModel.Model.NodeTree.Nodes.Move(oldIndex, newIndex);
-                history.Commit(CommandNames.MoveNode);
-            }
         }
     }
 

@@ -106,6 +106,7 @@ public static class NodesRegistrar
                 .Add<Utilities.Struct.SizeNode>("Size")
                 .Add<Utilities.Struct.RectNode>("Rect")
                 .Add<Utilities.Struct.RelativePointNode>("Relative Point")
+                .Add<Utilities.Struct.RelativeRectNode>("Relative Rect")
                 .Add<Utilities.Struct.PixelPointNode>("Pixel Point")
                 .Add<Utilities.Struct.PixelSizeNode>("Pixel Size")
                 .Add<Utilities.Struct.PixelRectNode>("Pixel Rect")

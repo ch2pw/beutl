@@ -163,14 +163,6 @@ public sealed partial class ElementView : UserControl
         _pointerPosition = point.X.PixelToTimeSpan(scale);
     }
 
-    private void UseNodeClick(object? sender, RoutedEventArgs e)
-    {
-        Element model = ViewModel.Model;
-        HistoryManager history = ViewModel.Timeline.EditorContext.GetRequiredService<HistoryManager>();
-        model.UseNode = !model.UseNode;
-        history.Commit(CommandNames.ChangeElementUseNode);
-    }
-
     private void EnableElementClick(object? sender, RoutedEventArgs e)
     {
         Element model = ViewModel.Model;
@@ -230,18 +222,6 @@ public sealed partial class ElementView : UserControl
         {
             viewModel.Color.Value = sender.ColorPicker.Color;
         }
-    }
-
-    private void OpenNodeTree_Click(object? sender, RoutedEventArgs e)
-    {
-        Element model = ViewModel.Model;
-        IEditorContext context = ViewModel.Timeline.EditorContext;
-        NodeTreeTabViewModel? nodeTree = context.FindToolTab<NodeTreeTabViewModel>(
-            v => v.Element.Value == model || v.Element.Value == null);
-        nodeTree ??= new NodeTreeTabViewModel(context);
-        nodeTree.Element.Value = model;
-
-        context.OpenToolTab(nodeTree);
     }
 
     private TimeSpan RoundStartTime(TimeSpan time, float scale, bool flag)
@@ -417,7 +397,6 @@ public sealed partial class ElementView : UserControl
                     {
                         TimeSpan? originalLength = null;
                         if (clampToOriginal
-                            && !elem.Model.UseNode
                             && elem.Model.Operation.Children.FirstOrDefault(v => v.HasOriginalLength()) is { } op
                             && op.TryGetOriginalLength(out TimeSpan ts))
                         {

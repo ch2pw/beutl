@@ -131,21 +131,6 @@
                     <ui:MenuFlyoutItem Command="{Binding FinishEditingAnimation}" Text="{x:Static lang:Strings.FinishEditing}" />
                     <ui:MenuFlyoutItem Command="{Binding BringAnimationToTop}" Text="{x:Static lang:Strings.BringToTop}" />
                 </ui:MenuFlyoutSubItem>
-                <ui:MenuFlyoutSeparator />
-                <ui:ToggleMenuFlyoutItem Click="UseNodeClick"
-                                         IsChecked="{Binding UseNode.Value}"
-                                         Text="{x:Static lang:Strings.UseNode}">
-                    <ui:ToggleMenuFlyoutItem.Styles>
-                        <Style Selector="ui|ToggleMenuFlyoutItem /template/ Viewbox#IconRoot">
-                            <Setter Property="Width" Value="0" />
-                        </Style>
-                    </ui:ToggleMenuFlyoutItem.Styles>
-                </ui:ToggleMenuFlyoutItem>
-                <ui:MenuFlyoutItem Click="OpenNodeTree_Click" Text="{x:Static lang:Strings.OpenNodeTree}">
-                    <ui:MenuFlyoutItem.IconSource>
-                        <icons:SymbolIconSource Symbol="Open" />
-                    </ui:MenuFlyoutItem.IconSource>
-                </ui:MenuFlyoutItem>
             </ui:FAMenuFlyout>
         </Border.ContextFlyout>
         <Panel>

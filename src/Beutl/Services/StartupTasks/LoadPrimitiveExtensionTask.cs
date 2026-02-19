@@ -10,7 +10,6 @@ using Beutl.Editor.Components.SceneSettingsTab;
 using Beutl.Editor.Components.SourceOperatorsTab;
 using Beutl.Editor.Components.GraphEditorTab;
 using Beutl.Editor.Components.NodeTreeTab;
-using Beutl.Editor.Components.NodeTreeInputTab;
 using Beutl.Editor.Components.PathEditorTab;
 using Beutl.Services.PrimitiveImpls;
 
@@ -32,7 +31,6 @@ public sealed class LoadPrimitiveExtensionTask : StartupTask
         SourceOperatorsTabExtension.Instance,
         PropertyEditorExtension.Instance,
         NodeTreeTabExtension.Instance,
-        NodeTreeInputTabExtension.Instance,
         GraphEditorTabExtension.Instance,
         SceneSettingsTabExtension.Instance,
         WaveReaderExtension.Instance,
