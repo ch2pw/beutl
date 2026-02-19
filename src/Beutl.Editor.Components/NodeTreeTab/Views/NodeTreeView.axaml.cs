@@ -87,9 +87,10 @@ public partial class NodeTreeView : UserControl
 
         void OnLayoutUpdated(object? sender, EventArgs eventArgs)
         {
-            if (!_initialMatrix.HasValue) return;
-
-            zoomBorder.SetMatrix(_initialMatrix.Value, true);
+            if (_initialMatrix.HasValue)
+            {
+                zoomBorder.SetMatrix(_initialMatrix.Value, true);
+            }
             LayoutUpdated -= OnLayoutUpdated;
         }
     }
