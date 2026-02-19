@@ -130,7 +130,9 @@ public sealed class SourceSoundOperator : PublishOperator<SourceSound>, IElement
         int maxWidth,
         int maxHeight,
         IElementThumbnailCacheService? cacheService,
-        [EnumeratorCancellation] CancellationToken cancellationToken = default)
+        [EnumeratorCancellation] CancellationToken cancellationToken = default,
+        int startIndex = 0,
+        int endIndex = -1)
     {
         await Task.CompletedTask;
         yield break;

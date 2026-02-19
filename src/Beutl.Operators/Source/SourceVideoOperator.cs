@@ -146,7 +146,9 @@ public sealed class SourceVideoOperator : PublishOperator<SourceVideo>, IElement
         int maxWidth,
         int maxHeight,
         IElementThumbnailCacheService? cacheService,
-        [EnumeratorCancellation] CancellationToken cancellationToken = default)
+        [EnumeratorCancellation] CancellationToken cancellationToken = default,
+        int startIndex = 0,
+        int endIndex = -1)
     {
         using var resource = Value.ToResource(RenderContext.Default);
 
@@ -166,12 +168,15 @@ public sealed class SourceVideoOperator : PublishOperator<SourceVideo>, IElement
         string? cacheKey = cacheService != null ? GetThumbnailsCacheKey() : null;
         var cacheThreshold = TimeSpan.FromSeconds(interval * 0.5);
 
+        int effectiveStart = Math.Max(0, startIndex);
+        int effectiveEnd = endIndex < 0 ? count - 1 : Math.Min(endIndex, count - 1);
+
         var node = new DrawableRenderNode(resource);
         var processor = new RenderNodeProcessor(node, false);
 
         try
         {
-            for (int i = 0; i < count; i++)
+            for (int i = effectiveStart; i <= effectiveEnd; i++)
             {
                 if (cancellationToken.IsCancellationRequested)
                     yield break;

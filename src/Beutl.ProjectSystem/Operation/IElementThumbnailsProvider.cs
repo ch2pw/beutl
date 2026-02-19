@@ -18,7 +18,9 @@ public interface IElementThumbnailsProvider
         int maxWidth,
         int maxHeight,
         IElementThumbnailCacheService? cacheService = null,
-        CancellationToken cancellationToken = default);
+        CancellationToken cancellationToken = default,
+        int startIndex = 0,
+        int endIndex = -1);
 
     IAsyncEnumerable<WaveformChunk> GetWaveformChunksAsync(
         int chunkCount,
