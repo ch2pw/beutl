@@ -149,9 +149,10 @@ public sealed class SourceSoundOperator : PublishOperator<SourceSound>, IElement
         if (chunkCount <= 0 || samplesPerChunk <= 0)
             yield break;
 
-        var duration = resource.Duration;
-        if (duration <= TimeSpan.Zero)
+        if (resource.Duration <= TimeSpan.Zero)
             yield break;
+
+        var duration = Value.TimeRange.Duration;
 
         int sampleRate = resource.SampleRate;
         int totalSamples = (int)(duration.TotalSeconds * sampleRate);
