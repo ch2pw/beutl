@@ -1,5 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
+using System.Text;
+using System.Text.Json.Nodes;
 using Beutl.Engine;
 using Beutl.Graphics;
 using Beutl.Graphics.Effects;
@@ -9,6 +12,7 @@ using Beutl.Language;
 using Beutl.Media;
 using Beutl.Media.Source;
 using Beutl.Operation;
+using Beutl.Serialization;
 using Beutl.Threading;
 using SkiaSharp;
 
@@ -101,10 +105,50 @@ public sealed class SourceVideoOperator : PublishOperator<SourceVideo>, IElement
         }
     }
 
+    public string? GetThumbnailsCacheKey()
+    {
+        if (Value is not { } value) return null;
+
+        var fullJson = CoreSerializer.SerializeToJsonObject(value);
+        var cacheJson = new JsonObject();
+        string[] targetProps = ["Source", "OffsetPosition", "Speed", "IsLoop"];
+
+        foreach (var prop in targetProps)
+        {
+            if (fullJson.TryGetPropertyValue(prop, out var node))
+                cacheJson[prop] = node?.DeepClone();
+        }
+
+        if (fullJson.TryGetPropertyValue("Animations", out var anims) && anims is JsonObject animObj)
+        {
+            var filtered = new JsonObject();
+            foreach (var prop in targetProps)
+                if (animObj.TryGetPropertyValue(prop, out var n))
+                    filtered[prop] = n?.DeepClone();
+            if (filtered.Count > 0) cacheJson["Animations"] = filtered;
+        }
+
+        if (fullJson.TryGetPropertyValue("Expressions", out var exprs) && exprs is JsonObject exprObj)
+        {
+            var filtered = new JsonObject();
+            foreach (var prop in targetProps)
+                if (exprObj.TryGetPropertyValue(prop, out var n))
+                    filtered[prop] = n?.DeepClone();
+            if (filtered.Count > 0) cacheJson["Expressions"] = filtered;
+        }
+
+        var jsonStr = cacheJson.ToJsonString();
+        var hash = SHA256.HashData(Encoding.UTF8.GetBytes(jsonStr));
+        return Convert.ToHexString(hash);
+    }
+
     public async IAsyncEnumerable<(int Index, int Count, IBitmap Thumbnail)> GetThumbnailStripAsync(
         int maxWidth,
         int maxHeight,
-        [EnumeratorCancellation] CancellationToken cancellationToken = default)
+        IElementThumbnailCacheService? cacheService,
+        [EnumeratorCancellation] CancellationToken cancellationToken = default,
+        int startIndex = 0,
+        int endIndex = -1)
     {
         using var resource = Value.ToResource(RenderContext.Default);
 
@@ -120,17 +164,33 @@ public sealed class SourceVideoOperator : PublishOperator<SourceVideo>, IElement
         float thumbWidth = maxHeight * aspectRatio;
         int count = (int)MathF.Ceiling(maxWidth / thumbWidth);
         double interval = duration.TotalSeconds / count;
+
+        string? cacheKey = cacheService != null ? GetThumbnailsCacheKey() : null;
+        var cacheThreshold = TimeSpan.FromSeconds(interval * 0.5);
+
+        int effectiveStart = Math.Max(0, startIndex);
+        int effectiveEnd = endIndex < 0 ? count - 1 : Math.Min(endIndex, count - 1);
+
         var node = new DrawableRenderNode(resource);
         var processor = new RenderNodeProcessor(node, false);
 
         try
         {
-            for (int i = 0; i < count; i++)
+            for (int i = effectiveStart; i <= effectiveEnd; i++)
             {
                 if (cancellationToken.IsCancellationRequested)
                     yield break;
 
                 var time = TimeSpan.FromSeconds(i * interval);
+
+                // キャッシュチェック（TimeSpanベース）
+                if (cacheKey != null
+                    && cacheService!.TryGet(cacheKey, time, cacheThreshold, out var cached)
+                    && cached != null)
+                {
+                    yield return (i, count, cached);
+                    continue;
+                }
 
                 var thumbnail = await RenderThread.Dispatcher.InvokeAsync(() =>
                 {
@@ -153,6 +213,10 @@ public sealed class SourceVideoOperator : PublishOperator<SourceVideo>, IElement
 
                 if (thumbnail != null)
                 {
+                    // キャッシュに保存（TimeSpanベース）
+                    if (cacheKey != null)
+                        cacheService!.Save(cacheKey, time, thumbnail);
+
                     yield return (i, count, thumbnail);
                 }
             }
@@ -169,6 +233,7 @@ public sealed class SourceVideoOperator : PublishOperator<SourceVideo>, IElement
     public async IAsyncEnumerable<WaveformChunk> GetWaveformChunksAsync(
         int chunkCount,
         int samplesPerChunk,
+        IElementThumbnailCacheService? cacheService,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
         await Task.CompletedTask;

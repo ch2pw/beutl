@@ -9,6 +9,7 @@ using Avalonia.Media.Imaging;
 using Beutl.Animation;
 using Beutl.Controls;
 using Beutl.Editor.Components.Helpers;
+using Beutl.Editor.Components.TimelineTab.Services;
 using Beutl.Editor.Services;
 using Beutl.Logging;
 using Beutl.Media;
@@ -32,7 +33,15 @@ public sealed class ElementViewModel : IDisposable, IContextCommandHandler
     private readonly Subject<Unit> _thumbnailsInvalidatedSubject = new();
     private CancellationTokenSource? _thumbnailsCts;
     private IElementThumbnailsProvider? _currentThumbnailsProvider;
+    private readonly IElementThumbnailCacheService _thumbnailCacheService = ElementThumbnailCacheService.Instance;
     private EventHandler? _thumbnailsInvalidatedHandler;
+    private string? _lastThumbnailsCacheKey;
+    private int _lastVisibleStart = -1;
+    private int _lastVisibleEnd = -1;
+    private CancellationTokenSource? _scrollThumbnailsCts;
+    private readonly Subject<(int Start, int End)> _visibleRangeSubject = new();
+
+    public Func<int, int, List<int>>? GetMissingThumbnailIndices;
 
     public ElementViewModel(Element element, TimelineTabViewModel timeline)
     {
@@ -183,6 +192,13 @@ public sealed class ElementViewModel : IDisposable, IContextCommandHandler
             .ObserveOnUIDispatcher()
             .Subscribe(_ => UpdateThumbnailsAsync())
             .AddTo(_disposables);
+
+        // スクロール時の可視範囲変更をスロットルして追加生成
+        _visibleRangeSubject
+            .Throttle(TimeSpan.FromMilliseconds(50))
+            .ObserveOnUIDispatcher()
+            .Subscribe(range => _ = UpdateVisibleThumbnailsAsync(range.Start, range.End))
+            .AddTo(_disposables);
     }
 
     private void InitializeElementGroup()
@@ -329,12 +345,17 @@ public sealed class ElementViewModel : IDisposable, IContextCommandHandler
     {
         CancelThumbnailsLoading();
 
+        _scrollThumbnailsCts?.Cancel();
+        _scrollThumbnailsCts?.Dispose();
+        _scrollThumbnailsCts = null;
+
         // ThumbnailsInvalidatedイベントの購読を解除
         if (_currentThumbnailsProvider != null && _thumbnailsInvalidatedHandler != null)
         {
             _currentThumbnailsProvider.ThumbnailsInvalidated -= _thumbnailsInvalidatedHandler;
         }
         _thumbnailsInvalidatedSubject.Dispose();
+        _visibleRangeSubject.Dispose();
 
         // ThumbnailsDisabledElementsイベントの購読を解除
         Timeline.ThumbnailsDisabledElements.Attached -= OnThumbnailsDisabledElementsAttached;
@@ -354,6 +375,7 @@ public sealed class ElementViewModel : IDisposable, IContextCommandHandler
         Scope = null!;
         AnimationRequested = (_, _) => Task.CompletedTask;
         GetClickedTime = null;
+        GetMissingThumbnailIndices = null;
         GC.SuppressFinalize(this);
     }
 
@@ -795,10 +817,22 @@ public sealed class ElementViewModel : IDisposable, IContextCommandHandler
             }
 
             _currentThumbnailsProvider = provider;
+            _lastThumbnailsCacheKey = provider?.GetThumbnailsCacheKey();
 
             if (provider != null)
             {
-                _thumbnailsInvalidatedHandler = (_, _) => _thumbnailsInvalidatedSubject.OnNext(Unit.Default);
+                _thumbnailsInvalidatedHandler = (_, _) =>
+                {
+                    // 旧キーでキャッシュを無効化
+                    var oldKey = _lastThumbnailsCacheKey;
+                    if (oldKey != null)
+                        _thumbnailCacheService.Invalidate(oldKey);
+
+                    // 新しいキーをキャプチャ
+                    _lastThumbnailsCacheKey = _currentThumbnailsProvider?.GetThumbnailsCacheKey();
+
+                    _thumbnailsInvalidatedSubject.OnNext(Unit.Default);
+                };
                 provider.ThumbnailsInvalidated += _thumbnailsInvalidatedHandler;
             }
         }
@@ -834,6 +868,15 @@ public sealed class ElementViewModel : IDisposable, IContextCommandHandler
         {
             _logger.LogError(ex, "Failed to update thumbnails.");
         }
+        finally
+        {
+            // 生成完了後、このCTSがまだ現役なら解放する
+            if (_thumbnailsCts is { } cts && cts.Token == ct)
+            {
+                _thumbnailsCts = null;
+                cts.Dispose();
+            }
+        }
     }
 
     private IElementThumbnailsProvider? FindThumbnailsProvider()
@@ -845,6 +888,76 @@ public sealed class ElementViewModel : IDisposable, IContextCommandHandler
         }
 
         return null;
+    }
+
+    public void OnVisibleRangeChanged(int start, int end)
+    {
+        _lastVisibleStart = start;
+        _lastVisibleEnd = end;
+        _visibleRangeSubject.OnNext((start, end));
+    }
+
+    private async Task UpdateVisibleThumbnailsAsync(int start, int end)
+    {
+        if (end < start) return;
+
+        var provider = _currentThumbnailsProvider;
+        if (provider == null || provider.ThumbnailsKind != ElementThumbnailsKind.Video)
+            return;
+
+        // Width変更による生成が進行中ならキャンセルする
+        CancelThumbnailsLoading();
+
+        var missing = GetMissingThumbnailIndices?.Invoke(start, end);
+        if (missing == null || missing.Count == 0)
+            return;
+
+        _scrollThumbnailsCts?.Cancel();
+        _scrollThumbnailsCts?.Dispose();
+        _scrollThumbnailsCts = new CancellationTokenSource();
+        var ct = _scrollThumbnailsCts.Token;
+
+        try
+        {
+            const int MaxThumbnailHeight = 25;
+            double width = Width.Value;
+            if (width <= 0)
+                return;
+
+            await foreach (var (index, count, thumbnail) in provider.GetThumbnailStripAsync(
+                (int)width, MaxThumbnailHeight, _thumbnailCacheService, ct, start, end))
+            {
+                if (ct.IsCancellationRequested)
+                {
+                    thumbnail.Dispose();
+                    break;
+                }
+
+                await Avalonia.Threading.Dispatcher.UIThread.InvokeAsync(() =>
+                {
+                    using (thumbnail)
+                    {
+                        if (!ct.IsCancellationRequested)
+                        {
+                            VideoThumbnailCount.Value = count;
+                            ThumbnailReady?.Invoke(index, ConvertToAvaloniaBitmap(thumbnail));
+                        }
+                    }
+                });
+            }
+        }
+        catch (OperationCanceledException)
+        {
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to update visible thumbnails.");
+        }
+        finally
+        {
+            _scrollThumbnailsCts?.Dispose();
+            _scrollThumbnailsCts = null;
+        }
     }
 
     private async Task UpdateVideoThumbnailsAsync(IElementThumbnailsProvider provider, CancellationToken ct)
@@ -862,7 +975,10 @@ public sealed class ElementViewModel : IDisposable, IContextCommandHandler
             }
         });
 
-        await foreach (var (index, count, thumbnail) in provider.GetThumbnailStripAsync((int)width, MaxThumbnailHeight, ct))
+        int startIndex = _lastVisibleStart >= 0 ? _lastVisibleStart : 0;
+        int endIndex = _lastVisibleEnd >= 0 ? _lastVisibleEnd : -1;
+
+        await foreach (var (index, count, thumbnail) in provider.GetThumbnailStripAsync((int)width, MaxThumbnailHeight, _thumbnailCacheService, ct, startIndex, endIndex))
         {
             if (ct.IsCancellationRequested)
             {
@@ -902,7 +1018,7 @@ public sealed class ElementViewModel : IDisposable, IContextCommandHandler
             }
         });
 
-        await foreach (var chunk in provider.GetWaveformChunksAsync(chunkCount, MaxSamplesPerChunk, ct))
+        await foreach (var chunk in provider.GetWaveformChunksAsync(chunkCount, MaxSamplesPerChunk, _thumbnailCacheService, ct))
         {
             if (ct.IsCancellationRequested)
                 break;

@@ -78,6 +78,9 @@ public sealed partial class ElementView : UserControl
         obj.RenameRequested = () => { };
         obj.GetClickedTime = null;
 
+        obj.GetMissingThumbnailIndices = null;
+        thumbnailStrip.VisibleRangeChanged -= obj.OnVisibleRangeChanged;
+
         obj.ThumbnailReady -= OnThumbnailReady;
         obj.ThumbnailsClear -= OnThumbnailsClear;
         obj.WaveformChunkReady -= OnWaveformChunkReady;
@@ -102,6 +105,9 @@ public sealed partial class ElementView : UserControl
         };
         obj.RenameRequested = () => Rename_Click(null, null!);
         obj.GetClickedTime = () => _pointerPosition;
+
+        obj.GetMissingThumbnailIndices = thumbnailStrip.GetMissingIndices;
+        thumbnailStrip.VisibleRangeChanged += obj.OnVisibleRangeChanged;
 
         obj.IsSelected
             .ObserveOnUIDispatcher()
