@@ -953,6 +953,11 @@ public sealed class ElementViewModel : IDisposable, IContextCommandHandler
         {
             _logger.LogError(ex, "Failed to update visible thumbnails.");
         }
+        finally
+        {
+            _scrollThumbnailsCts?.Dispose();
+            _scrollThumbnailsCts = null;
+        }
     }
 
     private async Task UpdateVideoThumbnailsAsync(IElementThumbnailsProvider provider, CancellationToken ct)
