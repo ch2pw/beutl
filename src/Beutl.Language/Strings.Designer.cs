@@ -4130,5 +4130,227 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("HoldLastFrame", resourceCulture);
             }
         }
+        
+        public static string ParticleEmitter {
+            get {
+                return ResourceManager.GetString("ParticleEmitter", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_EmitterGroup {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_EmitterGroup", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_Seed {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_Seed", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_EmitterShape {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_EmitterShape", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_EmitterWidth {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_EmitterWidth", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_EmitterHeight {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_EmitterHeight", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_MaxParticles {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_MaxParticles", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_EmissionGroup {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_EmissionGroup", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_EmissionRate {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_EmissionRate", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_Lifetime {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_Lifetime", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_LifetimeRandom {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_LifetimeRandom", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_VelocityGroup {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_VelocityGroup", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_Speed {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_Speed", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_SpeedRandom {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_SpeedRandom", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_Direction {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_Direction", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_Spread {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_Spread", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_PhysicsGroup {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_PhysicsGroup", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_Gravity {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_Gravity", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_AirResistance {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_AirResistance", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_TurbulenceStrength {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_TurbulenceStrength", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_TurbulenceScale {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_TurbulenceScale", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_TurbulenceSpeed {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_TurbulenceSpeed", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_VisualGroup {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_VisualGroup", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_ParticleDrawable {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_ParticleDrawable", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_ParticleSize {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_ParticleSize", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_SizeRandom {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_SizeRandom", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_Color {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_Color", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_ParticleOpacity {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_ParticleOpacity", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_RotationGroup {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_RotationGroup", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_InitialRotation {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_InitialRotation", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_InitialRotationRandom {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_InitialRotationRandom", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_AngularVelocity {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_AngularVelocity", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_OverLifeGroup {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_OverLifeGroup", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_EndSizeMultiplier {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_EndSizeMultiplier", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_EndOpacityMultiplier {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_EndOpacityMultiplier", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_EndColor {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_EndColor", resourceCulture);
+            }
+        }
+        
+        public static string ParticleEmitter_UseEndColor {
+            get {
+                return ResourceManager.GetString("ParticleEmitter_UseEndColor", resourceCulture);
+            }
+        }
     }
 }

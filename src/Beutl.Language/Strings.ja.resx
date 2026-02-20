@@ -2176,4 +2176,115 @@ GetProperty&lt;T&gt;("path") または GetProperty&lt;T&gt;(guid, "propertyName"
   <data name="HoldLastFrame" xml:space="preserve">
     <value>最後のフレームを保持</value>
   </data>
+  <data name="ParticleEmitter" xml:space="preserve">
+    <value>パーティクルエミッタ</value>
+  </data>
+  <data name="ParticleEmitter_EmitterGroup" xml:space="preserve">
+    <value>エミッタ</value>
+  </data>
+  <data name="ParticleEmitter_Seed" xml:space="preserve">
+    <value>シード</value>
+  </data>
+  <data name="ParticleEmitter_EmitterShape" xml:space="preserve">
+    <value>エミッタ形状</value>
+  </data>
+  <data name="ParticleEmitter_EmitterWidth" xml:space="preserve">
+    <value>エミッタ幅</value>
+  </data>
+  <data name="ParticleEmitter_EmitterHeight" xml:space="preserve">
+    <value>エミッタ高さ</value>
+  </data>
+  <data name="ParticleEmitter_MaxParticles" xml:space="preserve">
+    <value>最大パーティクル数</value>
+  </data>
+  <data name="ParticleEmitter_EmissionGroup" xml:space="preserve">
+    <value>放出</value>
+  </data>
+  <data name="ParticleEmitter_EmissionRate" xml:space="preserve">
+    <value>放出レート</value>
+  </data>
+  <data name="ParticleEmitter_Lifetime" xml:space="preserve">
+    <value>寿命</value>
+  </data>
+  <data name="ParticleEmitter_LifetimeRandom" xml:space="preserve">
+    <value>寿命ランダム</value>
+  </data>
+  <data name="ParticleEmitter_VelocityGroup" xml:space="preserve">
+    <value>速度</value>
+  </data>
+  <data name="ParticleEmitter_Speed" xml:space="preserve">
+    <value>スピード</value>
+  </data>
+  <data name="ParticleEmitter_SpeedRandom" xml:space="preserve">
+    <value>スピードランダム</value>
+  </data>
+  <data name="ParticleEmitter_Direction" xml:space="preserve">
+    <value>方向</value>
+  </data>
+  <data name="ParticleEmitter_Spread" xml:space="preserve">
+    <value>拡散</value>
+  </data>
+  <data name="ParticleEmitter_PhysicsGroup" xml:space="preserve">
+    <value>物理</value>
+  </data>
+  <data name="ParticleEmitter_Gravity" xml:space="preserve">
+    <value>重力</value>
+  </data>
+  <data name="ParticleEmitter_AirResistance" xml:space="preserve">
+    <value>空気抵抗</value>
+  </data>
+  <data name="ParticleEmitter_TurbulenceStrength" xml:space="preserve">
+    <value>タービュランス強度</value>
+  </data>
+  <data name="ParticleEmitter_TurbulenceScale" xml:space="preserve">
+    <value>タービュランススケール</value>
+  </data>
+  <data name="ParticleEmitter_TurbulenceSpeed" xml:space="preserve">
+    <value>タービュランス速度</value>
+  </data>
+  <data name="ParticleEmitter_VisualGroup" xml:space="preserve">
+    <value>ビジュアル</value>
+  </data>
+  <data name="ParticleEmitter_ParticleDrawable" xml:space="preserve">
+    <value>パーティクル描画</value>
+  </data>
+  <data name="ParticleEmitter_ParticleSize" xml:space="preserve">
+    <value>パーティクルサイズ</value>
+  </data>
+  <data name="ParticleEmitter_SizeRandom" xml:space="preserve">
+    <value>サイズランダム</value>
+  </data>
+  <data name="ParticleEmitter_Color" xml:space="preserve">
+    <value>色</value>
+  </data>
+  <data name="ParticleEmitter_ParticleOpacity" xml:space="preserve">
+    <value>パーティクル不透明度</value>
+  </data>
+  <data name="ParticleEmitter_RotationGroup" xml:space="preserve">
+    <value>回転</value>
+  </data>
+  <data name="ParticleEmitter_InitialRotation" xml:space="preserve">
+    <value>初期回転</value>
+  </data>
+  <data name="ParticleEmitter_InitialRotationRandom" xml:space="preserve">
+    <value>初期回転ランダム</value>
+  </data>
+  <data name="ParticleEmitter_AngularVelocity" xml:space="preserve">
+    <value>角速度</value>
+  </data>
+  <data name="ParticleEmitter_OverLifeGroup" xml:space="preserve">
+    <value>ライフタイム変化</value>
+  </data>
+  <data name="ParticleEmitter_EndSizeMultiplier" xml:space="preserve">
+    <value>終了サイズ倍率</value>
+  </data>
+  <data name="ParticleEmitter_EndOpacityMultiplier" xml:space="preserve">
+    <value>終了不透明度倍率</value>
+  </data>
+  <data name="ParticleEmitter_EndColor" xml:space="preserve">
+    <value>終了色</value>
+  </data>
+  <data name="ParticleEmitter_UseEndColor" xml:space="preserve">
+    <value>終了色を使用</value>
+  </data>
 </root>

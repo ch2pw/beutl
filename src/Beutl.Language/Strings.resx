@@ -2171,4 +2171,115 @@ Example: GetProperty&lt;double&gt;("{GUID}.Opacity")</value>
   <data name="HoldLastFrame" xml:space="preserve">
     <value>Hold Last Frame</value>
   </data>
+  <data name="ParticleEmitter" xml:space="preserve">
+    <value>Particle Emitter</value>
+  </data>
+  <data name="ParticleEmitter_EmitterGroup" xml:space="preserve">
+    <value>Emitter</value>
+  </data>
+  <data name="ParticleEmitter_Seed" xml:space="preserve">
+    <value>Seed</value>
+  </data>
+  <data name="ParticleEmitter_EmitterShape" xml:space="preserve">
+    <value>Emitter Shape</value>
+  </data>
+  <data name="ParticleEmitter_EmitterWidth" xml:space="preserve">
+    <value>Emitter Width</value>
+  </data>
+  <data name="ParticleEmitter_EmitterHeight" xml:space="preserve">
+    <value>Emitter Height</value>
+  </data>
+  <data name="ParticleEmitter_MaxParticles" xml:space="preserve">
+    <value>Max Particles</value>
+  </data>
+  <data name="ParticleEmitter_EmissionGroup" xml:space="preserve">
+    <value>Emission</value>
+  </data>
+  <data name="ParticleEmitter_EmissionRate" xml:space="preserve">
+    <value>Emission Rate</value>
+  </data>
+  <data name="ParticleEmitter_Lifetime" xml:space="preserve">
+    <value>Lifetime</value>
+  </data>
+  <data name="ParticleEmitter_LifetimeRandom" xml:space="preserve">
+    <value>Lifetime Random</value>
+  </data>
+  <data name="ParticleEmitter_VelocityGroup" xml:space="preserve">
+    <value>Velocity</value>
+  </data>
+  <data name="ParticleEmitter_Speed" xml:space="preserve">
+    <value>Speed</value>
+  </data>
+  <data name="ParticleEmitter_SpeedRandom" xml:space="preserve">
+    <value>Speed Random</value>
+  </data>
+  <data name="ParticleEmitter_Direction" xml:space="preserve">
+    <value>Direction</value>
+  </data>
+  <data name="ParticleEmitter_Spread" xml:space="preserve">
+    <value>Spread</value>
+  </data>
+  <data name="ParticleEmitter_PhysicsGroup" xml:space="preserve">
+    <value>Physics</value>
+  </data>
+  <data name="ParticleEmitter_Gravity" xml:space="preserve">
+    <value>Gravity</value>
+  </data>
+  <data name="ParticleEmitter_AirResistance" xml:space="preserve">
+    <value>Air Resistance</value>
+  </data>
+  <data name="ParticleEmitter_TurbulenceStrength" xml:space="preserve">
+    <value>Turbulence Strength</value>
+  </data>
+  <data name="ParticleEmitter_TurbulenceScale" xml:space="preserve">
+    <value>Turbulence Scale</value>
+  </data>
+  <data name="ParticleEmitter_TurbulenceSpeed" xml:space="preserve">
+    <value>Turbulence Speed</value>
+  </data>
+  <data name="ParticleEmitter_VisualGroup" xml:space="preserve">
+    <value>Visual</value>
+  </data>
+  <data name="ParticleEmitter_ParticleDrawable" xml:space="preserve">
+    <value>Particle Drawable</value>
+  </data>
+  <data name="ParticleEmitter_ParticleSize" xml:space="preserve">
+    <value>Particle Size</value>
+  </data>
+  <data name="ParticleEmitter_SizeRandom" xml:space="preserve">
+    <value>Size Random</value>
+  </data>
+  <data name="ParticleEmitter_Color" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="ParticleEmitter_ParticleOpacity" xml:space="preserve">
+    <value>Particle Opacity</value>
+  </data>
+  <data name="ParticleEmitter_RotationGroup" xml:space="preserve">
+    <value>Rotation</value>
+  </data>
+  <data name="ParticleEmitter_InitialRotation" xml:space="preserve">
+    <value>Initial Rotation</value>
+  </data>
+  <data name="ParticleEmitter_InitialRotationRandom" xml:space="preserve">
+    <value>Initial Rotation Random</value>
+  </data>
+  <data name="ParticleEmitter_AngularVelocity" xml:space="preserve">
+    <value>Angular Velocity</value>
+  </data>
+  <data name="ParticleEmitter_OverLifeGroup" xml:space="preserve">
+    <value>Over Life</value>
+  </data>
+  <data name="ParticleEmitter_EndSizeMultiplier" xml:space="preserve">
+    <value>End Size Multiplier</value>
+  </data>
+  <data name="ParticleEmitter_EndOpacityMultiplier" xml:space="preserve">
+    <value>End Opacity Multiplier</value>
+  </data>
+  <data name="ParticleEmitter_EndColor" xml:space="preserve">
+    <value>End Color</value>
+  </data>
+  <data name="ParticleEmitter_UseEndColor" xml:space="preserve">
+    <value>Use End Color</value>
+  </data>
 </root>

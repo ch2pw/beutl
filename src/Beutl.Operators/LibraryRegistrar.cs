@@ -2,6 +2,7 @@
 using Beutl.Audio.Effects;
 using Beutl.Graphics;
 using Beutl.Graphics.Effects;
+using Beutl.Graphics.Particles;
 using Beutl.Graphics.Transformation;
 using Beutl.Graphics3D;
 using Beutl.Language;
@@ -105,6 +106,12 @@ public static class LibraryRegistrar
                 .BindSourceOperator<Source.SpotLight3DOperator>()
             )
         );
+
+        LibraryService.Current
+            .AddMultiple(Strings.ParticleEmitter, m => m
+                .BindSourceOperator<Source.ParticleEmitterOperator>()
+                .BindDrawable<ParticleEmitter>()
+            );
 
         LibraryService.Current
             .AddMultiple(Strings.NodeTree, m => m
