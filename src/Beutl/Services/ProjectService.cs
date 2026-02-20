@@ -5,6 +5,7 @@ using Beutl.Logging;
 using Beutl.Models;
 using Beutl.ProjectSystem;
 using Beutl.Serialization;
+using Beutl.Services.Tutorials;
 using FluentAvalonia.UI.Controls;
 using Microsoft.Extensions.Logging;
 using NuGet.Versioning;
@@ -136,6 +137,8 @@ public sealed class ProjectService
             AddToRecentProjects(project.Uri.LocalPath);
             _logger.LogInformation("Created new project. Name: {Name}, Location: {Location}, Width: {Width}, Height: {Height}, Framerate: {Framerate}, Samplerate: {Samplerate}", name, location, width, height, framerate, samplerate);
 
+            TriggerFirstSceneOpenTutorial();
+
             return project;
         }
         catch (Exception ex)
@@ -151,5 +154,23 @@ public sealed class ProjectService
         ViewConfig viewConfig = GlobalConfiguration.Instance.ViewConfig;
         viewConfig.UpdateRecentProject(file);
         viewConfig.UpdateRecentFile(file);
+    }
+
+    private static async void TriggerFirstSceneOpenTutorial()
+    {
+        if (!GlobalConfiguration.Instance.TutorialConfig.ShowTutorialsOnStartup)
+            return;
+
+        ITutorialService service = TutorialService.Current;
+        IReadOnlyList<TutorialDefinition> tutorials = service.GetAvailableTutorials();
+        TutorialDefinition? tutorial = tutorials
+            .Where(t => t.Trigger == TutorialTrigger.FirstSceneOpen && !service.IsTutorialCompleted(t.Id))
+            .OrderBy(t => t.Priority)
+            .FirstOrDefault();
+
+        if (tutorial != null)
+        {
+            await service.StartTutorial(tutorial.Id);
+        }
     }
 }
