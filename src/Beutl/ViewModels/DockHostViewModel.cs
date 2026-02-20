@@ -1,5 +1,6 @@
 ﻿using System.Text.Json.Nodes;
 using Beutl.Api.Services;
+using Beutl.Editor.Components.FileBrowserTab;
 using Beutl.Editor.Components.LibraryTab;
 using Beutl.Editor.Components.SourceOperatorsTab;
 using Beutl.Logging;
@@ -387,6 +388,7 @@ public class DockHostViewModel : IDisposable, IJsonSerializable
             OutputTabExtension.Instance,
             SourceOperatorsTabExtension.Instance,
             LibraryTabExtension.Instance,
+            FileBrowserTabExtension.Instance,
         };
         foreach (var ext in tabs)
         {
