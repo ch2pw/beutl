@@ -15,6 +15,10 @@ public sealed class ThumbnailStripControl : Control
     private readonly Dictionary<int, Bitmap?> _thumbnails = new();
     private readonly Lock _lock = new();
     private ScrollViewer? _scrollViewer;
+    private int _lastNotifiedStart = -1;
+    private int _lastNotifiedEnd = -1;
+
+    public event Action<int, int>? VisibleRangeChanged;
 
     static ThumbnailStripControl()
     {
@@ -64,6 +68,67 @@ public sealed class ThumbnailStripControl : Control
         if (change.Property == ThumbnailCountProperty)
         {
             ClearThumbnails();
+            NotifyVisibleRangeIfChanged();
+        }
+    }
+
+
+    private (int Start, int End) ComputeVisibleRange()
+    {
+        int count = ThumbnailCount;
+        if (count <= 0)
+            return (0, -1);
+
+        double width = Bounds.Width;
+        double height = Bounds.Height;
+        if (width <= 0 || height <= 0)
+            return (0, -1);
+
+        double slotWidth = width / count;
+        int startIndex = 0;
+        int endIndex = count - 1;
+
+        if (_scrollViewer != null)
+        {
+            var topLeft = this.TranslatePoint(Bounds.TopLeft, _scrollViewer);
+            var bottomRight = this.TranslatePoint(Bounds.BottomRight, _scrollViewer);
+            if (topLeft.HasValue && bottomRight.HasValue)
+            {
+                var translatedBounds = new Rect(topLeft.Value, bottomRight.Value);
+                double minX = Math.Max(0, -translatedBounds.Left);
+                double maxX = _scrollViewer.Viewport.Width - translatedBounds.Left;
+
+                // バッファ2スロット分
+                startIndex = Math.Max(0, (int)(minX / slotWidth) - 2);
+                endIndex = Math.Min(count - 1, (int)Math.Ceiling(maxX / slotWidth) + 2);
+            }
+        }
+
+        return (startIndex, endIndex);
+    }
+
+    public List<int> GetMissingIndices(int start, int end)
+    {
+        var missing = new List<int>();
+        lock (_lock)
+        {
+            for (int i = start; i <= end; i++)
+            {
+                if (!_thumbnails.ContainsKey(i))
+                    missing.Add(i);
+            }
+        }
+        return missing;
+    }
+
+    private void NotifyVisibleRangeIfChanged()
+    {
+        var (start, end) = ComputeVisibleRange();
+        if (start != _lastNotifiedStart || end != _lastNotifiedEnd)
+        {
+            _lastNotifiedStart = start;
+            _lastNotifiedEnd = end;
+            VisibleRangeChanged?.Invoke(start, end);
         }
     }
 
@@ -85,27 +150,7 @@ public sealed class ThumbnailStripControl : Control
         double slotWidth = width / count;
         lock (_lock)
         {
-            // 可視範囲を計算
-            int startIndex = 0;
-            int endIndex = count - 1;
-
-            if (_scrollViewer != null)
-            {
-                var topLeft = this.TranslatePoint(Bounds.TopLeft, _scrollViewer);
-                var bottomRight = this.TranslatePoint(Bounds.BottomRight, _scrollViewer);
-                if (topLeft.HasValue && bottomRight.HasValue)
-                {
-                    var translatedBounds = new Rect(topLeft.Value, bottomRight.Value);
-                    double minX = Math.Max(0, -translatedBounds.Left);
-                    double maxX = _scrollViewer.Viewport.Width - translatedBounds.Left;
-
-                    // 少し余裕を持たせる(1スロット分)
-                    startIndex = Math.Max(0, (int)(minX / slotWidth) - 1);
-                    endIndex = Math.Min(count - 1, (int)Math.Ceiling(maxX / slotWidth) + 1);
-
-                    // Console.WriteLine($"minX: {minX}, maxX: {maxX}, startIndex: {startIndex}, endIndex: {endIndex}");
-                }
-            }
+            var (startIndex, endIndex) = ComputeVisibleRange();
 
             foreach (var kvp in _thumbnails)
             {
@@ -143,6 +188,7 @@ public sealed class ThumbnailStripControl : Control
         base.OnAttachedToVisualTree(e);
         _scrollViewer = this.FindAncestorOfType<ScrollViewer>();
         _scrollViewer?.PropertyChanged += OnScrollViewerPropertyChanged;
+        NotifyVisibleRangeIfChanged();
     }
 
     private void OnScrollViewerPropertyChanged(object? sender, AvaloniaPropertyChangedEventArgs e)
@@ -151,6 +197,7 @@ public sealed class ThumbnailStripControl : Control
             e.Property == ScrollViewer.ViewportProperty)
         {
             InvalidateVisual();
+            NotifyVisibleRangeIfChanged();
         }
     }
 
