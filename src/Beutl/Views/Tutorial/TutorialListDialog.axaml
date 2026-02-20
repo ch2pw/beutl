@@ -1,0 +1,46 @@
+<ui:ContentDialog x:Class="Beutl.Views.Tutorial.TutorialListDialog"
+                  xmlns="https://github.com/avaloniaui"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                  xmlns:icons="using:FluentIcons.FluentAvalonia"
+                  xmlns:lang="using:Beutl.Language"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  xmlns:ui="using:FluentAvalonia.UI.Controls"
+                  Title="{x:Static lang:Strings.Tutorials}"
+                  d:DesignHeight="400"
+                  d:DesignWidth="500"
+                  CloseButtonText="{x:Static lang:Strings.Close}"
+                  mc:Ignorable="d">
+
+    <StackPanel MinWidth="400" Spacing="4">
+        <ItemsControl x:Name="TutorialList">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Button HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Stretch"
+                            Click="OnTutorialItemClick"
+                            Tag="{Binding Id}">
+                        <Grid ColumnDefinitions="*,Auto">
+                            <StackPanel Spacing="4">
+                                <TextBlock FontWeight="SemiBold" Text="{Binding Title}" />
+                                <TextBlock Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                                           Text="{Binding Description}"
+                                           TextWrapping="Wrap" />
+                            </StackPanel>
+                            <icons:SymbolIcon Grid.Column="1"
+                                              VerticalAlignment="Center"
+                                              x:Name="CompletedIcon"
+                                              Foreground="{DynamicResource SystemFillColorSuccessBrush}"
+                                              IsVisible="False"
+                                              Symbol="CheckmarkCircle" />
+                        </Grid>
+                    </Button>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <TextBlock IsVisible="{Binding !#TutorialList.ItemCount}"
+                   Text="{x:Static lang:Strings.NoTutorialsAvailable}" />
+    </StackPanel>
+
+</ui:ContentDialog>

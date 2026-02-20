@@ -15,6 +15,7 @@ using Beutl.Operators;
 using Beutl.Pages;
 using Beutl.Services;
 using Beutl.Services.StartupTasks;
+using Beutl.Services.Tutorials;
 using Beutl.ViewModels;
 using Beutl.Views;
 using FluentAvalonia.Core;
@@ -101,6 +102,7 @@ public sealed class App : Application
 
         PropertyEditorExtension.DefaultHandler = new PropertyEditorService.PropertyEditorExtensionImpl();
         NotificationService.Handler = new NotificationServiceHandler();
+        TutorialService.Current = new TutorialServiceHandler();
 
         // Setup AppHelper delegates for Beutl.Editor.Components
         AppHelper.GetContextCommandManager = GetContextCommandManager;
