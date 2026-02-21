@@ -100,7 +100,7 @@ public sealed class ProjectService
         }
     }
 
-    public Project? CreateProject(int width, int height, int framerate, int samplerate, string name, string location)
+    public Project? CreateProject(int width, int height, int framerate, int samplerate, string name, string location, bool disableTutorial = false)
     {
         using Activity? activity = Telemetry.StartActivity();
         activity?.SetTag(nameof(width), width);
@@ -137,7 +137,10 @@ public sealed class ProjectService
             AddToRecentProjects(project.Uri.LocalPath);
             _logger.LogInformation("Created new project. Name: {Name}, Location: {Location}, Width: {Width}, Height: {Height}, Framerate: {Framerate}, Samplerate: {Samplerate}", name, location, width, height, framerate, samplerate);
 
-            TriggerFirstSceneOpenTutorial();
+            if (!disableTutorial)
+            {
+                TriggerFirstSceneOpenTutorial();
+            }
 
             return project;
         }

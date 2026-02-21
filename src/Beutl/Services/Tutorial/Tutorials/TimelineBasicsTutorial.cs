@@ -1,3 +1,4 @@
+using System.IO;
 using System.Numerics;
 using Avalonia;
 using Avalonia.Controls;
@@ -54,6 +55,51 @@ public static class TimelineBasicsTutorial
             Trigger = TutorialTrigger.FirstSceneOpen,
             Priority = 10,
             Category = "basics",
+            CanStart = () => GetEditViewModel() != null,
+            FulfillPrerequisites = async () =>
+            {
+                // プロジェクトが開いていない場合、新規プロジェクトを作成
+                if (ProjectService.Current.CurrentProject.Value == null)
+                {
+                    // ~/.beutl/tmp/tutorials フォルダに保存
+                    string tutorialDir = Path.Combine(
+                        Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
+                        ".beutl", "tmp", "tutorials");
+                    Directory.CreateDirectory(tutorialDir);
+
+                    string projectName = $"Tutorial_{DateTime.Now:yyyyMMddHHmmss}";
+
+                    // プロジェクト作成処理
+                    Project? project = ProjectService.Current.CreateProject(
+                        width: 1920,
+                        height: 1080,
+                        framerate: 30,
+                        samplerate: 44100,
+                        name: projectName,
+                        location: tutorialDir,
+                        disableTutorial: true);
+
+                    if (project == null)
+                    {
+                        return false;
+                    }
+                }
+
+                // シーンを開く
+                Project? currentProject = ProjectService.Current.CurrentProject.Value;
+                if (currentProject == null) return false;
+
+                Scene? scene = currentProject.Items.OfType<Scene>().FirstOrDefault();
+                if (scene != null)
+                {
+                    EditorService.Current.ActivateTabItem(scene);
+                }
+
+                // UIの更新を待つ
+                await Task.Delay(200);
+
+                return GetEditViewModel() != null;
+            },
             Steps =
             [
                 // Step 1: Add an ellipse to the timeline

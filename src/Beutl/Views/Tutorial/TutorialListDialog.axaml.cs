@@ -31,7 +31,7 @@ public partial class TutorialListDialog : ContentDialog
         if (sender is Button { Tag: string tutorialId })
         {
             Hide();
-            await TutorialService.Current.StartTutorial(tutorialId);
+            await TutorialService.Current.StartTutorial(tutorialId, autoFulfillPrerequisites: true);
         }
     }
 }

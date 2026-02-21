@@ -14,6 +14,8 @@ public sealed class TutorialDefinition
 
     public Func<bool>? CanStart { get; init; }
 
+    public Func<Task<bool>>? FulfillPrerequisites { get; init; }
+
     public string? Category { get; init; }
 
     public int Priority { get; init; }
