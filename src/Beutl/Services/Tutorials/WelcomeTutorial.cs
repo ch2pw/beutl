@@ -11,7 +11,6 @@ public static class WelcomeTutorial
             Id = TutorialId,
             Title = TutorialStrings.Tutorial_Welcome_Title,
             Description = TutorialStrings.LearnBeutlBasics,
-            Trigger = TutorialTrigger.FirstRun,
             Priority = 0,
             Category = "basics",
             Steps =

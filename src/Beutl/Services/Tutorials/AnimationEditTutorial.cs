@@ -37,7 +37,6 @@ public static class AnimationEditTutorial
             Id = TutorialId,
             Title = TutorialStrings.Tutorial_AnimationEdit_Title,
             Description = TutorialStrings.Tutorial_AnimationEdit_Description,
-            Trigger = TutorialTrigger.Manual,
             Priority = 20,
             Category = "advanced",
             CanStart = TutorialHelpers.OpenLibraryTabIfNeeded,

@@ -10,8 +10,6 @@ public sealed class TutorialDefinition
 
     public required IReadOnlyList<TutorialStep> Steps { get; init; }
 
-    public TutorialTrigger Trigger { get; init; } = TutorialTrigger.Manual;
-
     public Func<bool>? CanStart { get; init; }
 
     public Func<Task<bool>>? FulfillPrerequisites { get; init; }

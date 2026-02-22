@@ -32,7 +32,6 @@ public static class TimelineBasicsTutorial
             Id = TutorialId,
             Title = TutorialStrings.Tutorial_SceneEdit_Title,
             Description = TutorialStrings.Tutorial_SceneEdit_Description,
-            Trigger = TutorialTrigger.FirstSceneOpen,
             Priority = 10,
             Category = "basics",
             CanStart = TutorialHelpers.OpenLibraryTabIfNeeded,
