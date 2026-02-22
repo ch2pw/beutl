@@ -201,12 +201,16 @@ public partial class TutorialOverlay : UserControl
         }
     }
 
-    private void UpdateOverlayClip(List<Rect> targetRects)
+    private void UpdateOverlayClip(List<Rect> targetRects, bool dispatchUpdate = true)
     {
         // Boundsが0の場合はDispatcherで遅延させる（まだレイアウトが完了していない可能性があるため）
         if (Bounds.Width == 0 || Bounds.Height == 0)
         {
-            Dispatcher.UIThread.Post(() => UpdateOverlayClip(targetRects), DispatcherPriority.Render);
+            if (dispatchUpdate)
+            {
+                Dispatcher.UIThread.Post(() => UpdateOverlayClip(targetRects, false), DispatcherPriority.Render);
+            }
+
             return;
         }
 
