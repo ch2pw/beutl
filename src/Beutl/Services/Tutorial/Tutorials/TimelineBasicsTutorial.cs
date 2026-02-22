@@ -341,7 +341,7 @@ public static class TimelineBasicsTutorial
                             .FirstOrDefault(e => e.Operation.Children.OfType<EllipseOperator>().Any());
                         if (element != null)
                         {
-                            editVm.Scene.Duration = element.Range.Duration + TimeSpan.FromSeconds(1);
+                            editVm.Scene.Duration = element.Range.End + TimeSpan.FromSeconds(1);
                             editVm.CurrentTime.Value = element.Start;
                         }
                     },
