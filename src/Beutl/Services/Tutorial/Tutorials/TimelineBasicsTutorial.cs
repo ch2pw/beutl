@@ -6,6 +6,8 @@ using Avalonia.Threading;
 using Avalonia.VisualTree;
 using Beutl.Animation;
 using Beutl.Controls.PropertyEditors;
+using Beutl.Editor.Components.LibraryTab;
+using Beutl.Editor.Components.LibraryTab.ViewModels;
 using Beutl.Editor.Components.SourceOperatorsTab;
 using Beutl.Engine;
 using Beutl.Graphics.Shapes;
@@ -55,7 +57,15 @@ public static class TimelineBasicsTutorial
             Trigger = TutorialTrigger.FirstSceneOpen,
             Priority = 10,
             Category = "basics",
-            CanStart = () => GetEditViewModel() != null,
+            CanStart = () =>
+            {
+                var editVm = GetEditViewModel();
+                if (editVm == null) return false;
+
+                var tab = editVm.FindToolTab<LibraryTabViewModel>() ?? new LibraryTabViewModel(editVm);
+                editVm.OpenToolTab(tab);
+                return true;
+            },
             FulfillPrerequisites = async () =>
             {
                 // プロジェクトが開いていない場合、新規プロジェクトを作成
@@ -108,7 +118,11 @@ public static class TimelineBasicsTutorial
                     Id = "scene-add-ellipse",
                     Title = TutorialStrings.Tutorial_SceneEdit_Step1_Title,
                     Content = TutorialStrings.Tutorial_SceneEdit_Step1_Content,
-                    TargetElements = [new TargetElementDefinition { ToolTabType = typeof(TimelineTabExtension), IsPrimary = true }],
+                    TargetElements =
+                    [
+                        new TargetElementDefinition { ToolTabType = typeof(TimelineTabExtension), IsPrimary = true },
+                        new TargetElementDefinition { ToolTabType = typeof(LibraryTabExtension) },
+                    ],
                     PreferredPlacement = TutorialStepPlacement.Top,
                     IsActionRequired = true,
                     OnShown = () =>
