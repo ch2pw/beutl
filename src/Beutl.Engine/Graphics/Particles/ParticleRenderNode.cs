@@ -64,12 +64,13 @@ internal sealed class ParticleRenderNode(ParticleEmitter.Resource particle) : Re
             float scale = p.CurrentSize / 10f;
             if (scale <= 0) continue;
 
-            // Compute the transformed bounds for this particle
+            // Use a conservative square bounding box that safely encloses any rotation
+            float maxDim = MathF.Max((float)_drawableBounds.Width, (float)_drawableBounds.Height) * scale;
             var particleBounds = new Rect(
-                p.X - (_drawableBounds.Width / 2) * scale,
-                p.Y - (_drawableBounds.Height / 2) * scale,
-                _drawableBounds.Width * scale,
-                _drawableBounds.Height * scale);
+                p.X - maxDim / 2f,
+                p.Y - maxDim / 2f,
+                maxDim,
+                maxDim);
 
             totalBounds = totalBounds.Union(particleBounds);
         }

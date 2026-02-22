@@ -9,6 +9,7 @@ internal sealed class ParticleSimulator
 {
     private const float FixedDeltaTime = 1f / 60f;
     private const float CheckpointInterval = 0.5f;
+    private const int MaxCheckpoints = 120;
 
     private readonly PerlinNoise _noise = new();
 
@@ -16,7 +17,7 @@ internal sealed class ParticleSimulator
     private int _aliveCount;
 
     // Checkpoint cache
-    private readonly List<(float Time, Particle[] Snapshot, int AliveCount)> _checkpoints = [];
+    private readonly List<(float Time, Particle[] Snapshot, int AliveCount, int RngCallCount)> _checkpoints = [];
     private long _parameterVersion;
     private long _lastCachedVersion;
 
@@ -72,6 +73,7 @@ internal sealed class ParticleSimulator
         // Find nearest checkpoint before requested time
         float startTime = 0;
         _aliveCount = 0;
+        int rngSkipCount = 0;
 
         for (int i = _checkpoints.Count - 1; i >= 0; i--)
         {
@@ -80,6 +82,7 @@ internal sealed class ParticleSimulator
                 startTime = _checkpoints[i].Time;
                 Particle[] snapshot = _checkpoints[i].Snapshot;
                 _aliveCount = _checkpoints[i].AliveCount;
+                rngSkipCount = _checkpoints[i].RngCallCount;
                 EnsureCapacity(snapshot.Length);
                 Array.Copy(snapshot, _particles, snapshot.Length);
                 // Remove checkpoints after this time (in case of scrub back)
@@ -89,14 +92,7 @@ internal sealed class ParticleSimulator
         }
 
         // Simulate from startTime to time in fixed steps
-        var rng = new Random(seed);
-        // Advance RNG to match startTime state
-        int startSteps = (int)(startTime / FixedDeltaTime);
-        for (int i = 0; i < startSteps; i++)
-        {
-            // Consume the same random values that would have been used
-            AdvanceRng(rng, emissionRate);
-        }
+        var rng = new CountingRandom(seed, rngSkipCount);
 
         float currentTime = startTime;
         float nextCheckpoint = startTime + CheckpointInterval;
@@ -232,7 +228,7 @@ internal sealed class ParticleSimulator
             // Save checkpoint
             if (currentTime >= nextCheckpoint)
             {
-                SaveCheckpoint(currentTime);
+                SaveCheckpoint(currentTime, rng.CallCount);
                 nextCheckpoint = currentTime + CheckpointInterval;
             }
         }
@@ -243,11 +239,16 @@ internal sealed class ParticleSimulator
         return _particles.AsMemory(0, _aliveCount);
     }
 
-    private void SaveCheckpoint(float time)
+    private void SaveCheckpoint(float time, int rngCallCount)
     {
         var snapshot = new Particle[_aliveCount];
         Array.Copy(_particles, snapshot, _aliveCount);
-        _checkpoints.Add((time, snapshot, _aliveCount));
+        _checkpoints.Add((time, snapshot, _aliveCount, rngCallCount));
+
+        if (_checkpoints.Count > MaxCheckpoints)
+        {
+            _checkpoints.RemoveAt(0);
+        }
     }
 
     private void EnsureCapacity(int required)
@@ -257,7 +258,7 @@ internal sealed class ParticleSimulator
         Array.Resize(ref _particles, newSize);
     }
 
-    private static void SpawnPosition(Random rng, EmitterShape shape, float width, float height, out float x, out float y)
+    private static void SpawnPosition(CountingRandom rng, EmitterShape shape, float width, float height, out float x, out float y)
     {
         switch (shape)
         {
@@ -285,26 +286,6 @@ internal sealed class ParticleSimulator
         }
     }
 
-    private void AdvanceRng(Random rng, float emissionRate)
-    {
-        // Consume the same number of random values as a normal step would
-        float emitCount = emissionRate * FixedDeltaTime;
-        int toEmit = (int)emitCount;
-        rng.NextSingle(); // for fractional check
-        for (int i = 0; i < toEmit; i++)
-        {
-            // lifetime, spawnX, spawnY (depending on shape - use max), speed, angle, size, rotation
-            rng.NextSingle(); // lifetime
-            rng.NextSingle(); // spawn1
-            rng.NextSingle(); // spawn2
-            rng.NextSingle(); // spawn3 (circle angle)
-            rng.NextSingle(); // speed
-            rng.NextSingle(); // angle
-            rng.NextSingle(); // size
-            rng.NextSingle(); // rotation
-        }
-    }
-
     private static Color LerpColor(Color a, Color b, float t)
     {
         return new Color(
@@ -312,5 +293,26 @@ internal sealed class ParticleSimulator
             (byte)(a.R + (b.R - a.R) * t),
             (byte)(a.G + (b.G - a.G) * t),
             (byte)(a.B + (b.B - a.B) * t));
+    }
+
+    private sealed class CountingRandom
+    {
+        private readonly Random _rng;
+
+        public CountingRandom(int seed, int skipCount = 0)
+        {
+            _rng = new Random(seed);
+            CallCount = skipCount;
+            for (int i = 0; i < skipCount; i++)
+                _rng.NextSingle();
+        }
+
+        public int CallCount { get; private set; }
+
+        public float NextSingle()
+        {
+            CallCount++;
+            return _rng.NextSingle();
+        }
     }
 }
