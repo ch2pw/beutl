@@ -19,7 +19,7 @@ public sealed class TutorialServiceHandler : ITutorialService
 
     public IObservable<TutorialState?> CurrentTutorial => _currentTutorial.AsObservable();
 
-    internal TutorialState? GetCurrentState() => _currentTutorial.Value;
+    public TutorialState? GetCurrentState() => _currentTutorial.Value;
 
     public void Register(TutorialDefinition tutorial)
     {

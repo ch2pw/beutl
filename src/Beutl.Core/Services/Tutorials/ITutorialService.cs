@@ -4,6 +4,8 @@ public interface ITutorialService
 {
     IObservable<TutorialState?> CurrentTutorial { get; }
 
+    TutorialState? GetCurrentState();
+
     void Register(TutorialDefinition tutorial);
 
     Task StartTutorial(string tutorialId, bool autoFulfillPrerequisites = false);

@@ -312,7 +312,7 @@ public partial class TutorialOverlay : UserControl
 
     private void OnNextClick(object? sender, RoutedEventArgs e)
     {
-        TutorialState? state = (TutorialService.Current as TutorialServiceHandler)?.GetCurrentState();
+        TutorialState? state = TutorialService.Current.GetCurrentState();
         if (state?.IsLastStep == true)
         {
             TutorialService.Current?.CancelTutorial();
