@@ -79,17 +79,9 @@ public static class TutorialHelpers
             return null;
         }
 
-        IDisposable? sub = null;
-        sub = editVm.SelectedObject.Subscribe(obj =>
-        {
-            if (obj != null)
-            {
-                Dispatcher.UIThread.Post(onSelected);
-                sub?.Dispose();
-            }
-        });
-
-        return sub;
+        return editVm.SelectedObject.Where(obj => obj != null)
+            .Take(1)
+            .Subscribe(_ => Dispatcher.UIThread.Post(onSelected));
     }
 
     public static IDisposable? SubscribeToAnimationEnabled<T>(
