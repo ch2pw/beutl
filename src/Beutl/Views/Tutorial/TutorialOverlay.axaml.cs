@@ -3,6 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Media;
+using Avalonia.Threading;
 using Avalonia.VisualTree;
 
 using Beutl.Language;
@@ -129,6 +130,13 @@ public partial class TutorialOverlay : UserControl
 
     private void UpdateOverlayClip(Point targetPos, Size targetSize)
     {
+        // Boundsが0の場合はDispatcherで遅延させる（まだレイアウトが完了していない可能性があるため）
+        if (Bounds.Width == 0 || Bounds.Height == 0)
+        {
+            Dispatcher.UIThread.Post(() => UpdateOverlayClip(targetPos, targetSize), DispatcherPriority.Render);
+            return;
+        }
+
         var fullRect = new RectangleGeometry(new Rect(0, 0, Bounds.Width, Bounds.Height));
         var cutout = new RectangleGeometry(new Rect(
             targetPos.X - 4, targetPos.Y - 4,
