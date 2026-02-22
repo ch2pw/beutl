@@ -1,22 +1,16 @@
-using System.IO;
-using System.Numerics;
-using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Threading;
 using Avalonia.VisualTree;
 using Beutl.Animation;
 using Beutl.Controls.PropertyEditors;
+using Beutl.Editor.Components.Helpers;
 using Beutl.Editor.Components.LibraryTab;
-using Beutl.Editor.Components.LibraryTab.ViewModels;
 using Beutl.Editor.Components.SourceOperatorsTab;
 using Beutl.Engine;
 using Beutl.Graphics.Shapes;
-using Beutl.Language;
 using Beutl.Operation;
 using Beutl.Operators.Source;
 using Beutl.ProjectSystem;
 using Beutl.Services.PrimitiveImpls;
-using Beutl.Services.Tutorials;
 using Beutl.ViewModels;
 using Beutl.ViewModels.Editors;
 
@@ -25,22 +19,6 @@ namespace Beutl.Services.Tutorials;
 public static class TimelineBasicsTutorial
 {
     public const string TutorialId = "timeline-basics";
-
-    private static EditViewModel? GetEditViewModel()
-    {
-        return EditorService.Current.SelectedTabItem.Value?.Context.Value as EditViewModel;
-    }
-
-    private static TopLevel? GetTopLevel()
-    {
-        if (Application.Current?.ApplicationLifetime
-            is Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime desktop)
-        {
-            return desktop.MainWindow;
-        }
-
-        return null;
-    }
 
     public static TutorialDefinition Create()
     {
@@ -57,59 +35,8 @@ public static class TimelineBasicsTutorial
             Trigger = TutorialTrigger.FirstSceneOpen,
             Priority = 10,
             Category = "basics",
-            CanStart = () =>
-            {
-                var editVm = GetEditViewModel();
-                if (editVm == null) return false;
-
-                var tab = editVm.FindToolTab<LibraryTabViewModel>() ?? new LibraryTabViewModel(editVm);
-                editVm.OpenToolTab(tab);
-                return true;
-            },
-            FulfillPrerequisites = async () =>
-            {
-                // プロジェクトが開いていない場合、新規プロジェクトを作成
-                if (ProjectService.Current.CurrentProject.Value == null)
-                {
-                    // ~/.beutl/tmp/tutorials フォルダに保存
-                    string tutorialDir = Path.Combine(
-                        Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
-                        ".beutl", "tmp", "tutorials");
-                    Directory.CreateDirectory(tutorialDir);
-
-                    string projectName = $"Tutorial_{DateTime.Now:yyyyMMddHHmmss}";
-
-                    // プロジェクト作成処理
-                    Project? project = ProjectService.Current.CreateProject(
-                        width: 1920,
-                        height: 1080,
-                        framerate: 30,
-                        samplerate: 44100,
-                        name: projectName,
-                        location: tutorialDir,
-                        disableTutorial: true);
-
-                    if (project == null)
-                    {
-                        return false;
-                    }
-                }
-
-                // シーンを開く
-                Project? currentProject = ProjectService.Current.CurrentProject.Value;
-                if (currentProject == null) return false;
-
-                Scene? scene = currentProject.Items.OfType<Scene>().FirstOrDefault();
-                if (scene != null)
-                {
-                    EditorService.Current.ActivateTabItem(scene);
-                }
-
-                // UIの更新を待つ
-                await Task.Delay(200);
-
-                return GetEditViewModel() != null;
-            },
+            CanStart = TutorialHelpers.OpenLibraryTabIfNeeded,
+            FulfillPrerequisites = () => TutorialHelpers.EnsureProjectAsync("Tutorial"),
             Steps =
             [
                 // Step 1: Add an ellipse to the timeline
@@ -127,27 +54,12 @@ public static class TimelineBasicsTutorial
                     IsActionRequired = true,
                     OnShown = () =>
                     {
-                        EditViewModel? editVm = GetEditViewModel();
+                        EditViewModel? editVm = TutorialHelpers.GetEditViewModel();
                         if (editVm == null) return;
 
-                        // Already has an ellipse element?
-                        if (HasEllipseElement(editVm.Scene))
-                        {
-                            Dispatcher.UIThread.Post(() => TutorialService.Current.AdvanceStep());
-                            return;
-                        }
-
-                        Action<Element>? handler = null;
-                        handler = element =>
-                        {
-                            if (element.Operation.Children.OfType<EllipseOperator>().Any())
-                            {
-                                Dispatcher.UIThread.Post(() => TutorialService.Current.AdvanceStep());
-                            }
-                        };
-
-                        editVm.Scene.Children.Attached += handler;
-                        step1Subscription = Disposable.Create(() => editVm.Scene.Children.Attached -= handler);
+                        step1Subscription = TutorialHelpers.SubscribeToElementAdded<EllipseOperator>(
+                            editVm.Scene,
+                            () => TutorialService.Current.AdvanceStep());
                     },
                     OnDismissed = () =>
                     {
@@ -167,27 +79,10 @@ public static class TimelineBasicsTutorial
                     IsActionRequired = true,
                     OnShown = () =>
                     {
-                        EditViewModel? editVm = GetEditViewModel();
-                        if (editVm == null) return;
-
-                        // Already selected?
-                        if (editVm.SelectedObject.Value != null)
-                        {
-                            Dispatcher.UIThread.Post(() => TutorialService.Current.AdvanceStep());
-                            return;
-                        }
-
-                        IDisposable? sub = null;
-                        sub = editVm.SelectedObject.Subscribe(obj =>
-                        {
-                            if (obj != null)
-                            {
-                                Dispatcher.UIThread.Post(() => TutorialService.Current.AdvanceStep());
-                                sub?.Dispose();
-                            }
-                        });
-
-                        step2Subscription = sub;
+                        EditViewModel? editVm = TutorialHelpers.GetEditViewModel();
+                        step2Subscription = TutorialHelpers.SubscribeToElementSelection(
+                            editVm,
+                            () => TutorialService.Current.AdvanceStep());
                     },
                     OnDismissed = () =>
                     {
@@ -217,35 +112,16 @@ public static class TimelineBasicsTutorial
                     TargetElements = [new TargetElementDefinition { ElementResolver = FindWidthPropertyEditor, IsPrimary = true }],
                     OnShown = () =>
                     {
-                        EditViewModel? editVm = GetEditViewModel();
+                        EditViewModel? editVm = TutorialHelpers.GetEditViewModel();
                         if (editVm == null) return;
 
-                        Element? element = editVm.Scene.Children
-                            .FirstOrDefault(e => e.Operation.Children.OfType<EllipseOperator>().Any());
-                        if (element == null) return;
-
-                        EllipseOperator? ellipseOp =
-                            element.Operation.Children.OfType<EllipseOperator>().FirstOrDefault();
+                        Element? element = TutorialHelpers.FindElementWithOperator<EllipseOperator>(editVm.Scene);
+                        EllipseOperator? ellipseOp = TutorialHelpers.GetOperator<EllipseOperator>(element);
                         if (ellipseOp == null) return;
 
-                        IProperty<float> widthProp = ellipseOp.Value.Width;
-                        if (widthProp.Animation != null)
-                        {
-                            Dispatcher.UIThread.Post(() => TutorialService.Current.AdvanceStep());
-                        }
-                        else if (widthProp is AnimatableProperty<float> animatableProp)
-                        {
-                            void Handler(IAnimation<float>? anm)
-                            {
-                                if (anm != null)
-                                {
-                                    Dispatcher.UIThread.Post(() => TutorialService.Current.AdvanceStep());
-                                }
-                            }
-
-                            animatableProp.AnimationChanged += Handler;
-                            step3Subscription = Disposable.Create(() => animatableProp.AnimationChanged -= Handler);
-                        }
+                        step3Subscription = TutorialHelpers.SubscribeToAnimationEnabled(
+                            ellipseOp.Value.Width,
+                            () => TutorialService.Current.AdvanceStep());
                     },
                     OnDismissed = () =>
                     {
@@ -265,16 +141,12 @@ public static class TimelineBasicsTutorial
                     TargetElements = [new TargetElementDefinition { ElementResolver = FindWidthPropertyEditor, IsPrimary = true }],
                     OnShown = () =>
                     {
-                        EditViewModel? editVm = GetEditViewModel();
+                        EditViewModel? editVm = TutorialHelpers.GetEditViewModel();
                         if (editVm == null) return;
 
-                        Element? element = editVm.Scene.Children
-                            .FirstOrDefault(e => e.Operation.Children.OfType<EllipseOperator>().Any());
-                        if (element == null) return;
-
-                        EllipseOperator? ellipseOp =
-                            element.Operation.Children.OfType<EllipseOperator>().FirstOrDefault();
-                        if (ellipseOp == null) return;
+                        Element? element = TutorialHelpers.FindElementWithOperator<EllipseOperator>(editVm.Scene);
+                        EllipseOperator? ellipseOp = TutorialHelpers.GetOperator<EllipseOperator>(element);
+                        if (ellipseOp == null || element == null) return;
 
                         IProperty<float> widthProp = ellipseOp.Value.Width;
                         if (widthProp.Animation is not KeyFrameAnimation<float> animation) return;
@@ -287,17 +159,10 @@ public static class TimelineBasicsTutorial
                         else
                         {
                             editVm.CurrentTime.Value = element.Start + TimeSpan.FromSeconds(2);
-                            // キーフレームの追加を監視して、2つ以上になったら次のステップに進む
-                            void Handler(IKeyFrame _)
-                            {
-                                if (animation.KeyFrames.Count >= 2)
-                                {
-                                    Dispatcher.UIThread.Post(() => TutorialService.Current.AdvanceStep());
-                                }
-                            }
-
-                            animation.KeyFrames.Attached += Handler;
-                            step4Subscription = Disposable.Create(() => animation.KeyFrames.Attached -= Handler);
+                            step4Subscription = TutorialHelpers.SubscribeToKeyFrameAdded(
+                                animation,
+                                2,
+                                () => TutorialService.Current.AdvanceStep());
                         }
                     },
                     OnDismissed = () =>
@@ -317,15 +182,11 @@ public static class TimelineBasicsTutorial
                     TargetElements = [new TargetElementDefinition { ElementResolver = FindWidthPropertyEditor, IsPrimary = true }],
                     OnDismissed = () =>
                     {
-                        EditViewModel? editVm = GetEditViewModel();
+                        EditViewModel? editVm = TutorialHelpers.GetEditViewModel();
                         if (editVm == null) return;
 
-                        Element? element = editVm.Scene.Children
-                            .FirstOrDefault(e => e.Operation.Children.OfType<EllipseOperator>().Any());
-                        if (element == null) return;
-
-                        EllipseOperator? ellipseOp =
-                            element.Operation.Children.OfType<EllipseOperator>().FirstOrDefault();
+                        Element? element = TutorialHelpers.FindElementWithOperator<EllipseOperator>(editVm.Scene);
+                        EllipseOperator? ellipseOp = TutorialHelpers.GetOperator<EllipseOperator>(element);
                         if (ellipseOp is PublishOperator<EllipseShape> publishOp)
                         {
                             IProperty<float> widthProp = publishOp.Value.Width;
@@ -348,16 +209,9 @@ public static class TimelineBasicsTutorial
                     PreferredPlacement = TutorialStepPlacement.Bottom,
                     OnShown = () =>
                     {
-                        EditViewModel? editVm = GetEditViewModel();
-                        if (editVm == null) return;
-
-                        Element? element = editVm.Scene.Children
-                            .FirstOrDefault(e => e.Operation.Children.OfType<EllipseOperator>().Any());
-                        if (element != null)
-                        {
-                            editVm.Scene.Duration = element.Range.End + TimeSpan.FromSeconds(1);
-                            editVm.CurrentTime.Value = element.Start;
-                        }
+                        EditViewModel? editVm = TutorialHelpers.GetEditViewModel();
+                        Element? element = TutorialHelpers.FindElementWithOperator<EllipseOperator>(editVm?.Scene);
+                        TutorialHelpers.PrepareForPlayback(editVm, element);
                     },
                 },
 
@@ -375,7 +229,7 @@ public static class TimelineBasicsTutorial
 
     private static Control? FindWidthPropertyEditor()
     {
-        TopLevel? topLevel = GetTopLevel();
+        TopLevel? topLevel = AppHelper.GetTopLevel();
         return topLevel?.GetVisualDescendants()
             .OfType<NumberEditor<float>>()
             .FirstOrDefault(c =>
@@ -383,10 +237,5 @@ public static class TimelineBasicsTutorial
                 vm.PropertyAdapter.GetEngineProperty() is IProperty prop &&
                 prop.GetOwnerObject() is EllipseShape &&
                 prop.Name == nameof(Shape.Width));
-    }
-
-    private static bool HasEllipseElement(Scene scene)
-    {
-        return scene.Children.Any(e => e.Operation.Children.OfType<EllipseOperator>().Any());
     }
 }

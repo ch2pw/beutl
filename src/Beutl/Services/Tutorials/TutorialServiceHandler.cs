@@ -1,20 +1,15 @@
-﻿using System.Reactive.Linq;
-using System.Reactive.Subjects;
-
+﻿using System.Reactive.Subjects;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Threading;
-
 using Beutl.Configuration;
 using Beutl.Logging;
-using Beutl.Services.Tutorials;
 using Beutl.Views;
 using Beutl.Views.Tutorial;
-
 using Microsoft.Extensions.Logging;
 
-namespace Beutl.Services;
+namespace Beutl.Services.Tutorials;
 
 public sealed class TutorialServiceHandler : ITutorialService
 {

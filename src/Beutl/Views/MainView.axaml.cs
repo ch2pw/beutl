@@ -114,7 +114,6 @@ public sealed partial class MainView : UserControl
 
         await ShowTelemetryDialog();
         await CheckDifferentVersion();
-        await TriggerTutorialsForContext(TutorialTrigger.FirstRun);
 
         _logger.LogInformation("Window opened.");
     }
@@ -398,31 +397,7 @@ public sealed partial class MainView : UserControl
 
     private async void OpenTutorialsDialog(object? sender, RoutedEventArgs e)
     {
-        if (TopLevel.GetTopLevel(this) is Window window)
-        {
-            var dialog = new TutorialListDialog();
-            await dialog.ShowAsync();
-        }
-    }
-
-    private static async Task TriggerTutorialsForContext(TutorialTrigger trigger)
-    {
-        ITutorialService? service = TutorialService.Current;
-        if (service == null)
-            return;
-
-        if (!GlobalConfiguration.Instance.TutorialConfig.ShowTutorialsOnStartup)
-            return;
-
-        IReadOnlyList<TutorialDefinition> tutorials = service.GetAvailableTutorials();
-        TutorialDefinition? tutorial = tutorials
-            .Where(t => t.Trigger == trigger && !service.IsTutorialCompleted(t.Id))
-            .OrderBy(t => t.Priority)
-            .FirstOrDefault();
-
-        if (tutorial != null)
-        {
-            await service.StartTutorial(tutorial.Id);
-        }
+        var dialog = new TutorialListDialog();
+        await dialog.ShowAsync();
     }
 }

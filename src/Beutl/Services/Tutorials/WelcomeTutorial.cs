@@ -1,7 +1,4 @@
-using Beutl.Language;
-using Beutl.Services.Tutorials;
-
-namespace Beutl.Services.Tutorials;
+﻿namespace Beutl.Services.Tutorials;
 
 public static class WelcomeTutorial
 {
