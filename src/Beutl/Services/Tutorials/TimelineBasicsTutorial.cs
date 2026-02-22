@@ -1,4 +1,5 @@
 using Avalonia.Controls;
+using Avalonia.Threading;
 using Avalonia.VisualTree;
 using Beutl.Animation;
 using Beutl.Controls.PropertyEditors;
@@ -154,6 +155,7 @@ public static class TimelineBasicsTutorial
                         if (animation.KeyFrames.Count >= 2)
                         {
                             editVm.CurrentTime.Value = animation.KeyFrames[1].KeyTime + element.Start;
+                            Dispatcher.UIThread.Post(() => TutorialService.Current.AdvanceStep());
                         }
                         else
                         {
