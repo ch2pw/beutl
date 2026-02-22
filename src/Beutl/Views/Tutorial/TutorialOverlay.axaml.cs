@@ -260,7 +260,7 @@ public partial class TutorialOverlay : UserControl
             }
             else if (placement == TutorialStepPlacement.Left)
             {
-                tipLeft = target.Bounds.Width - 16;
+                tipLeft = Bounds.Width - (targetLeft - 16);
                 tipTop = targetCenterY;
                 TipContainer.HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Right;
                 TipContainer.Margin = new Thickness(0, tipTop, tipLeft, 0);
