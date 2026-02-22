@@ -200,17 +200,7 @@ public static class TimelineBasicsTutorial
                     Content = TutorialStrings.Tutorial_SceneEdit_Step4_Content,
                     PreferredPlacement = TutorialStepPlacement.Bottom,
                     IsActionRequired = true,
-                    TargetElementResolver = () =>
-                    {
-                        TopLevel? topLevel = GetTopLevel();
-                        return topLevel?.GetVisualDescendants()
-                            .OfType<NumberEditor<float>>()
-                            .FirstOrDefault(c =>
-                                c.DataContext is BaseEditorViewModel vm &&
-                                vm.PropertyAdapter.GetEngineProperty() is IProperty prop &&
-                                prop.GetOwnerObject() is EllipseShape &&
-                                prop.Name == nameof(Shape.Width));
-                    },
+                    TargetElementResolver = FindWidthPropertyEditor,
                     OnShown = () =>
                     {
                         EditViewModel? editVm = GetEditViewModel();
@@ -258,17 +248,7 @@ public static class TimelineBasicsTutorial
                     Content = TutorialStrings.Tutorial_SceneEdit_Step5_Content,
                     PreferredPlacement = TutorialStepPlacement.Bottom,
                     IsActionRequired = true,
-                    TargetElementResolver = () =>
-                    {
-                        TopLevel? topLevel = GetTopLevel();
-                        return topLevel?.GetVisualDescendants()
-                            .OfType<NumberEditor<float>>()
-                            .FirstOrDefault(c =>
-                                c.DataContext is BaseEditorViewModel vm &&
-                                vm.PropertyAdapter.GetEngineProperty() is IProperty prop &&
-                                prop.GetOwnerObject() is EllipseShape &&
-                                prop.Name == nameof(Shape.Width));
-                    },
+                    TargetElementResolver = FindWidthPropertyEditor,
                     OnShown = () =>
                     {
                         EditViewModel? editVm = GetEditViewModel();
@@ -320,17 +300,7 @@ public static class TimelineBasicsTutorial
                     Title = TutorialStrings.Tutorial_SceneEdit_Step6_Title,
                     Content = TutorialStrings.Tutorial_SceneEdit_Step6_Content,
                     PreferredPlacement = TutorialStepPlacement.Bottom,
-                    TargetElementResolver = () =>
-                    {
-                        TopLevel? topLevel = GetTopLevel();
-                        return topLevel?.GetVisualDescendants()
-                            .OfType<NumberEditor<float>>()
-                            .FirstOrDefault(c =>
-                                c.DataContext is BaseEditorViewModel vm &&
-                                vm.PropertyAdapter.GetEngineProperty() is IProperty prop &&
-                                prop.GetOwnerObject() is EllipseShape &&
-                                prop.Name == nameof(Shape.Width));
-                    },
+                    TargetElementResolver = FindWidthPropertyEditor,
                     OnDismissed = () =>
                     {
                         EditViewModel? editVm = GetEditViewModel();
@@ -389,18 +359,20 @@ public static class TimelineBasicsTutorial
         };
     }
 
+    private static Control? FindWidthPropertyEditor()
+    {
+        TopLevel? topLevel = GetTopLevel();
+        return topLevel?.GetVisualDescendants()
+            .OfType<NumberEditor<float>>()
+            .FirstOrDefault(c =>
+                c.DataContext is BaseEditorViewModel vm &&
+                vm.PropertyAdapter.GetEngineProperty() is IProperty prop &&
+                prop.GetOwnerObject() is EllipseShape &&
+                prop.Name == nameof(Shape.Width));
+    }
+
     private static bool HasEllipseElement(Scene scene)
     {
         return scene.Children.Any(e => e.Operation.Children.OfType<EllipseOperator>().Any());
-    }
-
-    private static class Disposable
-    {
-        public static IDisposable Create(Action dispose) => new ActionDisposable(dispose);
-
-        private sealed class ActionDisposable(Action dispose) : IDisposable
-        {
-            public void Dispose() => dispose();
-        }
     }
 }
