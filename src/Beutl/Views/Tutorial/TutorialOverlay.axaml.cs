@@ -1,4 +1,4 @@
-﻿using Avalonia;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
@@ -15,7 +15,9 @@ namespace Beutl.Views.Tutorial;
 
 public partial class TutorialOverlay : UserControl
 {
-    private Control? _currentTarget;
+    private readonly List<Border> _highlightBorders = [];
+    private readonly List<Control> _currentTargets = [];
+    private Control? _primaryTarget;
 
     public TutorialOverlay()
     {
@@ -29,7 +31,7 @@ public partial class TutorialOverlay : UserControl
         if (state == null)
         {
             IsVisible = false;
-            ClearHighlight();
+            ClearHighlights();
             return;
         }
 
@@ -49,55 +51,85 @@ public partial class TutorialOverlay : UserControl
 
     private void UpdateTargetHighlight(TutorialStep step)
     {
-        _currentTarget = ResolveTargetElement(step);
+        ResolveTargetElements(step);
 
-        if (_currentTarget != null)
+        if (_currentTargets.Count > 0)
         {
-            PositionHighlight(_currentTarget);
-            PositionTip(_currentTarget, step.PreferredPlacement);
+            PositionHighlights();
+            if (_primaryTarget != null)
+            {
+                PositionTip(_primaryTarget, step.PreferredPlacement);
+            }
+            else
+            {
+                PositionTip(_currentTargets[0], step.PreferredPlacement);
+            }
         }
         else
         {
-            ClearHighlight();
+            ClearHighlights();
             // ターゲットがない場合は中央に表示
             TipContainer.HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center;
             TipContainer.VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center;
         }
     }
 
-    private Control? ResolveTargetElement(TutorialStep step)
+    private void ResolveTargetElements(TutorialStep step)
     {
-        if (step.TargetElementResolver != null)
-        {
-            return step.TargetElementResolver() as Control;
-        }
+        _currentTargets.Clear();
+        _primaryTarget = null;
 
-        if (step.TargetToolTabType != null)
-        {
-            return ResolveToolTabElement(step.TargetToolTabType);
-        }
+        if (step.TargetElements == null || step.TargetElements.Count == 0)
+            return;
 
-        if (step.TargetElementName != null)
+        TopLevel? topLevel = TopLevel.GetTopLevel(this);
+        if (topLevel == null)
+            return;
+
+        foreach (TargetElementDefinition definition in step.TargetElements)
         {
-            // ビジュアルツリーを走査して Name が一致するコントロールを探す
-            TopLevel? topLevel = TopLevel.GetTopLevel(this);
-            if (topLevel != null)
+            Control? target = ResolveTargetElement(definition, topLevel);
+            if (target != null)
             {
-                return topLevel.GetVisualDescendants()
-                    .OfType<Control>()
-                    .FirstOrDefault(c => c.Name == step.TargetElementName);
+                _currentTargets.Add(target);
+                if (definition.IsPrimary)
+                {
+                    _primaryTarget = target;
+                }
             }
+        }
+
+        // フォールバック: IsPrimaryが設定されていない場合、最初の要素をprimaryとする
+        if (_primaryTarget == null && _currentTargets.Count > 0)
+        {
+            _primaryTarget = _currentTargets[0];
+        }
+    }
+
+    private Control? ResolveTargetElement(TargetElementDefinition definition, TopLevel topLevel)
+    {
+        if (definition.ElementResolver != null)
+        {
+            return definition.ElementResolver() as Control;
+        }
+
+        if (definition.ToolTabType != null)
+        {
+            return ResolveToolTabElement(definition.ToolTabType, topLevel);
+        }
+
+        if (definition.ElementName != null)
+        {
+            return topLevel.GetVisualDescendants()
+                .OfType<Control>()
+                .FirstOrDefault(c => c.Name == definition.ElementName);
         }
 
         return null;
     }
 
-    private Control? ResolveToolTabElement(Type extensionType)
+    private static Control? ResolveToolTabElement(Type extensionType, TopLevel topLevel)
     {
-        TopLevel? topLevel = TopLevel.GetTopLevel(this);
-        if (topLevel == null)
-            return null;
-
         return topLevel.GetVisualDescendants()
             .OfType<ToolTabContent>()
             .FirstOrDefault(ttc =>
@@ -105,45 +137,94 @@ public partial class TutorialOverlay : UserControl
                 extensionType.IsInstanceOfType(vm.Context.Extension));
     }
 
-    private void PositionHighlight(Control target)
+    private void PositionHighlights()
     {
-        try
-        {
-            Point? pos = target.TranslatePoint(new Point(0, 0), this);
-            if (pos.HasValue)
-            {
-                HighlightBorder.IsVisible = true;
-                Canvas.SetLeft(HighlightBorder, pos.Value.X - 4);
-                Canvas.SetTop(HighlightBorder, pos.Value.Y - 4);
-                HighlightBorder.Width = target.Bounds.Width + 8;
-                HighlightBorder.Height = target.Bounds.Height + 8;
+        // 必要に応じてボーダーを追加
+        EnsureBorderPool(_currentTargets.Count);
 
-                // オーバーレイ背景にクリッピングを適用
-                UpdateOverlayClip(pos.Value, target.Bounds.Size);
+        var targetRects = new List<Rect>();
+
+        for (int i = 0; i < _currentTargets.Count; i++)
+        {
+            Control target = _currentTargets[i];
+            Border border = _highlightBorders[i];
+
+            try
+            {
+                Point? pos = target.TranslatePoint(new Point(0, 0), this);
+                if (pos.HasValue)
+                {
+                    border.IsVisible = true;
+                    Canvas.SetLeft(border, pos.Value.X - 4);
+                    Canvas.SetTop(border, pos.Value.Y - 4);
+                    border.Width = target.Bounds.Width + 8;
+                    border.Height = target.Bounds.Height + 8;
+
+                    targetRects.Add(new Rect(
+                        pos.Value.X - 4, pos.Value.Y - 4,
+                        target.Bounds.Width + 8, target.Bounds.Height + 8));
+                }
+                else
+                {
+                    border.IsVisible = false;
+                }
+            }
+            catch
+            {
+                border.IsVisible = false;
             }
         }
-        catch
+
+        // 残りのボーダーを非表示
+        for (int i = _currentTargets.Count; i < _highlightBorders.Count; i++)
         {
-            ClearHighlight();
+            _highlightBorders[i].IsVisible = false;
+        }
+
+        // オーバーレイ背景にクリッピングを適用
+        UpdateOverlayClip(targetRects);
+    }
+
+    private void EnsureBorderPool(int count)
+    {
+        while (_highlightBorders.Count < count)
+        {
+            var border = new Border
+            {
+                BorderBrush = Application.Current?.FindResource("AccentFillColorDefaultBrush") as IBrush,
+                BorderThickness = new Thickness(2),
+                CornerRadius = new CornerRadius(4),
+                IsVisible = false
+            };
+            _highlightBorders.Add(border);
+            HighlightCanvas.Children.Add(border);
         }
     }
 
-    private void UpdateOverlayClip(Point targetPos, Size targetSize)
+    private void UpdateOverlayClip(List<Rect> targetRects)
     {
         // Boundsが0の場合はDispatcherで遅延させる（まだレイアウトが完了していない可能性があるため）
         if (Bounds.Width == 0 || Bounds.Height == 0)
         {
-            Dispatcher.UIThread.Post(() => UpdateOverlayClip(targetPos, targetSize), DispatcherPriority.Render);
+            Dispatcher.UIThread.Post(() => UpdateOverlayClip(targetRects), DispatcherPriority.Render);
             return;
         }
 
-        var fullRect = new RectangleGeometry(new Rect(0, 0, Bounds.Width, Bounds.Height));
-        var cutout = new RectangleGeometry(new Rect(
-            targetPos.X - 4, targetPos.Y - 4,
-            targetSize.Width + 8, targetSize.Height + 8));
+        if (targetRects.Count == 0)
+        {
+            OverlayBackdrop.Clip = null;
+            return;
+        }
 
-        OverlayBackdrop.Clip = new CombinedGeometry(
-            GeometryCombineMode.Exclude, fullRect, cutout);
+        Geometry result = new RectangleGeometry(new Rect(0, 0, Bounds.Width, Bounds.Height));
+
+        foreach (Rect rect in targetRects)
+        {
+            var cutout = new RectangleGeometry(rect);
+            result = new CombinedGeometry(GeometryCombineMode.Exclude, result, cutout);
+        }
+
+        OverlayBackdrop.Clip = result;
     }
 
     private void PositionTip(Control target, TutorialStepPlacement placement)
@@ -200,12 +281,17 @@ public partial class TutorialOverlay : UserControl
         }
     }
 
-    private void ClearHighlight()
+    private void ClearHighlights()
     {
-        HighlightBorder.IsVisible = false;
+        foreach (Border border in _highlightBorders)
+        {
+            border.IsVisible = false;
+        }
+
         OverlayBackdrop.Clip = null;
         TipContainer.Margin = default;
-        _currentTarget = null;
+        _currentTargets.Clear();
+        _primaryTarget = null;
     }
 
     private void OnBackdropPointerPressed(object? sender, PointerPressedEventArgs e)

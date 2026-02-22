@@ -1,4 +1,4 @@
-﻿namespace Beutl.Services.Tutorials;
+namespace Beutl.Services.Tutorials;
 
 public sealed class TutorialStep
 {
@@ -8,11 +8,7 @@ public sealed class TutorialStep
 
     public required string Content { get; init; }
 
-    public string? TargetElementName { get; init; }
-
-    public Func<object?>? TargetElementResolver { get; init; }
-
-    public Type? TargetToolTabType { get; init; }
+    public IReadOnlyList<TargetElementDefinition>? TargetElements { get; init; }
 
     public TutorialStepPlacement PreferredPlacement { get; init; } = TutorialStepPlacement.Center;
 

@@ -15,15 +15,8 @@
                 Background="#80000000"
                 IsHitTestVisible="True" />
 
-        <!-- TeachingTip をホストするためのキャンバス -->
-        <Canvas x:Name="TipCanvas" IsHitTestVisible="False">
-            <!-- ハイライト枠 -->
-            <Border x:Name="HighlightBorder"
-                    BorderBrush="{DynamicResource AccentFillColorDefaultBrush}"
-                    BorderThickness="2"
-                    CornerRadius="4"
-                    IsVisible="False" />
-        </Canvas>
+        <!-- ハイライト枠をホストするキャンバス（複数要素対応） -->
+        <Canvas x:Name="HighlightCanvas" IsHitTestVisible="False" />
 
         <!-- TeachingTip コンテンツ（吹き出し） -->
         <Border x:Name="TipContainer"

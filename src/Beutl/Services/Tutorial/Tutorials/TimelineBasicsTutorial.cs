@@ -108,7 +108,7 @@ public static class TimelineBasicsTutorial
                     Id = "scene-add-ellipse",
                     Title = TutorialStrings.Tutorial_SceneEdit_Step1_Title,
                     Content = TutorialStrings.Tutorial_SceneEdit_Step1_Content,
-                    TargetToolTabType = typeof(TimelineTabExtension),
+                    TargetElements = [new TargetElementDefinition { ToolTabType = typeof(TimelineTabExtension), IsPrimary = true }],
                     PreferredPlacement = TutorialStepPlacement.Top,
                     IsActionRequired = true,
                     OnShown = () =>
@@ -148,7 +148,7 @@ public static class TimelineBasicsTutorial
                     Id = "scene-select-element",
                     Title = TutorialStrings.Tutorial_SceneEdit_Step2_Title,
                     Content = TutorialStrings.Tutorial_SceneEdit_Step2_Content,
-                    TargetToolTabType = typeof(TimelineTabExtension),
+                    TargetElements = [new TargetElementDefinition { ToolTabType = typeof(TimelineTabExtension), IsPrimary = true }],
                     PreferredPlacement = TutorialStepPlacement.Top,
                     IsActionRequired = true,
                     OnShown = () =>
@@ -188,7 +188,7 @@ public static class TimelineBasicsTutorial
                     Id = "scene-source-operators",
                     Title = TutorialStrings.Tutorial_SceneEdit_Step3_Title,
                     Content = TutorialStrings.Tutorial_SceneEdit_Step3_Content,
-                    TargetToolTabType = typeof(SourceOperatorsTabExtension),
+                    TargetElements = [new TargetElementDefinition { ToolTabType = typeof(SourceOperatorsTabExtension), IsPrimary = true }],
                     PreferredPlacement = TutorialStepPlacement.Left,
                 },
 
@@ -200,7 +200,7 @@ public static class TimelineBasicsTutorial
                     Content = TutorialStrings.Tutorial_SceneEdit_Step4_Content,
                     PreferredPlacement = TutorialStepPlacement.Bottom,
                     IsActionRequired = true,
-                    TargetElementResolver = FindWidthPropertyEditor,
+                    TargetElements = [new TargetElementDefinition { ElementResolver = FindWidthPropertyEditor, IsPrimary = true }],
                     OnShown = () =>
                     {
                         EditViewModel? editVm = GetEditViewModel();
@@ -248,7 +248,7 @@ public static class TimelineBasicsTutorial
                     Content = TutorialStrings.Tutorial_SceneEdit_Step5_Content,
                     PreferredPlacement = TutorialStepPlacement.Bottom,
                     IsActionRequired = true,
-                    TargetElementResolver = FindWidthPropertyEditor,
+                    TargetElements = [new TargetElementDefinition { ElementResolver = FindWidthPropertyEditor, IsPrimary = true }],
                     OnShown = () =>
                     {
                         EditViewModel? editVm = GetEditViewModel();
@@ -300,7 +300,7 @@ public static class TimelineBasicsTutorial
                     Title = TutorialStrings.Tutorial_SceneEdit_Step6_Title,
                     Content = TutorialStrings.Tutorial_SceneEdit_Step6_Content,
                     PreferredPlacement = TutorialStepPlacement.Bottom,
-                    TargetElementResolver = FindWidthPropertyEditor,
+                    TargetElements = [new TargetElementDefinition { ElementResolver = FindWidthPropertyEditor, IsPrimary = true }],
                     OnDismissed = () =>
                     {
                         EditViewModel? editVm = GetEditViewModel();
@@ -330,7 +330,7 @@ public static class TimelineBasicsTutorial
                     Id = "scene-preview-animation",
                     Title = TutorialStrings.Tutorial_SceneEdit_Step7_Title,
                     Content = TutorialStrings.Tutorial_SceneEdit_Step7_Content,
-                    TargetElementName = "Player",
+                    TargetElements = [new TargetElementDefinition { ElementName = "Player", IsPrimary = true }],
                     PreferredPlacement = TutorialStepPlacement.Bottom,
                     OnShown = () =>
                     {
