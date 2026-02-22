@@ -20,20 +20,12 @@
                             HorizontalContentAlignment="Stretch"
                             Click="OnTutorialItemClick"
                             Tag="{Binding Id}">
-                        <Grid ColumnDefinitions="*,Auto">
-                            <StackPanel Spacing="4">
-                                <TextBlock FontWeight="SemiBold" Text="{Binding Title}" />
-                                <TextBlock Foreground="{DynamicResource TextFillColorSecondaryBrush}"
-                                           Text="{Binding Description}"
-                                           TextWrapping="Wrap" />
-                            </StackPanel>
-                            <icons:SymbolIcon Grid.Column="1"
-                                              VerticalAlignment="Center"
-                                              x:Name="CompletedIcon"
-                                              Foreground="{DynamicResource SystemFillColorSuccessBrush}"
-                                              IsVisible="False"
-                                              Symbol="CheckmarkCircle" />
-                        </Grid>
+                        <StackPanel Spacing="4">
+                            <TextBlock FontWeight="SemiBold" Text="{Binding Title}" />
+                            <TextBlock Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                                       Text="{Binding Description}"
+                                       TextWrapping="Wrap" />
+                        </StackPanel>
                     </Button>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
