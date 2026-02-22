@@ -12,7 +12,8 @@ public class DefaultTutorialExtension : TutorialExtension
         return
         [
             WelcomeTutorial.Create(),
-            TimelineBasicsTutorial.Create()
+            TimelineBasicsTutorial.Create(),
+            AnimationEditTutorial.Create()
         ];
     }
 }

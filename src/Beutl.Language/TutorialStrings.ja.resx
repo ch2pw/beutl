@@ -213,4 +213,88 @@
   <data name="Tutorial_SceneEdit_Step8_Content" xml:space="preserve">
     <value>おめでとうございます！要素の追加、プロパティの編集、アニメーションの作成を学びました。他の機能もぜひ探索してみてください！</value>
   </data>
+  <data name="Tutorial_AnimationEdit_Title" xml:space="preserve">
+    <value>アニメーション編集</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Description" xml:space="preserve">
+    <value>グラフエディタを使った高度なアニメーション編集を学びます</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step1_Title" xml:space="preserve">
+    <value>オブジェクトを選択</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step1_Content" xml:space="preserve">
+    <value>タイムラインでアニメーションさせたい要素を選択してください。</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step2_Title" xml:space="preserve">
+    <value>移動を追加</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step2_Content" xml:space="preserve">
+    <value>トランスフォーム プロパティの+ボタンをクリックし、「移動」を追加してください。</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step3_Title" xml:space="preserve">
+    <value>Xアニメーションを有効化</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step3_Content" xml:space="preserve">
+    <value>Xプロパティのメニューアイコンをクリックし、「アニメーションを編集」を選択してください。</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step4_Title" xml:space="preserve">
+    <value>キーフレームを追加</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step4_Content" xml:space="preserve">
+    <value>再生位置が先に移動しました。ダイヤモンドアイコンをクリックして、この位置にキーフレームを追加してください。</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step5_Title" xml:space="preserve">
+    <value>イージングを追加/適用</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step5_Content" xml:space="preserve">
+    <value>ライブラリパネル（イージングタブ）からイージング関数をドラッグし、グラフエディタにドロップすると任意のイージング関数でキーフレームを追加できます。また、既存のキーフレームと同じ位置にドロップするとイージング関数が変更されます。</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step6_Title" xml:space="preserve">
+    <value>グラフエディタの概要</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step6_Content" xml:space="preserve">
+    <value>グラフエディタでは、丸いアイコンはイージングコントロールポイントを表します。これを左右に移動すると、下のダイヤモンドアイコン（キーフレーム）が見えるようになります。</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step7_Title" xml:space="preserve">
+    <value>キーフレームを移動</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step7_Content" xml:space="preserve">
+    <value>ダイヤモンドアイコンをドラッグして、キーフレームの時間と値を変更できます。</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step8_Title" xml:space="preserve">
+    <value>アニメーションをプレビュー</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step8_Content" xml:space="preserve">
+    <value>再生ボタンを押してアニメーションをプレビューしてください。</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step9_Title" xml:space="preserve">
+    <value>アニメーションをコピー</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step9_Content" xml:space="preserve">
+    <value>グラフエディタの背景を右クリックし、「すべてコピー」を選択してすべてのキーフレームをコピーしてください。</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step10_Title" xml:space="preserve">
+    <value>Yアニメーションを有効化</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step10_Content" xml:space="preserve">
+    <value>Yプロパティのメニューアイコンをクリックし、「アニメーションを編集」を選択してください。</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step11_Title" xml:space="preserve">
+    <value>アニメーションを貼り付け</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step11_Content" xml:space="preserve">
+    <value>Yプロパティのグラフエディタで右クリックし、「貼り付け」を選択してコピーしたアニメーションを適用してください。</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step12_Title" xml:space="preserve">
+    <value>最終プレビュー</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step12_Content" xml:space="preserve">
+    <value>もう一度再生ボタンを押して、XとYのアニメーションが一緒に動作することを確認してください。</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step13_Title" xml:space="preserve">
+    <value>チュートリアル完了！</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step13_Content" xml:space="preserve">
+    <value>グラフエディタを使った高度なアニメーション編集、イージングの適用、アニメーションのコピー＆ペーストを学びました！</value>
+  </data>
 </root>

@@ -213,4 +213,88 @@
   <data name="Tutorial_SceneEdit_Step8_Content" xml:space="preserve">
     <value>Congratulations! You have learned how to add elements, edit properties, and create animations. Explore more features on your own!</value>
   </data>
+  <data name="Tutorial_AnimationEdit_Title" xml:space="preserve">
+    <value>Animation Editing</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Description" xml:space="preserve">
+    <value>Learn advanced animation editing using the graph editor</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step1_Title" xml:space="preserve">
+    <value>Select an Object</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step1_Content" xml:space="preserve">
+    <value>Select the element you want to animate in the timeline.</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step2_Title" xml:space="preserve">
+    <value>Add Translate</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step2_Content" xml:space="preserve">
+    <value>Click the + button on the Transform property and add "Translate".</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step3_Title" xml:space="preserve">
+    <value>Enable X Animation</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step3_Content" xml:space="preserve">
+    <value>Click the menu icon on the X property and select "Edit animation".</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step4_Title" xml:space="preserve">
+    <value>Add a Keyframe</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step4_Content" xml:space="preserve">
+    <value>The playback position has been moved forward. Click the diamond icon to add a keyframe at this position.</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step5_Title" xml:space="preserve">
+    <value>Apply Easing</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step5_Content" xml:space="preserve">
+    <value>Dragging an easing function from the Library panel (Easing tab) and dropping it onto the Graph Editor adds keyframes using that easing function. Dropping it at the same position as an existing keyframe changes the easing function of that keyframe.</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step6_Title" xml:space="preserve">
+    <value>Graph Editor Overview</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step6_Content" xml:space="preserve">
+    <value>In the graph editor, round icons represent easing control points. Move them left or right to reveal the diamond icons (keyframes) below.</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step7_Title" xml:space="preserve">
+    <value>Move Keyframes</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step7_Content" xml:space="preserve">
+    <value>You can drag diamond icons to change the time and value of keyframes.</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step8_Title" xml:space="preserve">
+    <value>Preview Animation</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step8_Content" xml:space="preserve">
+    <value>Press the Play button to preview your animation.</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step9_Title" xml:space="preserve">
+    <value>Copy Animation</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step9_Content" xml:space="preserve">
+    <value>Right-click on the graph editor background and select "Copy All" to copy all keyframes.</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step10_Title" xml:space="preserve">
+    <value>Enable Y Animation</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step10_Content" xml:space="preserve">
+    <value>Click the menu icon on the Y property and select "Edit animation".</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step11_Title" xml:space="preserve">
+    <value>Paste Animation</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step11_Content" xml:space="preserve">
+    <value>Right-click on the Y property's graph editor and select "Paste" to apply the copied animation.</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step12_Title" xml:space="preserve">
+    <value>Final Preview</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step12_Content" xml:space="preserve">
+    <value>Press the Play button again to verify that X and Y animations work together.</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step13_Title" xml:space="preserve">
+    <value>Tutorial Complete!</value>
+  </data>
+  <data name="Tutorial_AnimationEdit_Step13_Content" xml:space="preserve">
+    <value>You have learned advanced animation editing using the graph editor, applying easing functions, and copying/pasting animations. Explore more features on your own!</value>
+  </data>
 </root>
