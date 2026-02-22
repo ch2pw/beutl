@@ -26,10 +26,12 @@ public class ParticleEmitter : Drawable
 
     [Display(Name = nameof(Strings.ParticleEmitter_EmitterWidth), ResourceType = typeof(Strings),
         GroupName = nameof(Strings.ParticleEmitter_EmitterGroup))]
+    [Range(0, float.MaxValue)]
     public IProperty<float> EmitterWidth { get; } = Property.CreateAnimatable(100f);
 
     [Display(Name = nameof(Strings.ParticleEmitter_EmitterHeight), ResourceType = typeof(Strings),
         GroupName = nameof(Strings.ParticleEmitter_EmitterGroup))]
+    [Range(0, float.MaxValue)]
     public IProperty<float> EmitterHeight { get; } = Property.CreateAnimatable(100f);
 
     [Display(Name = nameof(Strings.ParticleEmitter_MaxParticles), ResourceType = typeof(Strings),
@@ -40,23 +42,28 @@ public class ParticleEmitter : Drawable
     // Emission
     [Display(Name = nameof(Strings.ParticleEmitter_EmissionRate), ResourceType = typeof(Strings),
         GroupName = nameof(Strings.ParticleEmitter_EmissionGroup))]
+    [Range(0, float.MaxValue)]
     public IProperty<float> EmissionRate { get; } = Property.CreateAnimatable(60f);
 
     [Display(Name = nameof(Strings.ParticleEmitter_Lifetime), ResourceType = typeof(Strings),
         GroupName = nameof(Strings.ParticleEmitter_EmissionGroup))]
+    [Range(0, float.MaxValue)]
     public IProperty<float> Lifetime { get; } = Property.CreateAnimatable(2f);
 
     [Display(Name = nameof(Strings.ParticleEmitter_LifetimeRandom), ResourceType = typeof(Strings),
         GroupName = nameof(Strings.ParticleEmitter_EmissionGroup))]
+    [Range(0, float.MaxValue)]
     public IProperty<float> LifetimeRandom { get; } = Property.CreateAnimatable(0f);
 
     // Velocity
     [Display(Name = nameof(Strings.ParticleEmitter_Speed), ResourceType = typeof(Strings),
         GroupName = nameof(Strings.ParticleEmitter_VelocityGroup))]
+    [Range(0, float.MaxValue)]
     public IProperty<float> Speed { get; } = Property.CreateAnimatable(200f);
 
     [Display(Name = nameof(Strings.ParticleEmitter_SpeedRandom), ResourceType = typeof(Strings),
         GroupName = nameof(Strings.ParticleEmitter_VelocityGroup))]
+    [Range(0, float.MaxValue)]
     public IProperty<float> SpeedRandom { get; } = Property.CreateAnimatable(0f);
 
     [Display(Name = nameof(Strings.ParticleEmitter_Direction), ResourceType = typeof(Strings),
@@ -65,6 +72,7 @@ public class ParticleEmitter : Drawable
 
     [Display(Name = nameof(Strings.ParticleEmitter_Spread), ResourceType = typeof(Strings),
         GroupName = nameof(Strings.ParticleEmitter_VelocityGroup))]
+    [Range(0, 360)]
     public IProperty<float> Spread { get; } = Property.CreateAnimatable(30f);
 
     // Physics
@@ -74,18 +82,22 @@ public class ParticleEmitter : Drawable
 
     [Display(Name = nameof(Strings.ParticleEmitter_AirResistance), ResourceType = typeof(Strings),
         GroupName = nameof(Strings.ParticleEmitter_PhysicsGroup))]
+    [Range(0, float.MaxValue)]
     public IProperty<float> AirResistance { get; } = Property.CreateAnimatable(0f);
 
     [Display(Name = nameof(Strings.ParticleEmitter_TurbulenceStrength), ResourceType = typeof(Strings),
         GroupName = nameof(Strings.ParticleEmitter_PhysicsGroup))]
+    [Range(0, float.MaxValue)]
     public IProperty<float> TurbulenceStrength { get; } = Property.CreateAnimatable(0f);
 
     [Display(Name = nameof(Strings.ParticleEmitter_TurbulenceScale), ResourceType = typeof(Strings),
         GroupName = nameof(Strings.ParticleEmitter_PhysicsGroup))]
+    [Range(0, float.MaxValue)]
     public IProperty<float> TurbulenceScale { get; } = Property.CreateAnimatable(0.01f);
 
     [Display(Name = nameof(Strings.ParticleEmitter_TurbulenceSpeed), ResourceType = typeof(Strings),
         GroupName = nameof(Strings.ParticleEmitter_PhysicsGroup))]
+    [Range(0, float.MaxValue)]
     public IProperty<float> TurbulenceSpeed { get; } = Property.CreateAnimatable(1f);
 
     // Visual
@@ -95,10 +107,12 @@ public class ParticleEmitter : Drawable
 
     [Display(Name = nameof(Strings.ParticleEmitter_ParticleSize), ResourceType = typeof(Strings),
         GroupName = nameof(Strings.ParticleEmitter_VisualGroup))]
+    [Range(0, float.MaxValue)]
     public IProperty<float> ParticleSize { get; } = Property.CreateAnimatable(10f);
 
     [Display(Name = nameof(Strings.ParticleEmitter_SizeRandom), ResourceType = typeof(Strings),
         GroupName = nameof(Strings.ParticleEmitter_VisualGroup))]
+    [Range(0, float.MaxValue)]
     public IProperty<float> SizeRandom { get; } = Property.CreateAnimatable(0f);
 
     [Display(Name = nameof(Strings.ParticleEmitter_Color), ResourceType = typeof(Strings),
@@ -117,6 +131,7 @@ public class ParticleEmitter : Drawable
 
     [Display(Name = nameof(Strings.ParticleEmitter_InitialRotationRandom), ResourceType = typeof(Strings),
         GroupName = nameof(Strings.ParticleEmitter_RotationGroup))]
+    [Range(0, float.MaxValue)]
     public IProperty<float> InitialRotationRandom { get; } = Property.CreateAnimatable(0f);
 
     [Display(Name = nameof(Strings.ParticleEmitter_AngularVelocity), ResourceType = typeof(Strings),
@@ -126,10 +141,12 @@ public class ParticleEmitter : Drawable
     // Over Life
     [Display(Name = nameof(Strings.ParticleEmitter_EndSizeMultiplier), ResourceType = typeof(Strings),
         GroupName = nameof(Strings.ParticleEmitter_OverLifeGroup))]
+    [Range(0, float.MaxValue)]
     public IProperty<float> EndSizeMultiplier { get; } = Property.CreateAnimatable(1f);
 
     [Display(Name = nameof(Strings.ParticleEmitter_EndOpacityMultiplier), ResourceType = typeof(Strings),
         GroupName = nameof(Strings.ParticleEmitter_OverLifeGroup))]
+    [Range(0, float.MaxValue)]
     public IProperty<float> EndOpacityMultiplier { get; } = Property.CreateAnimatable(0f);
 
     [Display(Name = nameof(Strings.ParticleEmitter_EndColor), ResourceType = typeof(Strings),
