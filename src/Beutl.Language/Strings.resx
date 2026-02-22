@@ -2288,4 +2288,19 @@ Example: GetProperty&lt;double&gt;("{GUID}.Opacity")</value>
   <data name="ParticleEmitter_UseEndColor" xml:space="preserve">
     <value>Use End Color</value>
   </data>
+  <data name="BpmGrid" xml:space="preserve">
+    <value>BPM Grid</value>
+  </data>
+  <data name="ShowBpmGrid" xml:space="preserve">
+    <value>Show BPM Grid</value>
+  </data>
+  <data name="BpmValue" xml:space="preserve">
+    <value>BPM</value>
+  </data>
+  <data name="BeatSubdivisions" xml:space="preserve">
+    <value>Subdivisions</value>
+  </data>
+  <data name="BpmOffset" xml:space="preserve">
+    <value>Offset</value>
+  </data>
 </root>

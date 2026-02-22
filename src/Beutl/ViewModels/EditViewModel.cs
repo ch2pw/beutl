@@ -513,7 +513,14 @@ public sealed partial class EditViewModel : IEditorContext, ITimelineOptionsProv
             ["selected-object"] = SelectedObject.Value?.Id,
             ["max-layer-count"] = Options.Value.MaxLayerCount,
             ["scale"] = Options.Value.Scale,
-            ["offset"] = new JsonObject { ["x"] = Options.Value.Offset.X, ["y"] = Options.Value.Offset.Y, }
+            ["offset"] = new JsonObject { ["x"] = Options.Value.Offset.X, ["y"] = Options.Value.Offset.Y, },
+            ["bpm-grid"] = new JsonObject
+            {
+                ["bpm"] = Options.Value.BpmGrid.Bpm,
+                ["subdivisions"] = Options.Value.BpmGrid.Subdivisions,
+                ["offset"] = Options.Value.BpmGrid.Offset.ToString(),
+                ["is-enabled"] = Options.Value.BpmGrid.IsEnabled,
+            }
         };
 
         DockHost.WriteToJson(json);
@@ -574,6 +581,27 @@ public sealed partial class EditViewModel : IEditorContext, ITimelineOptionsProv
                 && offsetObj.TryGetPropertyValueAsJsonValue("y", out float y))
             {
                 timelineOptions = timelineOptions with { Offset = new Vector2(x, y) };
+            }
+
+            if (jsonObject.TryGetPropertyValue("bpm-grid", out JsonNode? bpmGridNode)
+                && bpmGridNode is JsonObject bpmGridObj)
+            {
+                var bpmGrid = new BpmGridOptions();
+
+                if (bpmGridObj.TryGetPropertyValueAsJsonValue("bpm", out double bpm))
+                    bpmGrid = bpmGrid with { Bpm = bpm };
+
+                if (bpmGridObj.TryGetPropertyValueAsJsonValue("subdivisions", out int subdivisions))
+                    bpmGrid = bpmGrid with { Subdivisions = subdivisions };
+
+                if (bpmGridObj.TryGetPropertyValueAsJsonValue("offset", out string? bpmOffsetStr)
+                    && TimeSpan.TryParse(bpmOffsetStr, out TimeSpan bpmOffset))
+                    bpmGrid = bpmGrid with { Offset = bpmOffset };
+
+                if (bpmGridObj.TryGetPropertyValueAsJsonValue("is-enabled", out bool isEnabled))
+                    bpmGrid = bpmGrid with { IsEnabled = isEnabled };
+
+                timelineOptions = timelineOptions with { BpmGrid = bpmGrid };
             }
 
             Options.Value = timelineOptions;

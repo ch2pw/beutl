@@ -2293,4 +2293,19 @@ GetProperty&lt;T&gt;("path") または GetProperty&lt;T&gt;(guid, "propertyName"
   <data name="ParticleEmitter_UseEndColor" xml:space="preserve">
     <value>終了色を使用</value>
   </data>
+  <data name="BpmGrid" xml:space="preserve">
+    <value>BPMグリッド</value>
+  </data>
+  <data name="ShowBpmGrid" xml:space="preserve">
+    <value>BPMグリッドを表示</value>
+  </data>
+  <data name="BpmValue" xml:space="preserve">
+    <value>BPM</value>
+  </data>
+  <data name="BeatSubdivisions" xml:space="preserve">
+    <value>分割数</value>
+  </data>
+  <data name="BpmOffset" xml:space="preserve">
+    <value>オフセット</value>
+  </data>
 </root>

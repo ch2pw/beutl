@@ -1,5 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Collections.Specialized;
+using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using System.Text.Json.Nodes;
 using Avalonia;
@@ -147,6 +148,24 @@ public sealed class TimelineTabViewModel : IToolContext, IContextCommandHandler
             _logger.LogDebug("AutoAdjustSceneDuration changed to {Value}.", b);
             editorConfig.AutoAdjustSceneDuration = b;
         });
+
+        // Initialize BPM grid properties from current options
+        BpmGridOptions bpmGrid = Options.Value.BpmGrid;
+        IsBpmGridEnabled.Value = bpmGrid.IsEnabled;
+        BpmValue.Value = bpmGrid.Bpm;
+        BpmSubdivisions.Value = bpmGrid.Subdivisions;
+        BpmOffsetSeconds.Value = bpmGrid.Offset.TotalSeconds;
+
+        // Sync BPM grid reactive properties back to Options
+        Observable.CombineLatest(
+                IsBpmGridEnabled, BpmValue, BpmSubdivisions, BpmOffsetSeconds,
+                (enabled, bpm, subdivisions, offsetSec) => new BpmGridOptions(
+                    bpm, subdivisions, TimeSpan.FromSeconds(offsetSec), enabled))
+            .Subscribe(grid =>
+            {
+                Options.Value = Options.Value with { BpmGrid = grid };
+            })
+            .AddTo(_disposables);
 
         IsLockCacheButtonEnabled = HoveredCacheBlock.Select(v => v is { IsLocked: false })
             .ToReadOnlyReactivePropertySlim()
@@ -352,6 +371,14 @@ public sealed class TimelineTabViewModel : IToolContext, IContextCommandHandler
     public ReactiveCommandSlim UnlockFrameCache { get; }
 
     public ReactiveProperty<bool> AutoAdjustSceneDuration { get; }
+
+    public ReactivePropertySlim<bool> IsBpmGridEnabled { get; } = new();
+
+    public ReactivePropertySlim<double> BpmValue { get; } = new(120.0);
+
+    public ReactivePropertySlim<int> BpmSubdivisions { get; } = new(4);
+
+    public ReactivePropertySlim<double> BpmOffsetSeconds { get; } = new(0.0);
 
     public ReactivePropertySlim<CacheBlock?> HoveredCacheBlock { get; } = new();
 
