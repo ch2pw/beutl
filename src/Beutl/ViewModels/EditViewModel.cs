@@ -518,7 +518,7 @@ public sealed partial class EditViewModel : IEditorContext, ITimelineOptionsProv
             {
                 ["bpm"] = Options.Value.BpmGrid.Bpm,
                 ["subdivisions"] = Options.Value.BpmGrid.Subdivisions,
-                ["offset"] = Options.Value.BpmGrid.Offset.ToString(),
+                ["offset"] = Options.Value.BpmGrid.Offset.ToString("c"),
                 ["is-enabled"] = Options.Value.BpmGrid.IsEnabled,
             }
         };
@@ -595,7 +595,7 @@ public sealed partial class EditViewModel : IEditorContext, ITimelineOptionsProv
                     bpmGrid = bpmGrid with { Subdivisions = subdivisions };
 
                 if (bpmGridObj.TryGetPropertyValueAsJsonValue("offset", out string? bpmOffsetStr)
-                    && TimeSpan.TryParse(bpmOffsetStr, out TimeSpan bpmOffset))
+                    && TimeSpan.TryParseExact(bpmOffsetStr, "c", CultureInfo.InvariantCulture, out TimeSpan bpmOffset))
                     bpmGrid = bpmGrid with { Offset = bpmOffset };
 
                 if (bpmGridObj.TryGetPropertyValueAsJsonValue("is-enabled", out bool isEnabled))
