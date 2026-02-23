@@ -624,19 +624,17 @@ public sealed partial class TimelineTabView : UserControl
     {
         if (ViewModel == null) return;
 
+        var bpmGrid = ViewModel.Options.Value.BpmGrid;
         var flyout = new Editor.Components.Views.BpmGridFlyout
         {
-            IsEnabledChecked = ViewModel.IsBpmGridEnabled.Value,
-            Bpm = (decimal)ViewModel.BpmValue.Value,
-            Subdivisions = ViewModel.BpmSubdivisions.Value,
-            OffsetSeconds = (decimal)ViewModel.BpmOffsetSeconds.Value,
+            IsEnabledChecked = bpmGrid.IsEnabled,
+            Bpm = (decimal)bpmGrid.Bpm,
+            Subdivisions = bpmGrid.Subdivisions,
+            OffsetSeconds = (decimal)bpmGrid.Offset.TotalSeconds,
         };
         flyout.OptionsChanged += (_, options) =>
         {
-            ViewModel.IsBpmGridEnabled.Value = options.IsEnabled;
-            ViewModel.BpmValue.Value = options.Bpm;
-            ViewModel.BpmSubdivisions.Value = options.Subdivisions;
-            ViewModel.BpmOffsetSeconds.Value = options.Offset.TotalSeconds;
+            ViewModel.Options.Value = ViewModel.Options.Value with { BpmGrid = options };
         };
 
         flyout.ShowAt(TimelinePanel, true);

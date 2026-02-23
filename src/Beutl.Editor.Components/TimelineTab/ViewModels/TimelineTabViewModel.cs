@@ -149,25 +149,6 @@ public sealed class TimelineTabViewModel : IToolContext, IContextCommandHandler
             editorConfig.AutoAdjustSceneDuration = b;
         });
 
-        // Initialize BPM grid properties from current options
-        BpmGridOptions bpmGrid = Options.Value.BpmGrid;
-        IsBpmGridEnabled.Value = bpmGrid.IsEnabled;
-        BpmValue.Value = bpmGrid.Bpm;
-        BpmSubdivisions.Value = bpmGrid.Subdivisions;
-        BpmOffsetSeconds.Value = bpmGrid.Offset.TotalSeconds;
-
-        // Sync BPM grid reactive properties back to Options
-        Observable.CombineLatest(
-                IsBpmGridEnabled, BpmValue, BpmSubdivisions, BpmOffsetSeconds,
-                (enabled, bpm, subdivisions, offsetSec) => new BpmGridOptions(
-                    bpm, subdivisions, TimeSpan.FromSeconds(offsetSec), enabled))
-            .DistinctUntilChanged()
-            .Subscribe(grid =>
-            {
-                Options.Value = Options.Value with { BpmGrid = grid };
-            })
-            .AddTo(_disposables);
-
         IsLockCacheButtonEnabled = HoveredCacheBlock.Select(v => v is { IsLocked: false })
             .ToReadOnlyReactivePropertySlim()
             .DisposeWith(_disposables);
@@ -373,14 +354,6 @@ public sealed class TimelineTabViewModel : IToolContext, IContextCommandHandler
 
     public ReactiveProperty<bool> AutoAdjustSceneDuration { get; }
 
-    public ReactivePropertySlim<bool> IsBpmGridEnabled { get; } = new();
-
-    public ReactivePropertySlim<double> BpmValue { get; } = new(120.0);
-
-    public ReactivePropertySlim<int> BpmSubdivisions { get; } = new(4);
-
-    public ReactivePropertySlim<double> BpmOffsetSeconds { get; } = new(0.0);
-
     public ReactivePropertySlim<CacheBlock?> HoveredCacheBlock { get; } = new();
 
     public ReadOnlyReactivePropertySlim<bool> IsLockCacheButtonEnabled { get; }
@@ -395,7 +368,7 @@ public sealed class TimelineTabViewModel : IToolContext, IContextCommandHandler
 
     public HashSet<ElementViewModel> SelectedElements { get; } = [];
 
-    
+
 
     public ToolTabExtension Extension => TimelineTabExtension.Instance;
 
