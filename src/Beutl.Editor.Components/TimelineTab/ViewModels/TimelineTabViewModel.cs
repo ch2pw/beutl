@@ -161,6 +161,7 @@ public sealed class TimelineTabViewModel : IToolContext, IContextCommandHandler
                 IsBpmGridEnabled, BpmValue, BpmSubdivisions, BpmOffsetSeconds,
                 (enabled, bpm, subdivisions, offsetSec) => new BpmGridOptions(
                     bpm, subdivisions, TimeSpan.FromSeconds(offsetSec), enabled))
+            .DistinctUntilChanged()
             .Subscribe(grid =>
             {
                 Options.Value = Options.Value with { BpmGrid = grid };
