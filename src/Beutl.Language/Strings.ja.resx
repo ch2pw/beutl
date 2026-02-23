@@ -530,6 +530,9 @@
   <data name="Rename" xml:space="preserve">
     <value>名前を変更</value>
   </data>
+  <data name="ToggleMute" xml:space="preserve">
+    <value>ミュート切替</value>
+  </data>
   <data name="Ellipse" xml:space="preserve">
     <value>楕円</value>
   </data>
@@ -2175,6 +2178,105 @@ GetProperty&lt;T&gt;("path") または GetProperty&lt;T&gt;(guid, "propertyName"
   </data>
   <data name="HoldLastFrame" xml:space="preserve">
     <value>最後のフレームを保持</value>
+  </data>
+  <data name="Tutorials" xml:space="preserve">
+    <value>チュートリアル</value>
+  </data>
+  <data name="StartTutorial" xml:space="preserve">
+    <value>チュートリアルを開始</value>
+  </data>
+  <data name="TutorialStep" xml:space="preserve">
+    <value>ステップ {0}/{1}</value>
+  </data>
+  <data name="TutorialNext" xml:space="preserve">
+    <value>次へ</value>
+  </data>
+  <data name="TutorialPrevious" xml:space="preserve">
+    <value>前へ</value>
+  </data>
+  <data name="TutorialFinish" xml:space="preserve">
+    <value>完了</value>
+  </data>
+  <data name="TutorialSkip" xml:space="preserve">
+    <value>スキップ</value>
+  </data>
+  <data name="Tutorial_Welcome_Title" xml:space="preserve">
+    <value>Beutlへようこそ</value>
+  </data>
+  <data name="Tutorial_Welcome_Content" xml:space="preserve">
+    <value>Beutlはクロスプラットフォームの動画編集ソフトです。このチュートリアルでは基本的な使い方をご紹介します。</value>
+  </data>
+  <data name="Tutorial_Welcome_MenuBar_Title" xml:space="preserve">
+    <value>メニューバー</value>
+  </data>
+  <data name="Tutorial_Welcome_MenuBar_Content" xml:space="preserve">
+    <value>メニューバーにはファイル管理、編集などのオプションがあります。</value>
+  </data>
+  <data name="Tutorial_Welcome_Create_Title" xml:space="preserve">
+    <value>新規作成</value>
+  </data>
+  <data name="Tutorial_Welcome_Create_Content" xml:space="preserve">
+    <value>ここをクリックして新しいプロジェクトやシーンを作成し、編集を開始できます。</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Title" xml:space="preserve">
+    <value>シーン編集の基本</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Description" xml:space="preserve">
+    <value>要素の追加、プロパティの編集、アニメーションの作成を学ぶ</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step1_Title" xml:space="preserve">
+    <value>円形を追加</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step1_Content" xml:space="preserve">
+    <value>タイムラインを右クリックして、楕円（Ellipse）要素を追加してください。ライブラリからドラッグ＆ドロップすることもできます。</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step2_Title" xml:space="preserve">
+    <value>要素を選択</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step2_Content" xml:space="preserve">
+    <value>タイムラインで追加した要素をクリックして選択してください。</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step3_Title" xml:space="preserve">
+    <value>プロパティ</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step3_Content" xml:space="preserve">
+    <value>ここがプロパティタブです。選択した要素のプロパティを表示・編集できます。</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step4_Title" xml:space="preserve">
+    <value>アニメーションを有効化</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step4_Content" xml:space="preserve">
+    <value>横幅 プロパティを見つけて、横のメニューアイコンをクリックしてアニメーションを有効化してください。「アニメーションを編集」「インライン表示でアニメーションを編集」で有効化できます。</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step5_Title" xml:space="preserve">
+    <value>キーフレームを追加</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step5_Content" xml:space="preserve">
+    <value>ダイヤモンドアイコンをクリックして、現在位置にキーフレームを追加してください。</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step6_Title" xml:space="preserve">
+    <value>値を変更</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step6_Content" xml:space="preserve">
+    <value>横幅 の値を変更してください。数値ボックスに直接入力する以外に、マウスホイールでの変更、プロパティ名のドラッグ操作でも変更できます。これにより、時間経過とともに横幅を伸ばすアニメーションが作成されます。</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step7_Title" xml:space="preserve">
+    <value>アニメーションをプレビュー</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step7_Content" xml:space="preserve">
+    <value>プレーヤーの再生ボタンを押して、アニメーションをプレビューしてください。</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step8_Title" xml:space="preserve">
+    <value>チュートリアル完了！</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step8_Content" xml:space="preserve">
+    <value>おめでとうございます！要素の追加、プロパティの編集、アニメーションの作成を学びました。他の機能もぜひ探索してみてください！</value>
+  </data>
+  <data name="LearnBeutlBasics" xml:space="preserve">
+    <value>Beutlの基本を学ぶ</value>
+  </data>
+  <data name="NoTutorialsAvailable" xml:space="preserve">
+    <value>利用可能なチュートリアルはありません</value>
   </data>
   <data name="ParticleEmitter" xml:space="preserve">
     <value>パーティクルエミッタ</value>

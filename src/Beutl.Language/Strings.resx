@@ -525,6 +525,9 @@
   <data name="Rename" xml:space="preserve">
     <value>Rename</value>
   </data>
+  <data name="ToggleMute" xml:space="preserve">
+    <value>Toggle Mute</value>
+  </data>
   <data name="Ellipse" xml:space="preserve">
     <value>Ellipse</value>
   </data>
@@ -2170,6 +2173,105 @@ Example: GetProperty&lt;double&gt;("{GUID}.Opacity")</value>
   </data>
   <data name="HoldLastFrame" xml:space="preserve">
     <value>Hold Last Frame</value>
+  </data>
+  <data name="Tutorials" xml:space="preserve">
+    <value>Tutorials</value>
+  </data>
+  <data name="StartTutorial" xml:space="preserve">
+    <value>Start Tutorial</value>
+  </data>
+  <data name="TutorialStep" xml:space="preserve">
+    <value>Step {0} of {1}</value>
+  </data>
+  <data name="TutorialNext" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="TutorialPrevious" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="TutorialFinish" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="TutorialSkip" xml:space="preserve">
+    <value>Skip Tutorial</value>
+  </data>
+  <data name="Tutorial_Welcome_Title" xml:space="preserve">
+    <value>Welcome to Beutl</value>
+  </data>
+  <data name="Tutorial_Welcome_Content" xml:space="preserve">
+    <value>Beutl is a cross-platform video editor. This tutorial will guide you through the basics.</value>
+  </data>
+  <data name="Tutorial_Welcome_MenuBar_Title" xml:space="preserve">
+    <value>Menu Bar</value>
+  </data>
+  <data name="Tutorial_Welcome_MenuBar_Content" xml:space="preserve">
+    <value>The menu bar contains options for file management, editing, and more.</value>
+  </data>
+  <data name="Tutorial_Welcome_Create_Title" xml:space="preserve">
+    <value>Create New</value>
+  </data>
+  <data name="Tutorial_Welcome_Create_Content" xml:space="preserve">
+    <value>Click here to create a new project or scene to start editing.</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Title" xml:space="preserve">
+    <value>Scene Editing Basics</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Description" xml:space="preserve">
+    <value>Learn to add elements, edit properties, and create animations</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step1_Title" xml:space="preserve">
+    <value>Add an Ellipse</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step1_Content" xml:space="preserve">
+    <value>Right-click on the timeline and add an ellipse element. You can also drag and drop from the library.</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step2_Title" xml:space="preserve">
+    <value>Select the Element</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step2_Content" xml:space="preserve">
+    <value>Click on the element you just added in the timeline to select it.</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step3_Title" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step3_Content" xml:space="preserve">
+    <value>This is the properties tab. You can view and edit the properties of the selected element here.</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step4_Title" xml:space="preserve">
+    <value>Enable Animation</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step4_Content" xml:space="preserve">
+    <value>Find the Width property and click the menu icon next to it to enable animation. You can enable it with "Edit animation" or "Edit animation in inline view"</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step5_Title" xml:space="preserve">
+    <value>Add a Keyframe</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step5_Content" xml:space="preserve">
+    <value>The playback position has been moved forward. Click the diamond icon to add a keyframe at this position.</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step6_Title" xml:space="preserve">
+    <value>Change the Value</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step6_Content" xml:space="preserve">
+    <value>The Width value has been changed to 300. This creates an animation from 100 to 300 over time.</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step7_Title" xml:space="preserve">
+    <value>Preview the Animation</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step7_Content" xml:space="preserve">
+    <value>Press the Play button in the player to preview your animation.</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step8_Title" xml:space="preserve">
+    <value>Tutorial Complete!</value>
+  </data>
+  <data name="Tutorial_SceneEdit_Step8_Content" xml:space="preserve">
+    <value>Congratulations! You have learned how to add elements, edit properties, and create animations. Explore more features on your own!</value>
+  </data>
+  <data name="LearnBeutlBasics" xml:space="preserve">
+    <value>Learn the basics of Beutl</value>
+  </data>
+  <data name="NoTutorialsAvailable" xml:space="preserve">
+    <value>No tutorials available</value>
   </data>
   <data name="ParticleEmitter" xml:space="preserve">
     <value>Particle Emitter</value>
