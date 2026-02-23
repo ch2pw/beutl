@@ -195,6 +195,7 @@ public static class TimelineBasicsTutorial
                                 && animation.KeyFrames.LastOrDefault() is { Value: 100f or <= 100f } lastKeyFrame)
                             {
                                 lastKeyFrame.Value = 300f;
+                                editVm.HistoryManager.Commit(CommandNames.EditKeyFrame);
                             }
                         }
                     }
