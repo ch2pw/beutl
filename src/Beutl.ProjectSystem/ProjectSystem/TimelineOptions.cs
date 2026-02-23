@@ -56,5 +56,5 @@ public readonly record struct TimelineOptions
 
     public int MaxLayerCount { get; init; }
 
-    public BpmGridOptions BpmGrid { get; init; }
+    public BpmGridOptions BpmGrid { get; init; } = new();
 }
