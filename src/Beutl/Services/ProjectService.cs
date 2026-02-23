@@ -5,6 +5,7 @@ using Beutl.Logging;
 using Beutl.Models;
 using Beutl.ProjectSystem;
 using Beutl.Serialization;
+using Beutl.Services.Tutorials;
 using FluentAvalonia.UI.Controls;
 using Microsoft.Extensions.Logging;
 using NuGet.Versioning;

@@ -14,6 +14,7 @@ using Beutl.Helpers;
 using Beutl.Models;
 using Beutl.Services;
 using Beutl.ViewModels;
+using Beutl.Views.Tutorial;
 using DynamicData;
 using DynamicData.Binding;
 using FluentAvalonia.Styling;
@@ -208,6 +209,12 @@ public partial class EditorHostFallback : UserControl
                     break;
             }
         }
+    }
+
+    private async void StartTutorial_Click(object? sender, RoutedEventArgs e)
+    {
+        var dialog = new TutorialListDialog();
+        await dialog.ShowAsync();
     }
 
     private void InitRecentItems()

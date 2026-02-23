@@ -525,6 +525,9 @@
   <data name="Rename" xml:space="preserve">
     <value>Rename</value>
   </data>
+  <data name="ToggleMute" xml:space="preserve">
+    <value>Toggle Mute</value>
+  </data>
   <data name="Ellipse" xml:space="preserve">
     <value>Ellipse</value>
   </data>
@@ -2170,6 +2173,9 @@ Example: GetProperty&lt;double&gt;("{GUID}.Opacity")</value>
   </data>
   <data name="HoldLastFrame" xml:space="preserve">
     <value>Hold Last Frame</value>
+  </data>
+  <data name="Tutorials" xml:space="preserve">
+    <value>Tutorials</value>
   </data>
   <data name="ParticleEmitter" xml:space="preserve">
     <value>Particle Emitter</value>

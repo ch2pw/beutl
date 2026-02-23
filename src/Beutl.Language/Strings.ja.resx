@@ -530,6 +530,9 @@
   <data name="Rename" xml:space="preserve">
     <value>名前を変更</value>
   </data>
+  <data name="ToggleMute" xml:space="preserve">
+    <value>ミュート切替</value>
+  </data>
   <data name="Ellipse" xml:space="preserve">
     <value>楕円</value>
   </data>
@@ -2175,6 +2178,9 @@ GetProperty&lt;T&gt;("path") または GetProperty&lt;T&gt;(guid, "propertyName"
   </data>
   <data name="HoldLastFrame" xml:space="preserve">
     <value>最後のフレームを保持</value>
+  </data>
+  <data name="Tutorials" xml:space="preserve">
+    <value>チュートリアル</value>
   </data>
   <data name="ParticleEmitter" xml:space="preserve">
     <value>パーティクルエミッタ</value>

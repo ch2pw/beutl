@@ -8,6 +8,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:p="using:Beutl.Services.PrimitiveImpls"
              xmlns:ui="using:FluentAvalonia.UI.Controls"
+             xmlns:tutorial="using:Beutl.Views.Tutorial"
              xmlns:views="using:Beutl.Views"
              xmlns:vm="using:Beutl.ViewModels"
              xmlns:wnd="using:FluentAvalonia.UI.Windowing"
@@ -191,6 +192,8 @@
                 <MenuItem Header="{x:Static lang:Strings.Object}" />
                 <!--  ヘルプ  -->
                 <MenuItem Header="{x:Static lang:Strings.Help}">
+                    <MenuItem Click="OpenTutorialsDialog" Header="{x:Static lang:Strings.Tutorials}" />
+                    <Separator />
                     <MenuItem Click="GC_Collect_Click"
                               Header="GC.Collect"
                               IsVisible="{Binding IsDebuggerAttached}" />
@@ -318,6 +321,11 @@
                 </Style>
             </StackPanel.Styles>
         </StackPanel>
+
+        <!-- チュートリアルオーバーレイ -->
+        <tutorial:TutorialOverlay x:Name="TutorialOverlayPanel"
+                                  Grid.RowSpan="3"
+                                  IsVisible="False" />
     </Grid>
 
 </UserControl>

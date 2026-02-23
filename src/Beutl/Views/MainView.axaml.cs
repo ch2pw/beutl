@@ -8,6 +8,8 @@ using Beutl.Logging;
 using Beutl.Pages;
 using Beutl.Services;
 using Beutl.Services.PrimitiveImpls;
+using Beutl.Services.Tutorials;
+using Beutl.Views.Tutorial;
 using Beutl.Utilities;
 using Beutl.ViewModels;
 using Beutl.Views.Dialogs;
@@ -391,5 +393,11 @@ public sealed partial class MainView : UserControl
         var dialog = new SettingsDialog { DataContext = dialogViewModel };
         dialogViewModel.GoToAccountSettingsPage();
         await dialog.ShowDialog(window);
+    }
+
+    private async void OpenTutorialsDialog(object? sender, RoutedEventArgs e)
+    {
+        var dialog = new TutorialListDialog();
+        await dialog.ShowAsync();
     }
 }
