@@ -37,11 +37,11 @@ public partial class TutorialOverlay : UserControl
 
         TipTitle.Text = step.Title;
         TipContent.Text = step.Content;
-        StepCounter.Text = string.Format(Strings.TutorialStep, state.CurrentStepIndex + 1, state.TotalSteps);
+        StepCounter.Text = string.Format(TutorialStrings.TutorialStep, state.CurrentStepIndex + 1, state.TotalSteps);
 
         PreviousButton.IsVisible = !state.IsFirstStep;
         NextButton.IsVisible = !step.IsActionRequired || state.IsLastStep;
-        NextButton.Content = state.IsLastStep ? Strings.TutorialFinish : Strings.TutorialNext;
+        NextButton.Content = state.IsLastStep ? TutorialStrings.TutorialFinish : TutorialStrings.TutorialNext;
 
         UpdateTargetHighlight(step);
     }

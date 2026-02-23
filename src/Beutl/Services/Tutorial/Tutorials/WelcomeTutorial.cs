@@ -12,8 +12,8 @@ public static class WelcomeTutorial
         return new TutorialDefinition
         {
             Id = TutorialId,
-            Title = Strings.Tutorial_Welcome_Title,
-            Description = Strings.LearnBeutlBasics,
+            Title = TutorialStrings.Tutorial_Welcome_Title,
+            Description = TutorialStrings.LearnBeutlBasics,
             Trigger = TutorialTrigger.FirstRun,
             Priority = 0,
             Category = "basics",
@@ -22,23 +22,23 @@ public static class WelcomeTutorial
                 new TutorialStep
                 {
                     Id = "welcome-intro",
-                    Title = Strings.Tutorial_Welcome_Title,
-                    Content = Strings.Tutorial_Welcome_Content,
+                    Title = TutorialStrings.Tutorial_Welcome_Title,
+                    Content = TutorialStrings.Tutorial_Welcome_Content,
                     PreferredPlacement = TutorialStepPlacement.Center,
                 },
                 new TutorialStep
                 {
                     Id = "welcome-menubar",
-                    Title = Strings.Tutorial_Welcome_MenuBar_Title,
-                    Content = Strings.Tutorial_Welcome_MenuBar_Content,
+                    Title = TutorialStrings.Tutorial_Welcome_MenuBar_Title,
+                    Content = TutorialStrings.Tutorial_Welcome_MenuBar_Content,
                     TargetElementName = "MenuBar",
                     PreferredPlacement = TutorialStepPlacement.Bottom,
                 },
                 new TutorialStep
                 {
                     Id = "welcome-create",
-                    Title = Strings.Tutorial_Welcome_Create_Title,
-                    Content = Strings.Tutorial_Welcome_Create_Content,
+                    Title = TutorialStrings.Tutorial_Welcome_Create_Title,
+                    Content = TutorialStrings.Tutorial_Welcome_Create_Content,
                     TargetElementName = "createNewButton",
                     PreferredPlacement = TutorialStepPlacement.Bottom,
                 },

@@ -63,6 +63,16 @@
                         </ContextMenu>
                     </OptionsDisplayItem.ContextMenu>
                 </OptionsDisplayItem>
+
+                <OptionsDisplayItem Margin="4"
+                                    Description="{x:Static lang:TutorialStrings.LearnBeutlBasics}"
+                                    Header="{x:Static lang:TutorialStrings.StartTutorial}"
+                                    Navigates="True"
+                                    NavigationRequested="StartTutorial_Click">
+                    <OptionsDisplayItem.Icon>
+                        <ui:SymbolIcon Symbol="Help" />
+                    </OptionsDisplayItem.Icon>
+                </OptionsDisplayItem>
             </WrapPanel>
         </StackPanel>
 

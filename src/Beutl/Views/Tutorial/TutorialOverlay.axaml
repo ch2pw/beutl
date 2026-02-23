@@ -58,14 +58,14 @@
                                 Spacing="8">
                         <Button x:Name="SkipButton"
                                 Click="OnSkipClick"
-                                Content="{x:Static lang:Strings.TutorialSkip}"
+                                Content="{x:Static lang:TutorialStrings.TutorialSkip}"
                                 Theme="{StaticResource TransparentButton}" />
                         <Button x:Name="PreviousButton"
                                 Click="OnPreviousClick"
-                                Content="{x:Static lang:Strings.TutorialPrevious}" />
+                                Content="{x:Static lang:TutorialStrings.TutorialPrevious}" />
                         <Button x:Name="NextButton"
                                 Click="OnNextClick"
-                                Content="{x:Static lang:Strings.TutorialNext}"
+                                Content="{x:Static lang:TutorialStrings.TutorialNext}"
                                 Theme="{StaticResource AccentButtonStyle}" />
                     </StackPanel>
                 </Grid>

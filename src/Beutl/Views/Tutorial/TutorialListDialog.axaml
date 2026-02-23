@@ -40,7 +40,7 @@
         </ItemsControl>
 
         <TextBlock IsVisible="{Binding !#TutorialList.ItemCount}"
-                   Text="{x:Static lang:Strings.NoTutorialsAvailable}" />
+                   Text="{x:Static lang:TutorialStrings.NoTutorialsAvailable}" />
     </StackPanel>
 
 </ui:ContentDialog>

@@ -49,8 +49,8 @@ public static class TimelineBasicsTutorial
         return new TutorialDefinition
         {
             Id = TutorialId,
-            Title = Strings.Tutorial_SceneEdit_Title,
-            Description = Strings.Tutorial_SceneEdit_Description,
+            Title = TutorialStrings.Tutorial_SceneEdit_Title,
+            Description = TutorialStrings.Tutorial_SceneEdit_Description,
             Trigger = TutorialTrigger.FirstSceneOpen,
             Priority = 10,
             Category = "basics",
@@ -60,8 +60,8 @@ public static class TimelineBasicsTutorial
                 new TutorialStep
                 {
                     Id = "scene-add-ellipse",
-                    Title = Strings.Tutorial_SceneEdit_Step1_Title,
-                    Content = Strings.Tutorial_SceneEdit_Step1_Content,
+                    Title = TutorialStrings.Tutorial_SceneEdit_Step1_Title,
+                    Content = TutorialStrings.Tutorial_SceneEdit_Step1_Content,
                     TargetToolTabType = typeof(TimelineTabExtension),
                     PreferredPlacement = TutorialStepPlacement.Top,
                     IsActionRequired = true,
@@ -100,8 +100,8 @@ public static class TimelineBasicsTutorial
                 new TutorialStep
                 {
                     Id = "scene-select-element",
-                    Title = Strings.Tutorial_SceneEdit_Step2_Title,
-                    Content = Strings.Tutorial_SceneEdit_Step2_Content,
+                    Title = TutorialStrings.Tutorial_SceneEdit_Step2_Title,
+                    Content = TutorialStrings.Tutorial_SceneEdit_Step2_Content,
                     TargetToolTabType = typeof(TimelineTabExtension),
                     PreferredPlacement = TutorialStepPlacement.Top,
                     IsActionRequired = true,
@@ -140,8 +140,8 @@ public static class TimelineBasicsTutorial
                 new TutorialStep
                 {
                     Id = "scene-source-operators",
-                    Title = Strings.Tutorial_SceneEdit_Step3_Title,
-                    Content = Strings.Tutorial_SceneEdit_Step3_Content,
+                    Title = TutorialStrings.Tutorial_SceneEdit_Step3_Title,
+                    Content = TutorialStrings.Tutorial_SceneEdit_Step3_Content,
                     TargetToolTabType = typeof(SourceOperatorsTabExtension),
                     PreferredPlacement = TutorialStepPlacement.Left,
                 },
@@ -150,8 +150,8 @@ public static class TimelineBasicsTutorial
                 new TutorialStep
                 {
                     Id = "scene-enable-animation",
-                    Title = Strings.Tutorial_SceneEdit_Step4_Title,
-                    Content = Strings.Tutorial_SceneEdit_Step4_Content,
+                    Title = TutorialStrings.Tutorial_SceneEdit_Step4_Title,
+                    Content = TutorialStrings.Tutorial_SceneEdit_Step4_Content,
                     PreferredPlacement = TutorialStepPlacement.Bottom,
                     IsActionRequired = true,
                     TargetElementResolver = () =>
@@ -208,8 +208,8 @@ public static class TimelineBasicsTutorial
                 new TutorialStep
                 {
                     Id = "scene-add-keyframe",
-                    Title = Strings.Tutorial_SceneEdit_Step5_Title,
-                    Content = Strings.Tutorial_SceneEdit_Step5_Content,
+                    Title = TutorialStrings.Tutorial_SceneEdit_Step5_Title,
+                    Content = TutorialStrings.Tutorial_SceneEdit_Step5_Content,
                     PreferredPlacement = TutorialStepPlacement.Bottom,
                     IsActionRequired = true,
                     TargetElementResolver = () =>
@@ -271,8 +271,8 @@ public static class TimelineBasicsTutorial
                 new TutorialStep
                 {
                     Id = "scene-change-value",
-                    Title = Strings.Tutorial_SceneEdit_Step6_Title,
-                    Content = Strings.Tutorial_SceneEdit_Step6_Content,
+                    Title = TutorialStrings.Tutorial_SceneEdit_Step6_Title,
+                    Content = TutorialStrings.Tutorial_SceneEdit_Step6_Content,
                     PreferredPlacement = TutorialStepPlacement.Bottom,
                     TargetElementResolver = () =>
                     {
@@ -312,8 +312,8 @@ public static class TimelineBasicsTutorial
                 new TutorialStep
                 {
                     Id = "scene-preview-animation",
-                    Title = Strings.Tutorial_SceneEdit_Step7_Title,
-                    Content = Strings.Tutorial_SceneEdit_Step7_Content,
+                    Title = TutorialStrings.Tutorial_SceneEdit_Step7_Title,
+                    Content = TutorialStrings.Tutorial_SceneEdit_Step7_Content,
                     TargetElementName = "Player",
                     PreferredPlacement = TutorialStepPlacement.Bottom,
                     OnShown = () =>
@@ -335,8 +335,8 @@ public static class TimelineBasicsTutorial
                 new TutorialStep
                 {
                     Id = "scene-complete",
-                    Title = Strings.Tutorial_SceneEdit_Step8_Title,
-                    Content = Strings.Tutorial_SceneEdit_Step8_Content,
+                    Title = TutorialStrings.Tutorial_SceneEdit_Step8_Title,
+                    Content = TutorialStrings.Tutorial_SceneEdit_Step8_Content,
                     PreferredPlacement = TutorialStepPlacement.Center,
                 },
             ]

@@ -3445,15 +3445,6 @@ namespace Beutl.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Learn the basics of Beutl.
-        /// </summary>
-        public static string LearnBeutlBasics {
-            get {
-                return ResourceManager.GetString("LearnBeutlBasics", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Left.
         /// </summary>
         public static string Left {
@@ -4017,15 +4008,6 @@ namespace Beutl.Language {
         public static string NormalMapStrength {
             get {
                 return ResourceManager.GetString("NormalMapStrength", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No tutorials available.
-        /// </summary>
-        public static string NoTutorialsAvailable {
-            get {
-                return ResourceManager.GetString("NoTutorialsAvailable", resourceCulture);
             }
         }
         
@@ -5929,15 +5911,6 @@ namespace Beutl.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Start Tutorial.
-        /// </summary>
-        public static string StartTutorial {
-            get {
-                return ResourceManager.GetString("StartTutorial", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Strength.
         /// </summary>
         public static string Strength {
@@ -6307,272 +6280,11 @@ namespace Beutl.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Learn to add elements, edit properties, and create animations.
-        /// </summary>
-        public static string Tutorial_SceneEdit_Description {
-            get {
-                return ResourceManager.GetString("Tutorial_SceneEdit_Description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Right-click on the timeline and add an ellipse element. You can also drag and drop from the library..
-        /// </summary>
-        public static string Tutorial_SceneEdit_Step1_Content {
-            get {
-                return ResourceManager.GetString("Tutorial_SceneEdit_Step1_Content", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Add an Ellipse.
-        /// </summary>
-        public static string Tutorial_SceneEdit_Step1_Title {
-            get {
-                return ResourceManager.GetString("Tutorial_SceneEdit_Step1_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Click on the element you just added in the timeline to select it..
-        /// </summary>
-        public static string Tutorial_SceneEdit_Step2_Content {
-            get {
-                return ResourceManager.GetString("Tutorial_SceneEdit_Step2_Content", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Select the Element.
-        /// </summary>
-        public static string Tutorial_SceneEdit_Step2_Title {
-            get {
-                return ResourceManager.GetString("Tutorial_SceneEdit_Step2_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to This is the properties tab. You can view and edit the properties of the selected element here..
-        /// </summary>
-        public static string Tutorial_SceneEdit_Step3_Content {
-            get {
-                return ResourceManager.GetString("Tutorial_SceneEdit_Step3_Content", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Properties.
-        /// </summary>
-        public static string Tutorial_SceneEdit_Step3_Title {
-            get {
-                return ResourceManager.GetString("Tutorial_SceneEdit_Step3_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Find the Width property and click the menu icon next to it to enable animation. You can enable it with &quot;Edit animation&quot; or &quot;Edit animation in inline view&quot;.
-        /// </summary>
-        public static string Tutorial_SceneEdit_Step4_Content {
-            get {
-                return ResourceManager.GetString("Tutorial_SceneEdit_Step4_Content", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Enable Animation.
-        /// </summary>
-        public static string Tutorial_SceneEdit_Step4_Title {
-            get {
-                return ResourceManager.GetString("Tutorial_SceneEdit_Step4_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The playback position has been moved forward. Click the diamond icon to add a keyframe at this position..
-        /// </summary>
-        public static string Tutorial_SceneEdit_Step5_Content {
-            get {
-                return ResourceManager.GetString("Tutorial_SceneEdit_Step5_Content", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Add a Keyframe.
-        /// </summary>
-        public static string Tutorial_SceneEdit_Step5_Title {
-            get {
-                return ResourceManager.GetString("Tutorial_SceneEdit_Step5_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The Width value has been changed to 300. This creates an animation from 100 to 300 over time..
-        /// </summary>
-        public static string Tutorial_SceneEdit_Step6_Content {
-            get {
-                return ResourceManager.GetString("Tutorial_SceneEdit_Step6_Content", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Change the Value.
-        /// </summary>
-        public static string Tutorial_SceneEdit_Step6_Title {
-            get {
-                return ResourceManager.GetString("Tutorial_SceneEdit_Step6_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Press the Play button in the player to preview your animation..
-        /// </summary>
-        public static string Tutorial_SceneEdit_Step7_Content {
-            get {
-                return ResourceManager.GetString("Tutorial_SceneEdit_Step7_Content", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Preview the Animation.
-        /// </summary>
-        public static string Tutorial_SceneEdit_Step7_Title {
-            get {
-                return ResourceManager.GetString("Tutorial_SceneEdit_Step7_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Congratulations! You have learned how to add elements, edit properties, and create animations. Explore more features on your own!.
-        /// </summary>
-        public static string Tutorial_SceneEdit_Step8_Content {
-            get {
-                return ResourceManager.GetString("Tutorial_SceneEdit_Step8_Content", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Tutorial Complete!.
-        /// </summary>
-        public static string Tutorial_SceneEdit_Step8_Title {
-            get {
-                return ResourceManager.GetString("Tutorial_SceneEdit_Step8_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Scene Editing Basics.
-        /// </summary>
-        public static string Tutorial_SceneEdit_Title {
-            get {
-                return ResourceManager.GetString("Tutorial_SceneEdit_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Beutl is a cross-platform video editor. This tutorial will guide you through the basics..
-        /// </summary>
-        public static string Tutorial_Welcome_Content {
-            get {
-                return ResourceManager.GetString("Tutorial_Welcome_Content", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Click here to create a new project or scene to start editing..
-        /// </summary>
-        public static string Tutorial_Welcome_Create_Content {
-            get {
-                return ResourceManager.GetString("Tutorial_Welcome_Create_Content", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Create New.
-        /// </summary>
-        public static string Tutorial_Welcome_Create_Title {
-            get {
-                return ResourceManager.GetString("Tutorial_Welcome_Create_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The menu bar contains options for file management, editing, and more..
-        /// </summary>
-        public static string Tutorial_Welcome_MenuBar_Content {
-            get {
-                return ResourceManager.GetString("Tutorial_Welcome_MenuBar_Content", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Menu Bar.
-        /// </summary>
-        public static string Tutorial_Welcome_MenuBar_Title {
-            get {
-                return ResourceManager.GetString("Tutorial_Welcome_MenuBar_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Welcome to Beutl.
-        /// </summary>
-        public static string Tutorial_Welcome_Title {
-            get {
-                return ResourceManager.GetString("Tutorial_Welcome_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Finish.
-        /// </summary>
-        public static string TutorialFinish {
-            get {
-                return ResourceManager.GetString("TutorialFinish", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Next.
-        /// </summary>
-        public static string TutorialNext {
-            get {
-                return ResourceManager.GetString("TutorialNext", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Previous.
-        /// </summary>
-        public static string TutorialPrevious {
-            get {
-                return ResourceManager.GetString("TutorialPrevious", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Tutorials.
         /// </summary>
         public static string Tutorials {
             get {
                 return ResourceManager.GetString("Tutorials", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Skip Tutorial.
-        /// </summary>
-        public static string TutorialSkip {
-            get {
-                return ResourceManager.GetString("TutorialSkip", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Step {0} of {1}.
-        /// </summary>
-        public static string TutorialStep {
-            get {
-                return ResourceManager.GetString("TutorialStep", resourceCulture);
             }
         }
         
