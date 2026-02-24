@@ -138,14 +138,6 @@ public sealed class GraphEditorBackground : Control
             }
         }
 
-        double PixelsPerSecond = FrameNumberHelper.SecondWidth;
-        double right = viewport.Right;
-        double originX = Math.Floor(viewport.X / PixelsPerSecond) * PixelsPerSecond;
-        for (double x = originX; x < right; x += PixelsPerSecond)
-        {
-            context.DrawLine(_pen, new(x, viewport.Top), new(x, viewport.Bottom));
-        }
-
         using (context.PushOpacity(0.1))
         {
             double maxPixel = Maximum * _scale;

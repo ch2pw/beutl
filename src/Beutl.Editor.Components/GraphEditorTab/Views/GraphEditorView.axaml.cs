@@ -862,4 +862,24 @@ public partial class GraphEditorView : UserControl
             viewModel.UpdateUseGlobalClock(!viewModel.UseGlobalClock.Value);
         }
     }
+
+    private void ShowBpmGridFlyout(object? sender, RoutedEventArgs e)
+    {
+        if (DataContext is not GraphEditorViewModel viewModel) return;
+
+        var bpmGrid = viewModel.Options.Value.BpmGrid;
+        var flyout = new Editor.Components.Views.BpmGridFlyout
+        {
+            IsEnabledChecked = bpmGrid.IsEnabled,
+            Bpm = (decimal)bpmGrid.Bpm,
+            Subdivisions = bpmGrid.Subdivisions,
+            OffsetSeconds = (decimal)bpmGrid.Offset.TotalSeconds,
+        };
+        flyout.OptionsChanged += (_, options) =>
+        {
+            viewModel.Options.Value = viewModel.Options.Value with { BpmGrid = options };
+        };
+
+        flyout.ShowAt(graphPanel, true);
+    }
 }

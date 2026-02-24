@@ -9,8 +9,8 @@
 
 namespace Beutl.Language {
     using System;
-    
-    
+
+
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -22,15 +22,15 @@ namespace Beutl.Language {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Strings {
-        
+
         private static global::System.Resources.ResourceManager resourceMan;
-        
+
         private static global::System.Globalization.CultureInfo resourceCulture;
-        
+
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal Strings() {
         }
-        
+
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
@@ -44,7 +44,7 @@ namespace Beutl.Language {
                 return resourceMan;
             }
         }
-        
+
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
@@ -58,7 +58,7 @@ namespace Beutl.Language {
                 resourceCulture = value;
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to About Beutl.
         /// </summary>
@@ -67,7 +67,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("AboutBeutl", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Account.
         /// </summary>
@@ -76,7 +76,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Account", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Add.
         /// </summary>
@@ -85,7 +85,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Add", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Add Element.
         /// </summary>
@@ -94,7 +94,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("AddElement", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Addition.
         /// </summary>
@@ -103,7 +103,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Addition", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Add node.
         /// </summary>
@@ -112,7 +112,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("AddNode", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Add Profile.
         /// </summary>
@@ -121,7 +121,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("AddOutputProfile", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Add to Favorites.
         /// </summary>
@@ -130,7 +130,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("AddToFavorites", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Adjust Time Range.
         /// </summary>
@@ -139,7 +139,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("AdjustTimeRange", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Agree.
         /// </summary>
@@ -148,7 +148,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Agree", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Albedo.
         /// </summary>
@@ -157,7 +157,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Albedo", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Albedo Map.
         /// </summary>
@@ -166,7 +166,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("AlbedoMap", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Alignment X.
         /// </summary>
@@ -175,7 +175,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("AlignmentX", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Alignment Y.
         /// </summary>
@@ -184,7 +184,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("AlignmentY", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to All.
         /// </summary>
@@ -193,7 +193,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("All", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Alpha Offset.
         /// </summary>
@@ -202,7 +202,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("AlphaOffset", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Always display.
         /// </summary>
@@ -211,7 +211,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("AlwaysDisplay", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Ambient Color.
         /// </summary>
@@ -220,7 +220,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("AmbientColor", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Ambient Intensity.
         /// </summary>
@@ -229,7 +229,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("AmbientIntensity", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Ambient Occlusion.
         /// </summary>
@@ -238,7 +238,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("AmbientOcclusion", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Amount.
         /// </summary>
@@ -247,7 +247,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Amount", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Angle.
         /// </summary>
@@ -256,7 +256,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Angle", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Animation.
         /// </summary>
@@ -265,7 +265,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Animation", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to The property type of the pasted animation does not match. (Expected: {0}, Actual: {1}).
         /// </summary>
@@ -274,7 +274,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("AnimationPropertyTypeMismatch", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to AO Map.
         /// </summary>
@@ -283,7 +283,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("AOMap", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to API Error.
         /// </summary>
@@ -292,7 +292,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("APIError", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Apply.
         /// </summary>
@@ -301,7 +301,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Apply", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Asymmetry.
         /// </summary>
@@ -310,7 +310,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Asymmetry", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Audio.
         /// </summary>
@@ -319,7 +319,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Audio", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Audio Effect.
         /// </summary>
@@ -328,7 +328,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("AudioEffect", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Automatic Centering.
         /// </summary>
@@ -337,7 +337,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("AutomaticCentering", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Available GPUs.
         /// </summary>
@@ -346,7 +346,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("AvailableGPUs", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Available Memory.
         /// </summary>
@@ -355,7 +355,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("AvailableMemory", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to AVFoundation Decoder.
         /// </summary>
@@ -364,7 +364,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("AVFoundationDecoder", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to AVFoundation Encoder.
         /// </summary>
@@ -373,7 +373,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("AVFoundationEncoder", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
@@ -382,7 +382,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Back", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Backdrop.
         /// </summary>
@@ -391,7 +391,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Backdrop", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Background Color.
         /// </summary>
@@ -400,7 +400,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BackgroundColor", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Base Frequency X.
         /// </summary>
@@ -409,7 +409,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BaseFrequencyX", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Base Frequency Y.
         /// </summary>
@@ -418,7 +418,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BaseFrequencyY", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Basic Material.
         /// </summary>
@@ -427,7 +427,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BasicMaterial", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Bitmap Interpolation Mode.
         /// </summary>
@@ -436,7 +436,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BitmapInterpolationMode", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Bitrate.
         /// </summary>
@@ -445,7 +445,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Bitrate", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Set the bitrate.
         /// </summary>
@@ -454,7 +454,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Bitrate_Tip", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Blend.
         /// </summary>
@@ -463,7 +463,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendEffect", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Blend Mode.
         /// </summary>
@@ -472,7 +472,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Clear.
         /// </summary>
@@ -481,7 +481,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Clear", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Clears the content to transparent..
         /// </summary>
@@ -490,7 +490,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Clear_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Color.
         /// </summary>
@@ -499,7 +499,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Color", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Applies the foreground hue and saturation to the background&apos;s luminance..
         /// </summary>
@@ -508,7 +508,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Color_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Color Burn.
         /// </summary>
@@ -517,7 +517,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_ColorBurn", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Darkens the background by burning it with the foreground color..
         /// </summary>
@@ -526,7 +526,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_ColorBurn_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Color Dodge.
         /// </summary>
@@ -535,7 +535,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_ColorDodge", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Brightens the background by adding the foreground color..
         /// </summary>
@@ -544,7 +544,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_ColorDodge_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Darken.
         /// </summary>
@@ -553,7 +553,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Darken", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Keeps the darker color of the foreground or background..
         /// </summary>
@@ -562,7 +562,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Darken_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Difference.
         /// </summary>
@@ -571,7 +571,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Difference", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Emphasizes the absolute color differences..
         /// </summary>
@@ -580,7 +580,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Difference_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Keep Original.
         /// </summary>
@@ -589,7 +589,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Dst", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Keeps the original content unchanged..
         /// </summary>
@@ -598,7 +598,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Dst_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Background On Top.
         /// </summary>
@@ -607,7 +607,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_DstATop", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Places the background on top and keeps the foreground outside..
         /// </summary>
@@ -616,7 +616,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_DstATop_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Background Inside.
         /// </summary>
@@ -625,7 +625,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_DstIn", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Clips the background to the shape of the foreground..
         /// </summary>
@@ -634,7 +634,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_DstIn_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Background Outside.
         /// </summary>
@@ -643,7 +643,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_DstOut", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Keeps the area outside the foreground for the background..
         /// </summary>
@@ -652,7 +652,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_DstOut_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Background Over.
         /// </summary>
@@ -661,7 +661,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_DstOver", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Places the background beneath the foreground..
         /// </summary>
@@ -670,7 +670,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_DstOver_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Exclusion.
         /// </summary>
@@ -679,7 +679,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Exclusion", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Creates a softer difference effect..
         /// </summary>
@@ -688,7 +688,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Exclusion_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Hard Light.
         /// </summary>
@@ -697,7 +697,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_HardLight", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Simulates a harsh spotlight effect to enhance contrast..
         /// </summary>
@@ -706,7 +706,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_HardLight_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Hue.
         /// </summary>
@@ -715,7 +715,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Hue", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Applies the foreground hue to the background&apos;s luminance and saturation..
         /// </summary>
@@ -724,7 +724,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Hue_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Lighten.
         /// </summary>
@@ -733,7 +733,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Lighten", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Keeps the lighter color of the foreground or background..
         /// </summary>
@@ -742,7 +742,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Lighten_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Luminosity.
         /// </summary>
@@ -751,7 +751,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Luminosity", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Applies the foreground luminance to the background&apos;s hue and saturation..
         /// </summary>
@@ -760,7 +760,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Luminosity_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Blend by Opacity.
         /// </summary>
@@ -769,7 +769,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Modulate", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Combines the colors of the foreground and background based on their transparency (alpha values)..
         /// </summary>
@@ -778,7 +778,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Modulate_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Multiply Colors.
         /// </summary>
@@ -787,7 +787,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Multiply", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Multiplies the RGB color values of the foreground and background, creating a darker effect..
         /// </summary>
@@ -796,7 +796,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Multiply_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Overlay.
         /// </summary>
@@ -805,7 +805,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Overlay", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Combines the foreground and background to enhance contrast..
         /// </summary>
@@ -814,7 +814,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Overlay_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Additive.
         /// </summary>
@@ -823,7 +823,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Plus", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Adds the colors of the foreground and background..
         /// </summary>
@@ -832,7 +832,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Plus_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Saturation.
         /// </summary>
@@ -841,7 +841,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Saturation", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Applies the foreground saturation to the background&apos;s hue and luminance..
         /// </summary>
@@ -850,7 +850,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Saturation_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Screen.
         /// </summary>
@@ -859,7 +859,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Screen", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Multiplies the inverted colors of the foreground and background, creating a lighter effect..
         /// </summary>
@@ -868,7 +868,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Screen_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Soft Light.
         /// </summary>
@@ -877,7 +877,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_SoftLight", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Simulates a diffused spotlight for smoother lighting effects..
         /// </summary>
@@ -886,7 +886,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_SoftLight_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Overwrite.
         /// </summary>
@@ -895,7 +895,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Src", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Paints over the existing content..
         /// </summary>
@@ -904,7 +904,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Src_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Foreground On Top.
         /// </summary>
@@ -913,7 +913,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_SrcATop", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Places the foreground on top and keeps the background outside..
         /// </summary>
@@ -922,7 +922,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_SrcATop_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Foreground Inside.
         /// </summary>
@@ -931,7 +931,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_SrcIn", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Clips the foreground to the shape of the background..
         /// </summary>
@@ -940,7 +940,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_SrcIn_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Foreground Outside.
         /// </summary>
@@ -949,7 +949,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_SrcOut", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Keeps the area outside the background for the foreground..
         /// </summary>
@@ -958,7 +958,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_SrcOut_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Foreground Over.
         /// </summary>
@@ -967,7 +967,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_SrcOver", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Places the foreground over the background..
         /// </summary>
@@ -976,7 +976,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_SrcOver_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Exclusive Blend.
         /// </summary>
@@ -985,7 +985,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Xor", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Makes overlapping areas transparent, keeping non-overlapping areas..
         /// </summary>
@@ -994,7 +994,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlendMode_Xor_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Blue.
         /// </summary>
@@ -1003,7 +1003,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Blue", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Blue curve.
         /// </summary>
@@ -1012,7 +1012,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlueCurve", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Blue Offset.
         /// </summary>
@@ -1021,7 +1021,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BlueOffset", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Blur.
         /// </summary>
@@ -1030,7 +1030,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Blur", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Border.
         /// </summary>
@@ -1039,7 +1039,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Border", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Border Style.
         /// </summary>
@@ -1048,7 +1048,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BorderStyle", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Bottom.
         /// </summary>
@@ -1057,7 +1057,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Bottom", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Boundary correction.
         /// </summary>
@@ -1066,7 +1066,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BoundaryCorrection", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Brightness.
         /// </summary>
@@ -1075,7 +1075,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Brightness", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Brightness Range.
         /// </summary>
@@ -1084,7 +1084,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BrightnessRange", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Bring to the top.
         /// </summary>
@@ -1093,7 +1093,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("BringToTop", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Brush.
         /// </summary>
@@ -1102,7 +1102,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Brush", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Conical gradient.
         /// </summary>
@@ -1111,7 +1111,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Brush_ConicalGradient", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Linear gradient.
         /// </summary>
@@ -1120,7 +1120,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Brush_LinearGradient", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Perlin noise.
         /// </summary>
@@ -1129,7 +1129,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Brush_PerlinNoise", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Radial gradient.
         /// </summary>
@@ -1138,7 +1138,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Brush_RadialGradient", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Solid.
         /// </summary>
@@ -1147,7 +1147,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Brush_Solid", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Camera.
         /// </summary>
@@ -1156,7 +1156,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Camera", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
@@ -1165,7 +1165,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Cancel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Cast Shadows.
         /// </summary>
@@ -1174,7 +1174,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("CastShadows", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Casts Shadow.
         /// </summary>
@@ -1183,7 +1183,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("CastsShadow", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Center.
         /// </summary>
@@ -1192,7 +1192,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Center", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Center X.
         /// </summary>
@@ -1201,7 +1201,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("CenterX", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Center Y.
         /// </summary>
@@ -1210,7 +1210,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("CenterY", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Center Z.
         /// </summary>
@@ -1219,7 +1219,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("CenterZ", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Change.
         /// </summary>
@@ -1228,7 +1228,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Change", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Change color.
         /// </summary>
@@ -1237,7 +1237,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ChangeColor", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Change to original length.
         /// </summary>
@@ -1246,7 +1246,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ChangeToOriginalLength", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Channels.
         /// </summary>
@@ -1255,7 +1255,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Channels", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Set the number of channels.
         /// </summary>
@@ -1264,7 +1264,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Channels_Tip", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Character Spacing.
         /// </summary>
@@ -1273,7 +1273,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("CharactorSpacing", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Children.
         /// </summary>
@@ -1282,7 +1282,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Children", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Chroma key.
         /// </summary>
@@ -1291,7 +1291,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ChromaKey", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Clear Buffer.
         /// </summary>
@@ -1300,7 +1300,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ClearBuffer", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Clipping.
         /// </summary>
@@ -1309,7 +1309,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Clipping", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Clip transparent area.
         /// </summary>
@@ -1318,7 +1318,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ClipTransparentArea", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Close.
         /// </summary>
@@ -1327,7 +1327,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Close", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Close Project.
         /// </summary>
@@ -1336,7 +1336,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("CloseProject", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Close the current project.
         /// </summary>
@@ -1345,7 +1345,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("CloseProject_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Color.
         /// </summary>
@@ -1354,7 +1354,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Color", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to No Color Curves effect is selected..
         /// </summary>
@@ -1363,7 +1363,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ColorCurves_Missing", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Color Grading.
         /// </summary>
@@ -1372,7 +1372,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ColorGrading", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to No Color Grading effect is selected..
         /// </summary>
@@ -1381,7 +1381,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ColorGrading_Missing", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Color key.
         /// </summary>
@@ -1390,7 +1390,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ColorKey", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Color Map.
         /// </summary>
@@ -1399,7 +1399,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ColorMap", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Color Palette.
         /// </summary>
@@ -1408,7 +1408,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ColorPalette", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Scopes.
         /// </summary>
@@ -1417,7 +1417,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ColorScopes", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Color Shift.
         /// </summary>
@@ -1426,7 +1426,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ColorShift", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Completed.
         /// </summary>
@@ -1435,7 +1435,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Completed", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Conic.
         /// </summary>
@@ -1444,7 +1444,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Conic", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Conical.
         /// </summary>
@@ -1453,7 +1453,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Conical", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Constant Attenuation.
         /// </summary>
@@ -1462,7 +1462,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ConstantAttenuation", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Contrast.
         /// </summary>
@@ -1471,7 +1471,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Contrast", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Contrast Pivot.
         /// </summary>
@@ -1480,7 +1480,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ContrastPivot", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Control Point.
         /// </summary>
@@ -1489,7 +1489,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ControlPoint", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Control Point 1.
         /// </summary>
@@ -1498,7 +1498,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ControlPoint1", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Control Point 2.
         /// </summary>
@@ -1507,7 +1507,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ControlPoint2", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Convert to preset.
         /// </summary>
@@ -1516,7 +1516,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Convert_to_preset", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Copy.
         /// </summary>
@@ -1525,7 +1525,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Copy", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Copy the selected item..
         /// </summary>
@@ -1534,7 +1534,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Copy_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Copy All.
         /// </summary>
@@ -1543,7 +1543,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("CopyAll", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Copy as image.
         /// </summary>
@@ -1552,7 +1552,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("CopyAsImage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Copy GetProperty code.
         /// </summary>
@@ -1561,7 +1561,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("CopyGetPropertyCode", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Copy property path.
         /// </summary>
@@ -1570,7 +1570,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("CopyPropertyPath", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Corner Radius.
         /// </summary>
@@ -1579,7 +1579,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("CornerRadius", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Create New.
         /// </summary>
@@ -1588,7 +1588,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("CreateNew", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Create new project.
         /// </summary>
@@ -1597,7 +1597,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("CreateNewProject", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Create new project or scene.
         /// </summary>
@@ -1606,7 +1606,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("CreateNewProjectOrScene", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Create new scene.
         /// </summary>
@@ -1615,7 +1615,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("CreateNewScene", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Crop selection.
         /// </summary>
@@ -1624,7 +1624,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("CropSelection", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to C# Script.
         /// </summary>
@@ -1633,7 +1633,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("CSharpScriptEffect", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Cube.
         /// </summary>
@@ -1642,7 +1642,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Cube3D", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Cube Mesh.
         /// </summary>
@@ -1651,7 +1651,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("CubeMesh", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Cubic Bezier curve.
         /// </summary>
@@ -1660,7 +1660,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("CubicBezierCurve", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Current.
         /// </summary>
@@ -1669,7 +1669,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Current", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Curves.
         /// </summary>
@@ -1678,7 +1678,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Curves", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Custom (RGB).
         /// </summary>
@@ -1687,7 +1687,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("CustomCurve", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Cut.
         /// </summary>
@@ -1696,7 +1696,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Cut", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Cut the selected item..
         /// </summary>
@@ -1705,7 +1705,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Cut_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Dark.
         /// </summary>
@@ -1714,7 +1714,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Dark", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Data.
         /// </summary>
@@ -1723,7 +1723,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Data", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Decorator.
         /// </summary>
@@ -1732,7 +1732,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Decorator", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Delay.
         /// </summary>
@@ -1741,7 +1741,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Delay", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Delay Time (ms).
         /// </summary>
@@ -1750,7 +1750,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("DelayTime", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
@@ -1759,7 +1759,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Delete", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Delete the selected item..
         /// </summary>
@@ -1768,7 +1768,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Delete_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Delete All.
         /// </summary>
@@ -1777,7 +1777,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("DeleteAll", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Delete {0} items?.
         /// </summary>
@@ -1786,7 +1786,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("DeleteSelectedItems", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Depth.
         /// </summary>
@@ -1795,7 +1795,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Depth", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Destination.
         /// </summary>
@@ -1804,7 +1804,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("DestinationRect", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Destination to save to.
         /// </summary>
@@ -1813,7 +1813,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("DestinationToSaveTo", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Set the destination.
         /// </summary>
@@ -1822,7 +1822,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("DestinationToSaveTo_Tip", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Details.
         /// </summary>
@@ -1831,7 +1831,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Details", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Difference.
         /// </summary>
@@ -1840,7 +1840,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Difference", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Diffuse Color.
         /// </summary>
@@ -1849,7 +1849,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("DiffuseColor", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Diffuse Map.
         /// </summary>
@@ -1858,7 +1858,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("DiffuseMap", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Dilate.
         /// </summary>
@@ -1867,7 +1867,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Dilate", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Direction.
         /// </summary>
@@ -1876,7 +1876,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Direction", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Directional Light.
         /// </summary>
@@ -1885,7 +1885,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("DirectionalLight3D", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Disable Thumbnails.
         /// </summary>
@@ -1894,7 +1894,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("DisableThumbnails", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Disagree.
         /// </summary>
@@ -1903,7 +1903,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Disagree", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Discard changes.
         /// </summary>
@@ -1912,7 +1912,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("DiscardChanges", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Disconnect.
         /// </summary>
@@ -1921,7 +1921,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Disconnect", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Displacement Map.
         /// </summary>
@@ -1930,7 +1930,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("DisplacementMap", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Display mode.
         /// </summary>
@@ -1939,7 +1939,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("DisplayMode", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Bottom Left.
         /// </summary>
@@ -1948,7 +1948,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("DockArea_BottomLeft", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Bottom Right.
         /// </summary>
@@ -1957,7 +1957,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("DockArea_BottomRight", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Left Bottom.
         /// </summary>
@@ -1966,7 +1966,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("DockArea_LeftBottom", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Left Top.
         /// </summary>
@@ -1975,7 +1975,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("DockArea_LeftTop", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Right Bottom.
         /// </summary>
@@ -1984,7 +1984,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("DockArea_RightBottom", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Right Top.
         /// </summary>
@@ -1993,7 +1993,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("DockArea_RightTop", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Top Left.
         /// </summary>
@@ -2002,7 +2002,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("DockArea_TopLeft", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Top Right.
         /// </summary>
@@ -2011,7 +2011,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("DockArea_TopRight", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Docked.
         /// </summary>
@@ -2020,7 +2020,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Docked", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Drawable.
         /// </summary>
@@ -2029,7 +2029,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Drawable", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Drawable Texture.
         /// </summary>
@@ -2038,7 +2038,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("DrawableTextureSource", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Drop Shadow.
         /// </summary>
@@ -2047,7 +2047,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("DropShadow", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Dry Mix (%).
         /// </summary>
@@ -2056,7 +2056,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("DryMix", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Duration Time.
         /// </summary>
@@ -2065,7 +2065,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("DurationTime", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Easing.
         /// </summary>
@@ -2074,7 +2074,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Easing", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Easings.
         /// </summary>
@@ -2083,7 +2083,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Easings", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Edit.
         /// </summary>
@@ -2092,7 +2092,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Edit", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Edit animation.
         /// </summary>
@@ -2101,7 +2101,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("EditAnimation", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Edit animation in inline view.
         /// </summary>
@@ -2110,7 +2110,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("EditAnimationInInlineView", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Edit drawable.
         /// </summary>
@@ -2119,7 +2119,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("EditDrawable", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Edit expression.
         /// </summary>
@@ -2128,7 +2128,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("EditExpression", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Edit in frame.
         /// </summary>
@@ -2137,7 +2137,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("EditInFrame", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Edit in tab.
         /// </summary>
@@ -2146,7 +2146,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("EditInTab", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Edit Json.
         /// </summary>
@@ -2155,7 +2155,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("EditJson", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Editor.
         /// </summary>
@@ -2164,7 +2164,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Editor", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Editors.
         /// </summary>
@@ -2173,7 +2173,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Editors", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Effect.
         /// </summary>
@@ -2182,7 +2182,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Effect", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Elapsed time.
         /// </summary>
@@ -2191,7 +2191,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ElapsedTime", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Element.
         /// </summary>
@@ -2200,7 +2200,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Element", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Ellipse.
         /// </summary>
@@ -2209,7 +2209,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Ellipse", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Elliptical arc.
         /// </summary>
@@ -2218,7 +2218,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("EllipticalArc", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Emissive.
         /// </summary>
@@ -2227,7 +2227,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Emissive", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Emissive Intensity.
         /// </summary>
@@ -2236,7 +2236,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("EmissiveIntensity", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Emissive Map.
         /// </summary>
@@ -2245,7 +2245,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("EmissiveMap", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Enabled Extensions.
         /// </summary>
@@ -2254,7 +2254,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("EnabledExtensions", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Enable element.
         /// </summary>
@@ -2263,7 +2263,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("EnableElement", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Enable Live Preview.
         /// </summary>
@@ -2272,7 +2272,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("EnableLivePreview", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Encode.
         /// </summary>
@@ -2281,7 +2281,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Encode", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Encoder.
         /// </summary>
@@ -2290,7 +2290,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Encoder", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Select an encoder.
         /// </summary>
@@ -2299,7 +2299,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Encoder_Tip", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to End Point.
         /// </summary>
@@ -2308,7 +2308,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("EndPoint", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Erode.
         /// </summary>
@@ -2317,7 +2317,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Erode", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
@@ -2326,7 +2326,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Error", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Exclude.
         /// </summary>
@@ -2335,7 +2335,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Exclude", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Exclude the selected item..
         /// </summary>
@@ -2344,7 +2344,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Exclude_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Exclude Alpha channel.
         /// </summary>
@@ -2353,7 +2353,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ExcludeAlphaChannel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Exit.
         /// </summary>
@@ -2362,7 +2362,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Exit", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Exit the application.
         /// </summary>
@@ -2371,7 +2371,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Exit_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Experimental.
         /// </summary>
@@ -2380,7 +2380,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Experimental", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Exporting project....
         /// </summary>
@@ -2389,7 +2389,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ExportingProject", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Export Project....
         /// </summary>
@@ -2398,7 +2398,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ExportProject", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Exposure.
         /// </summary>
@@ -2407,7 +2407,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Exposure", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Functions.
         /// </summary>
@@ -2416,7 +2416,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Expression_Functions", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Interpolation: Lerp, InverseLerp, Remap, Smoothstep.
         /// </summary>
@@ -2425,7 +2425,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Expression_Functions_Interpolation", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Math: Sqrt, Pow, Exp, Log, Log10, Log2
         ///Rounding: Abs, Floor, Ceil, Round, Truncate, Sign
@@ -2436,7 +2436,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Expression_Functions_Math", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Trigonometric: Sin, Cos, Tan, Asin, Acos, Atan, Atan2
         ///Hyperbolic: Sinh, Cosh, Tanh.
@@ -2446,7 +2446,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Expression_Functions_Trigonometric", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Utility: Radians, Degrees, Mod, Frac
         ///Random: Random(seed), Random(seed, min, max), FrameRandom(), FrameRandom(min, max).
@@ -2456,7 +2456,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Expression_Functions_Utility", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Reference other properties:
         ///GetProperty&lt;T&gt;(&quot;path&quot;) or GetProperty&lt;T&gt;(guid, &quot;propertyName&quot;)
@@ -2467,7 +2467,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Expression_GetProperty_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Help.
         /// </summary>
@@ -2476,7 +2476,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Expression_Help", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Input.
         /// </summary>
@@ -2485,7 +2485,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Expression_Input", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Variables.
         /// </summary>
@@ -2494,7 +2494,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Expression_Variables", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Time: Current time relative to the element start (seconds)
         ///Start: Element start time (seconds)
@@ -2507,7 +2507,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Expression_Variables_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Enter a mathematical expression. Available variables: Time, Start, Duration, Progress. Use GetProperty&lt;T&gt;(&quot;{GUID}.Property&quot;) to reference other properties..
         /// </summary>
@@ -2516,7 +2516,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ExpressionHelp", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Extensions.
         /// </summary>
@@ -2525,7 +2525,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Extensions", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Extensions Settings.
         /// </summary>
@@ -2534,7 +2534,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ExtensionsSettings", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to copy animation.
         /// </summary>
@@ -2543,7 +2543,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("FailedToCopyAnimation", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to copy keyframe.
         /// </summary>
@@ -2552,7 +2552,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("FailedToCopyKeyframe", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to paste keyframe.
         /// </summary>
@@ -2561,7 +2561,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("FailedToPasteKeyframe", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Far Plane.
         /// </summary>
@@ -2570,7 +2570,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("FarPlane", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Favorites.
         /// </summary>
@@ -2579,7 +2579,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Favorites", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Feedback (%).
         /// </summary>
@@ -2588,7 +2588,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Feedback", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Field of View.
         /// </summary>
@@ -2597,7 +2597,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("FieldOfView", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Figure.
         /// </summary>
@@ -2606,7 +2606,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Figure", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to File.
         /// </summary>
@@ -2615,7 +2615,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("File", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to File Browser.
         /// </summary>
@@ -2624,7 +2624,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("FileBrowser", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Files.
         /// </summary>
@@ -2633,7 +2633,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Files", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Fill.
         /// </summary>
@@ -2642,7 +2642,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Fill", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Fill Type.
         /// </summary>
@@ -2651,7 +2651,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("FillType", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Filter Effect.
         /// </summary>
@@ -2660,7 +2660,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("FilterEffect", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Finish editing.
         /// </summary>
@@ -2669,7 +2669,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("FinishEditing", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Fix Image Size.
         /// </summary>
@@ -2678,7 +2678,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("FixImageSize", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Flat Shadow.
         /// </summary>
@@ -2687,7 +2687,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("FlatShadow", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Floating.
         /// </summary>
@@ -2696,7 +2696,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Floating", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Follow Rotation.
         /// </summary>
@@ -2705,7 +2705,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("FollowRotation", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Follow System.
         /// </summary>
@@ -2714,7 +2714,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("FollowSystem", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Font.
         /// </summary>
@@ -2723,7 +2723,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Font", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Font Family.
         /// </summary>
@@ -2732,7 +2732,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("FontFamily", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Font Style.
         /// </summary>
@@ -2741,7 +2741,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("FontStyle", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Font Weight.
         /// </summary>
@@ -2750,7 +2750,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("FontWeight", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Frame cache.
         /// </summary>
@@ -2759,7 +2759,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("FrameCache", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Frame rate.
         /// </summary>
@@ -2768,7 +2768,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("FrameRate", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Set the framerate.
         /// </summary>
@@ -2777,7 +2777,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("FrameRate_Tip", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Frame size.
         /// </summary>
@@ -2786,7 +2786,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("FrameSize", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Set the frame size.
         /// </summary>
@@ -2795,7 +2795,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("FrameSize_Tip", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Gain.
         /// </summary>
@@ -2804,7 +2804,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Gain", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Gamma.
         /// </summary>
@@ -2813,7 +2813,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Gamma", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Geometry.
         /// </summary>
@@ -2822,7 +2822,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Geometry", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Geometry.
         /// </summary>
@@ -2831,7 +2831,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("GeometryShape", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to GLSL Script.
         /// </summary>
@@ -2840,7 +2840,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("GLSLScriptEffect", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Gradient Origin.
         /// </summary>
@@ -2849,7 +2849,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("GradientOrigin", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Stops.
         /// </summary>
@@ -2858,7 +2858,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("GradientStops", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Graph Editor.
         /// </summary>
@@ -2867,7 +2867,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("GraphEditor", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Grayscale.
         /// </summary>
@@ -2876,7 +2876,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Grayscale", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Green.
         /// </summary>
@@ -2885,7 +2885,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Green", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Green curve.
         /// </summary>
@@ -2894,7 +2894,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("GreenCurve", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Green Offset.
         /// </summary>
@@ -2903,7 +2903,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("GreenOffset", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Group.
         /// </summary>
@@ -2912,7 +2912,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Group", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Group.
         /// </summary>
@@ -2921,7 +2921,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Group3D", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Group selected elements.
         /// </summary>
@@ -2930,7 +2930,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("GroupSelectedElements", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Hand.
         /// </summary>
@@ -2939,7 +2939,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Hand", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Height.
         /// </summary>
@@ -2948,7 +2948,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Height", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Height Segments.
         /// </summary>
@@ -2957,7 +2957,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("HeightSegments", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Help.
         /// </summary>
@@ -2966,7 +2966,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Help", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to High Contrast.
         /// </summary>
@@ -2975,7 +2975,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("HighContrast", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Highlights.
         /// </summary>
@@ -2984,7 +2984,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Highlights", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to High Range.
         /// </summary>
@@ -2993,7 +2993,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("HighRange", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Histogram.
         /// </summary>
@@ -3002,7 +3002,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Histogram", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Hold First Frame.
         /// </summary>
@@ -3011,7 +3011,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("HoldFirstFrame", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Hold Last Frame.
         /// </summary>
@@ -3020,7 +3020,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("HoldLastFrame", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
@@ -3029,7 +3029,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Home", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Horizontal divisions.
         /// </summary>
@@ -3038,7 +3038,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("HorizontalDivisions", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Horizontal spacing.
         /// </summary>
@@ -3047,7 +3047,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("HorizontalSpacing", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Hue.
         /// </summary>
@@ -3056,7 +3056,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Hue", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Hue Range.
         /// </summary>
@@ -3065,7 +3065,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("HueRange", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Hue Rotate.
         /// </summary>
@@ -3074,7 +3074,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("HueRotate", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Hue vs Hue.
         /// </summary>
@@ -3083,7 +3083,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("HueVsHue", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Hue vs Luminance.
         /// </summary>
@@ -3092,7 +3092,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("HueVsLuminance", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Hue vs Saturation.
         /// </summary>
@@ -3101,7 +3101,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("HueVsSaturation", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Icon View.
         /// </summary>
@@ -3110,7 +3110,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("IconView", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Image.
         /// </summary>
@@ -3119,7 +3119,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Image", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Image Filter.
         /// </summary>
@@ -3128,7 +3128,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ImageFilter", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Image Texture.
         /// </summary>
@@ -3137,7 +3137,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ImageTextureSource", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Import.
         /// </summary>
@@ -3146,7 +3146,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Import", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Importing project....
         /// </summary>
@@ -3155,7 +3155,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ImportingProject", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Import Project....
         /// </summary>
@@ -3164,7 +3164,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ImportProject", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Import SVG path.
         /// </summary>
@@ -3173,7 +3173,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ImportSvgPath", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to The current shape will be overwritten..
         /// </summary>
@@ -3182,7 +3182,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ImportSvgPath_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Index of Refraction.
         /// </summary>
@@ -3191,7 +3191,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("IndexOfRefraction", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Indices.
         /// </summary>
@@ -3200,7 +3200,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Indices", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Info.
         /// </summary>
@@ -3209,7 +3209,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Info", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Initialize.
         /// </summary>
@@ -3218,7 +3218,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Initialize", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Inner Cone Angle.
         /// </summary>
@@ -3227,7 +3227,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("InnerConeAngle", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Inner Shadow.
         /// </summary>
@@ -3236,7 +3236,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("InnerShadow", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Intensity.
         /// </summary>
@@ -3245,7 +3245,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Intensity", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Invalid Json..
         /// </summary>
@@ -3254,7 +3254,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("InvalidJson", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Invalid JSON: missing $type.
         /// </summary>
@@ -3263,7 +3263,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("InvalidJSON_MissingType", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Invalid JSON: $type is not a KeyFrame.
         /// </summary>
@@ -3272,7 +3272,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("InvalidJSON_TypeIsNotKeyFrame", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Invalid JSON: $type is not a KeyFrameAnimation.
         /// </summary>
@@ -3281,7 +3281,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("InvalidJSON_TypeIsNotKeyFrameAnimation", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Invalid keyframe data format..
         /// </summary>
@@ -3290,7 +3290,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("InvalidKeyframeDataFormat", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Invalid keyframe data format. missing $type..
         /// </summary>
@@ -3299,7 +3299,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("InvalidKeyframeDataFormat_MissingType", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Invalid keyframe data format. $type is not KeyFrame..
         /// </summary>
@@ -3308,7 +3308,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("InvalidKeyframeDataFormat_TypeIsNotKeyFrame", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Invert.
         /// </summary>
@@ -3317,7 +3317,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Invert", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Invert Style.
         /// </summary>
@@ -3326,7 +3326,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("InvertStyle", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Is Closed.
         /// </summary>
@@ -3335,7 +3335,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("IsClosed", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Is Large Arc.
         /// </summary>
@@ -3344,7 +3344,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("IsLargeArc", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Loop.
         /// </summary>
@@ -3353,7 +3353,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("IsLoop", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to {0} is not a valid..
         /// </summary>
@@ -3362,7 +3362,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("IsNotValid", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Item.
         /// </summary>
@@ -3371,7 +3371,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Item", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Kernel Size.
         /// </summary>
@@ -3380,7 +3380,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("KernelSize", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to A keyframe already exists at the paste position. The easing and value have been updated..
         /// </summary>
@@ -3389,7 +3389,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("KeyframeExistsAtPastePosition", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to The property type of the pasted keyframe does not match. Only the easing is applied..
         /// </summary>
@@ -3398,7 +3398,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("KeyframePropertyTypeMismatch_EasingApplied", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Keyframe rate.
         /// </summary>
@@ -3407,7 +3407,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("KeyframeRate", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Set the keyframe rate.
         /// </summary>
@@ -3416,7 +3416,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("KeyframeRate_Tip", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Keymap.
         /// </summary>
@@ -3425,7 +3425,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Keymap", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Language.
         /// </summary>
@@ -3434,7 +3434,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Language", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Layer.
         /// </summary>
@@ -3443,7 +3443,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Layer", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Left.
         /// </summary>
@@ -3452,7 +3452,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Left", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Length.
         /// </summary>
@@ -3461,7 +3461,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Length", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Library.
         /// </summary>
@@ -3470,7 +3470,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Library", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to License.
         /// </summary>
@@ -3479,7 +3479,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("License", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Lift.
         /// </summary>
@@ -3488,7 +3488,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Lift", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Light.
         /// </summary>
@@ -3497,7 +3497,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Light", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Lighting.
         /// </summary>
@@ -3506,7 +3506,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Lighting", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Lights.
         /// </summary>
@@ -3515,7 +3515,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Lights", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Line.
         /// </summary>
@@ -3524,7 +3524,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Line", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Linear.
         /// </summary>
@@ -3533,7 +3533,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Linear", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Linear Attenuation.
         /// </summary>
@@ -3542,7 +3542,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("LinearAttenuation", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Link.
         /// </summary>
@@ -3551,7 +3551,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Link", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Links.
         /// </summary>
@@ -3560,7 +3560,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Links", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to List View.
         /// </summary>
@@ -3569,7 +3569,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ListView", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Location.
         /// </summary>
@@ -3578,7 +3578,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Location", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Lock.
         /// </summary>
@@ -3587,7 +3587,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Lock", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Locked.
         /// </summary>
@@ -3596,7 +3596,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Locked", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Loop.
         /// </summary>
@@ -3605,7 +3605,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Loop", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Low Range.
         /// </summary>
@@ -3614,7 +3614,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("LowRange", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Luma.
         /// </summary>
@@ -3623,7 +3623,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Luma", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to LumaColor.
         /// </summary>
@@ -3632,7 +3632,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("LumaColor", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Luminance vs Saturation.
         /// </summary>
@@ -3641,7 +3641,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("LuminanceVsSaturation", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to LUT (Cube File).
         /// </summary>
@@ -3650,7 +3650,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("LUT_Cube_File", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Main View.
         /// </summary>
@@ -3659,7 +3659,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("MainView", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Mask Type.
         /// </summary>
@@ -3668,7 +3668,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("MaskType", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Master.
         /// </summary>
@@ -3677,7 +3677,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Master", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Material.
         /// </summary>
@@ -3686,7 +3686,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Material", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Matrix.
         /// </summary>
@@ -3695,7 +3695,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Matrix", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Matrix Transform.
         /// </summary>
@@ -3704,7 +3704,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("MatrixTransform", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Media Files.
         /// </summary>
@@ -3713,7 +3713,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("MediaFiles", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Memory usage.
         /// </summary>
@@ -3722,7 +3722,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("MemoryUsage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Mesh.
         /// </summary>
@@ -3731,7 +3731,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Mesh", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Mesh Object.
         /// </summary>
@@ -3740,7 +3740,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("MeshObject3D", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Metallic.
         /// </summary>
@@ -3749,7 +3749,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Metallic", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Metallic/Roughness Map.
         /// </summary>
@@ -3758,7 +3758,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("MetallicRoughnessMap", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Midtones.
         /// </summary>
@@ -3767,7 +3767,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Midtones", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Mode.
         /// </summary>
@@ -3776,7 +3776,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Mode", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Model.
         /// </summary>
@@ -3785,7 +3785,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Model3D", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Model Mesh.
         /// </summary>
@@ -3794,7 +3794,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ModelMesh", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Mosaic.
         /// </summary>
@@ -3803,7 +3803,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Mosaic", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Move.
         /// </summary>
@@ -3812,7 +3812,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Move", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Move to.
         /// </summary>
@@ -3821,7 +3821,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("MoveTo", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Move to end.
         /// </summary>
@@ -3830,7 +3830,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("MoveToEnd", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Move to the end of the scene..
         /// </summary>
@@ -3839,7 +3839,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("MoveToEnd_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Move to next.
         /// </summary>
@@ -3848,7 +3848,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("MoveToNext", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Move to the next frame..
         /// </summary>
@@ -3857,7 +3857,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("MoveToNext_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Move to previous.
         /// </summary>
@@ -3866,7 +3866,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("MoveToPrevious", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Move to the previous frame..
         /// </summary>
@@ -3875,7 +3875,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("MoveToPrevious_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Move to start.
         /// </summary>
@@ -3884,7 +3884,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("MoveToStart", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Move to the start of the scene..
         /// </summary>
@@ -3893,7 +3893,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("MoveToStart_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Multiplication.
         /// </summary>
@@ -3902,7 +3902,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Multiplication", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
@@ -3911,7 +3911,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Name", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Near Plane.
         /// </summary>
@@ -3920,7 +3920,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("NearPlane", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Negaposi.
         /// </summary>
@@ -3929,7 +3929,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Negaposi", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to New Folder.
         /// </summary>
@@ -3938,7 +3938,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("NewFolder", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Next.
         /// </summary>
@@ -3947,7 +3947,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Next", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to No.
         /// </summary>
@@ -3956,7 +3956,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("No", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Node Tree.
         /// </summary>
@@ -3965,7 +3965,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("NodeTree", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to No favorites.
         /// </summary>
@@ -3974,7 +3974,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("NoFavorites", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to No files used recently..
         /// </summary>
@@ -3983,7 +3983,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("NoFilesUsedRecently", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to No media files found.
         /// </summary>
@@ -3992,7 +3992,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("NoMediaFilesFound", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Normal Map.
         /// </summary>
@@ -4001,7 +4001,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("NormalMap", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Normal Map Strength.
         /// </summary>
@@ -4010,7 +4010,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("NormalMapStrength", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Null.
         /// </summary>
@@ -4019,7 +4019,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Null", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Number of Layers.
         /// </summary>
@@ -4028,7 +4028,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Number_of_Layers", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Object.
         /// </summary>
@@ -4037,7 +4037,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Object", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Objects.
         /// </summary>
@@ -4046,7 +4046,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Objects", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Octaves.
         /// </summary>
@@ -4055,7 +4055,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Octaves", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Off.
         /// </summary>
@@ -4064,7 +4064,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Off", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Offset.
         /// </summary>
@@ -4073,7 +4073,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Offset", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Offset Position.
         /// </summary>
@@ -4082,7 +4082,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("OffsetPosition", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to OK.
         /// </summary>
@@ -4091,7 +4091,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("OK", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to On.
         /// </summary>
@@ -4100,7 +4100,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("On", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Opacity.
         /// </summary>
@@ -4109,7 +4109,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Opacity", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Opacity Mask.
         /// </summary>
@@ -4118,7 +4118,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("OpacityMask", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Open.
         /// </summary>
@@ -4127,7 +4127,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Open", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Open a file you have already created.
         /// </summary>
@@ -4136,7 +4136,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("OpenAFileYouHaveAlreadyCreated", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Open Document.
         /// </summary>
@@ -4145,7 +4145,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("OpenDocument", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Open File.
         /// </summary>
@@ -4154,7 +4154,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("OpenFile", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Open Folder.
         /// </summary>
@@ -4163,7 +4163,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("OpenFolder", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Open in tab.
         /// </summary>
@@ -4172,7 +4172,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("OpenInTab", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Open Node Tree.
         /// </summary>
@@ -4181,7 +4181,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("OpenNodeTree", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Open Project.
         /// </summary>
@@ -4190,7 +4190,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("OpenProject", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Origin.
         /// </summary>
@@ -4199,7 +4199,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Origin", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Orthographic Camera.
         /// </summary>
@@ -4208,7 +4208,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("OrthographicCamera", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Others.
         /// </summary>
@@ -4217,7 +4217,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Others", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Outer Cone Angle.
         /// </summary>
@@ -4226,7 +4226,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("OuterConeAngle", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Output.
         /// </summary>
@@ -4235,7 +4235,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Output", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Particle Emitter.
         /// </summary>
@@ -4244,7 +4244,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Air Resistance.
         /// </summary>
@@ -4253,7 +4253,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_AirResistance", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Angular Velocity.
         /// </summary>
@@ -4262,7 +4262,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_AngularVelocity", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Color.
         /// </summary>
@@ -4271,7 +4271,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_Color", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Direction.
         /// </summary>
@@ -4280,7 +4280,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_Direction", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Emission.
         /// </summary>
@@ -4289,7 +4289,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_EmissionGroup", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Emission Rate.
         /// </summary>
@@ -4298,7 +4298,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_EmissionRate", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Emitter.
         /// </summary>
@@ -4307,7 +4307,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_EmitterGroup", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Emitter Height.
         /// </summary>
@@ -4316,7 +4316,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_EmitterHeight", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Emitter Shape.
         /// </summary>
@@ -4325,7 +4325,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_EmitterShape", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Emitter Width.
         /// </summary>
@@ -4334,7 +4334,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_EmitterWidth", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to End Color.
         /// </summary>
@@ -4343,7 +4343,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_EndColor", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to End Opacity Multiplier.
         /// </summary>
@@ -4352,7 +4352,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_EndOpacityMultiplier", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to End Size Multiplier.
         /// </summary>
@@ -4361,7 +4361,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_EndSizeMultiplier", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Gravity.
         /// </summary>
@@ -4370,7 +4370,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_Gravity", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Initial Rotation.
         /// </summary>
@@ -4379,7 +4379,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_InitialRotation", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Initial Rotation Random.
         /// </summary>
@@ -4388,7 +4388,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_InitialRotationRandom", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Lifetime.
         /// </summary>
@@ -4397,7 +4397,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_Lifetime", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Lifetime Random.
         /// </summary>
@@ -4406,7 +4406,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_LifetimeRandom", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Max Particles.
         /// </summary>
@@ -4415,7 +4415,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_MaxParticles", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Over Life.
         /// </summary>
@@ -4424,7 +4424,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_OverLifeGroup", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Particle Drawable.
         /// </summary>
@@ -4433,7 +4433,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_ParticleDrawable", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Particle Opacity.
         /// </summary>
@@ -4442,7 +4442,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_ParticleOpacity", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Particle Size.
         /// </summary>
@@ -4451,7 +4451,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_ParticleSize", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Physics.
         /// </summary>
@@ -4460,7 +4460,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_PhysicsGroup", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Rotation.
         /// </summary>
@@ -4469,7 +4469,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_RotationGroup", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Seed.
         /// </summary>
@@ -4478,7 +4478,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_Seed", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Size Random.
         /// </summary>
@@ -4487,7 +4487,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_SizeRandom", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Speed.
         /// </summary>
@@ -4496,7 +4496,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_Speed", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Speed Random.
         /// </summary>
@@ -4505,7 +4505,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_SpeedRandom", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Spread.
         /// </summary>
@@ -4514,7 +4514,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_Spread", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Turbulence Scale.
         /// </summary>
@@ -4523,7 +4523,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_TurbulenceScale", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Turbulence Speed.
         /// </summary>
@@ -4532,7 +4532,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_TurbulenceSpeed", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Turbulence Strength.
         /// </summary>
@@ -4541,7 +4541,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_TurbulenceStrength", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Use End Color.
         /// </summary>
@@ -4550,7 +4550,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_UseEndColor", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Velocity.
         /// </summary>
@@ -4559,7 +4559,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_VelocityGroup", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Visual.
         /// </summary>
@@ -4568,7 +4568,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ParticleEmitter_VisualGroup", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Paste.
         /// </summary>
@@ -4577,7 +4577,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Paste", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Paste the copied data..
         /// </summary>
@@ -4586,7 +4586,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Paste_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Path editor.
         /// </summary>
@@ -4595,7 +4595,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("PathEditor", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Path Follow.
         /// </summary>
@@ -4604,7 +4604,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("PathFollowEffect", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to PBR Material.
         /// </summary>
@@ -4613,7 +4613,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("PBRMaterial", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Dashes and spaces.
         /// </summary>
@@ -4622,7 +4622,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Pen_DashArray", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Dashed offset.
         /// </summary>
@@ -4631,7 +4631,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Pen_DashOffset", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Miter Limit.
         /// </summary>
@@ -4640,7 +4640,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Pen_MiterLimit", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Location.
         /// </summary>
@@ -4649,7 +4649,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Pen_StrokeAlignment", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Cap style.
         /// </summary>
@@ -4658,7 +4658,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Pen_StrokeCap", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Join style.
         /// </summary>
@@ -4667,7 +4667,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Pen_StrokeJoin", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Noise Type.
         /// </summary>
@@ -4676,7 +4676,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("PerlinNoiseType", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Perspective Camera.
         /// </summary>
@@ -4685,7 +4685,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("PerspectiveCamera", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Plane.
         /// </summary>
@@ -4694,7 +4694,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Plane3D", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Plane Mesh.
         /// </summary>
@@ -4703,7 +4703,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("PlaneMesh", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Play/Pause.
         /// </summary>
@@ -4712,7 +4712,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("PlayPause", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Switches between play and pause..
         /// </summary>
@@ -4721,7 +4721,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("PlayPause_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Point.
         /// </summary>
@@ -4730,7 +4730,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Point", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Point Light.
         /// </summary>
@@ -4739,7 +4739,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("PointLight3D", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Portal.
         /// </summary>
@@ -4748,7 +4748,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Portal", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Position.
         /// </summary>
@@ -4757,7 +4757,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Position", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Presenter.
         /// </summary>
@@ -4766,7 +4766,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Presenter", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Presets.
         /// </summary>
@@ -4775,7 +4775,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Presets", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Previous.
         /// </summary>
@@ -4784,7 +4784,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Previous", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Privacy Policy.
         /// </summary>
@@ -4793,7 +4793,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("PrivacyPolicy", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Profiles.
         /// </summary>
@@ -4802,7 +4802,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Profiles", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Progress.
         /// </summary>
@@ -4811,7 +4811,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Progress", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Project.
         /// </summary>
@@ -4820,7 +4820,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Project", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Project Directory.
         /// </summary>
@@ -4829,7 +4829,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ProjectDirectory", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Project File.
         /// </summary>
@@ -4838,7 +4838,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ProjectFile", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Project Package.
         /// </summary>
@@ -4847,7 +4847,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ProjectPackage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Projects.
         /// </summary>
@@ -4856,7 +4856,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Projects", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Properties.
         /// </summary>
@@ -4865,7 +4865,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Properties", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Quadratic Attenuation.
         /// </summary>
@@ -4874,7 +4874,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("QuadraticAttenuation", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Quadratic Bezier curve.
         /// </summary>
@@ -4883,7 +4883,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("QuadraticBezierCurve", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Radial.
         /// </summary>
@@ -4892,7 +4892,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Radial", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Radius.
         /// </summary>
@@ -4901,7 +4901,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Radius", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Radius X.
         /// </summary>
@@ -4910,7 +4910,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("RadiusX", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Radius Y.
         /// </summary>
@@ -4919,7 +4919,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("RadiusY", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Range.
         /// </summary>
@@ -4928,7 +4928,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Range", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Receive Shadows.
         /// </summary>
@@ -4937,7 +4937,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ReceiveShadows", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Recent Files.
         /// </summary>
@@ -4946,7 +4946,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("RecentFiles", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Recently.
         /// </summary>
@@ -4955,7 +4955,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Recently", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Recent Projects.
         /// </summary>
@@ -4964,7 +4964,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("RecentProjects", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Rectangle.
         /// </summary>
@@ -4973,7 +4973,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Rectangle", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Red.
         /// </summary>
@@ -4982,7 +4982,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Red", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Red curve.
         /// </summary>
@@ -4991,7 +4991,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("RedCurve", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Redo.
         /// </summary>
@@ -5000,7 +5000,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Redo", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Redo the last operation.
         /// </summary>
@@ -5009,7 +5009,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Redo_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Red Offset.
         /// </summary>
@@ -5018,7 +5018,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("RedOffset", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Refresh.
         /// </summary>
@@ -5027,7 +5027,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Refresh", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Remove.
         /// </summary>
@@ -5036,7 +5036,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Remove", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Remove animation.
         /// </summary>
@@ -5045,7 +5045,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("RemoveAnimation", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Remove expression.
         /// </summary>
@@ -5054,7 +5054,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("RemoveExpression", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Remove from Favorites.
         /// </summary>
@@ -5063,7 +5063,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("RemoveFromFavorites", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Rename.
         /// </summary>
@@ -5072,7 +5072,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Rename", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Rename the selected item..
         /// </summary>
@@ -5081,7 +5081,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Rename_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Render Height.
         /// </summary>
@@ -5090,7 +5090,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("RenderHeight", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Render Width.
         /// </summary>
@@ -5099,7 +5099,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("RenderWidth", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Reset.
         /// </summary>
@@ -5108,7 +5108,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Reset", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Reset zoom.
         /// </summary>
@@ -5117,7 +5117,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ResetZoom", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Result.
         /// </summary>
@@ -5126,7 +5126,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Result", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Reverse.
         /// </summary>
@@ -5135,7 +5135,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Reverse", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to RGB Overlay.
         /// </summary>
@@ -5144,7 +5144,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("RgbOverlay", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to RGB Parade.
         /// </summary>
@@ -5153,7 +5153,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("RgbParade", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Right.
         /// </summary>
@@ -5162,7 +5162,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Right", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Right-click to operate cache.
         /// </summary>
@@ -5171,7 +5171,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("RightClickToOperateCache", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Rings.
         /// </summary>
@@ -5180,7 +5180,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Rings", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Rotation.
         /// </summary>
@@ -5189,7 +5189,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Rotation", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Rotation 3D.
         /// </summary>
@@ -5198,7 +5198,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Rotation3D", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Rotation Angle.
         /// </summary>
@@ -5207,7 +5207,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("RotationAngle", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Rotation X.
         /// </summary>
@@ -5216,7 +5216,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("RotationX", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Rotation Y.
         /// </summary>
@@ -5225,7 +5225,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("RotationY", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Rotation Z.
         /// </summary>
@@ -5234,7 +5234,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("RotationZ", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Roughness.
         /// </summary>
@@ -5243,7 +5243,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Roughness", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Rounded rectangle.
         /// </summary>
@@ -5252,7 +5252,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("RoundedRect", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Running startup tasks.
         /// </summary>
@@ -5261,7 +5261,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("RunningStartupTasks", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Sample rate.
         /// </summary>
@@ -5270,7 +5270,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SampleRate", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Set the sample rate.
         /// </summary>
@@ -5279,7 +5279,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SampleRate_Tip", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Saturate.
         /// </summary>
@@ -5288,7 +5288,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Saturate", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Saturation.
         /// </summary>
@@ -5297,7 +5297,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Saturation", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Saturation Range.
         /// </summary>
@@ -5306,7 +5306,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SaturationRange", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Saturation vs Saturation.
         /// </summary>
@@ -5315,7 +5315,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SaturationVsSaturation", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Save.
         /// </summary>
@@ -5324,7 +5324,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Save", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Save the current file.
         /// </summary>
@@ -5333,7 +5333,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Save_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Save All.
         /// </summary>
@@ -5342,7 +5342,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SaveAll", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Save all files.
         /// </summary>
@@ -5351,7 +5351,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SaveAll_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Save as image.
         /// </summary>
@@ -5360,7 +5360,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SaveAsImage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Save a frame as an image.
         /// </summary>
@@ -5369,7 +5369,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SaveFrameAsImage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Save a selected element as an image.
         /// </summary>
@@ -5378,7 +5378,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SaveSelectedElementAsImage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Scale.
         /// </summary>
@@ -5387,7 +5387,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Scale", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Scale X.
         /// </summary>
@@ -5396,7 +5396,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ScaleX", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Scale Y.
         /// </summary>
@@ -5405,7 +5405,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ScaleY", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Scene.
         /// </summary>
@@ -5414,7 +5414,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Scene", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 3D Scene.
         /// </summary>
@@ -5423,7 +5423,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Scene3D", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Scene File.
         /// </summary>
@@ -5432,7 +5432,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SceneFile", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Scene settings.
         /// </summary>
@@ -5441,7 +5441,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SceneSettings", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Script.
         /// </summary>
@@ -5450,7 +5450,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Script", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Search.
         /// </summary>
@@ -5459,7 +5459,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Search", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Searching for media files....
         /// </summary>
@@ -5468,7 +5468,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SearchingMediaFiles", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Seed.
         /// </summary>
@@ -5477,7 +5477,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Seed", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Segments.
         /// </summary>
@@ -5486,7 +5486,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Segments", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Select Destination Folder.
         /// </summary>
@@ -5495,7 +5495,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SelectDestinationFolder", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Selected GPU.
         /// </summary>
@@ -5504,7 +5504,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SelectedGPU", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Separately.
         /// </summary>
@@ -5513,7 +5513,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Separately", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Set end time.
         /// </summary>
@@ -5522,7 +5522,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SetEndTime", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Set start time.
         /// </summary>
@@ -5531,7 +5531,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SetStartTime", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
@@ -5540,7 +5540,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Settings", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Shadow Bias.
         /// </summary>
@@ -5549,7 +5549,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ShadowBias", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Shadow Distance.
         /// </summary>
@@ -5558,7 +5558,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ShadowDistance", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Shadow Map Size.
         /// </summary>
@@ -5567,7 +5567,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ShadowMapSize", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Shadow Normal Bias.
         /// </summary>
@@ -5576,7 +5576,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ShadowNormalBias", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Shadow Only.
         /// </summary>
@@ -5585,7 +5585,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ShadowOnly", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Shadows.
         /// </summary>
@@ -5594,7 +5594,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Shadows", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Shadow Strength.
         /// </summary>
@@ -5603,7 +5603,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ShadowStrength", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Shake.
         /// </summary>
@@ -5612,7 +5612,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ShakeEffect", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Shininess.
         /// </summary>
@@ -5621,7 +5621,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Shininess", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Show Details.
         /// </summary>
@@ -5630,7 +5630,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ShowDetails", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Show Displacement Map.
         /// </summary>
@@ -5639,7 +5639,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ShowDisplacementMap", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Show Grid.
         /// </summary>
@@ -5648,7 +5648,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ShowGrid", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Show more.
         /// </summary>
@@ -5657,7 +5657,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ShowMore", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Show ring.
         /// </summary>
@@ -5666,7 +5666,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ShowRing", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Show sliders.
         /// </summary>
@@ -5675,7 +5675,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ShowSliders", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Sigma.
         /// </summary>
@@ -5684,7 +5684,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Sigma", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Size.
         /// </summary>
@@ -5693,7 +5693,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Size", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Skew.
         /// </summary>
@@ -5702,7 +5702,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Skew", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Skew X.
         /// </summary>
@@ -5711,7 +5711,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SkewX", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Skew Y.
         /// </summary>
@@ -5720,7 +5720,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SkewY", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to SKSL Script.
         /// </summary>
@@ -5729,7 +5729,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SKSLScriptEffect", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Smoothing.
         /// </summary>
@@ -5738,7 +5738,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Smoothing", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Sound.
         /// </summary>
@@ -5747,7 +5747,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Sound", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Source.
         /// </summary>
@@ -5756,7 +5756,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Source", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Source code.
         /// </summary>
@@ -5765,7 +5765,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SourceCode", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Source Operators.
         /// </summary>
@@ -5774,7 +5774,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SourceOperators", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Source.
         /// </summary>
@@ -5783,7 +5783,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SourceRect", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Specular Color.
         /// </summary>
@@ -5792,7 +5792,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SpecularColor", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Speed.
         /// </summary>
@@ -5801,7 +5801,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Speed", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Sphere.
         /// </summary>
@@ -5810,7 +5810,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Sphere3D", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Sphere Mesh.
         /// </summary>
@@ -5819,7 +5819,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SphereMesh", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Split.
         /// </summary>
@@ -5828,7 +5828,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Split", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Split by characters.
         /// </summary>
@@ -5837,7 +5837,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SplitByCharacters", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Split by current frame.
         /// </summary>
@@ -5846,7 +5846,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SplitByCurrentFrame", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Split by parts.
         /// </summary>
@@ -5855,7 +5855,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SplitByPartsEffect", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Split equally.
         /// </summary>
@@ -5864,7 +5864,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SplitEquallyEffect", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Spot Light.
         /// </summary>
@@ -5873,7 +5873,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SpotLight3D", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Spread Method.
         /// </summary>
@@ -5882,7 +5882,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SpreadMethod", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Start editing.
         /// </summary>
@@ -5891,7 +5891,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("StartEditing", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Start Point.
         /// </summary>
@@ -5900,7 +5900,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("StartPoint", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Start Time.
         /// </summary>
@@ -5909,7 +5909,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("StartTime", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Strength.
         /// </summary>
@@ -5918,7 +5918,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Strength", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Strength X.
         /// </summary>
@@ -5927,7 +5927,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("StrengthX", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Strength Y.
         /// </summary>
@@ -5936,7 +5936,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("StrengthY", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Stretch.
         /// </summary>
@@ -5945,7 +5945,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Stretch", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Stroke.
         /// </summary>
@@ -5954,7 +5954,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Stroke", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Center.
         /// </summary>
@@ -5963,7 +5963,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("StrokeAlignment_Center", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Inside.
         /// </summary>
@@ -5972,7 +5972,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("StrokeAlignment_Inside", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Outside.
         /// </summary>
@@ -5981,7 +5981,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("StrokeAlignment_Outside", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Flat.
         /// </summary>
@@ -5990,7 +5990,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("StrokeCap_Flat", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Round.
         /// </summary>
@@ -5999,7 +5999,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("StrokeCap_Round", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Square.
         /// </summary>
@@ -6008,7 +6008,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("StrokeCap_Square", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Stroke.
         /// </summary>
@@ -6017,7 +6017,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("StrokeEffect", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Beveled join.
         /// </summary>
@@ -6026,7 +6026,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("StrokeJoin_Bevel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Mitered join.
         /// </summary>
@@ -6035,7 +6035,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("StrokeJoin_Miter", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Circular join.
         /// </summary>
@@ -6044,7 +6044,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("StrokeJoin_Round", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Sweep Clockwise.
         /// </summary>
@@ -6053,7 +6053,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("SweepClockwise", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Symmetry.
         /// </summary>
@@ -6062,7 +6062,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Symmetry", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Target.
         /// </summary>
@@ -6071,7 +6071,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Target", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Temperature.
         /// </summary>
@@ -6080,7 +6080,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Temperature", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Terms of service.
         /// </summary>
@@ -6089,7 +6089,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("TermsOfService", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Text.
         /// </summary>
@@ -6098,7 +6098,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Texture Height.
         /// </summary>
@@ -6107,7 +6107,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("TextureHeight", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Texture Width.
         /// </summary>
@@ -6116,7 +6116,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("TextureWidth", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Theme.
         /// </summary>
@@ -6125,7 +6125,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Theme", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Thickness.
         /// </summary>
@@ -6134,7 +6134,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Thickness", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Third Party Licenses.
         /// </summary>
@@ -6143,7 +6143,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ThirdPartyLicenses", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Threshold.
         /// </summary>
@@ -6152,7 +6152,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Threshold", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Tile Mode.
         /// </summary>
@@ -6161,7 +6161,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("TileMode", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Tile size.
         /// </summary>
@@ -6170,7 +6170,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("TileSize", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Time Controller.
         /// </summary>
@@ -6179,7 +6179,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("TimeController", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Timeline.
         /// </summary>
@@ -6188,7 +6188,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Timeline", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Zoom.
         /// </summary>
@@ -6197,7 +6197,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("TimelineZoom", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Tint.
         /// </summary>
@@ -6206,7 +6206,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Tint", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Toggle Mute.
         /// </summary>
@@ -6215,7 +6215,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("ToggleMute", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Tools.
         /// </summary>
@@ -6224,7 +6224,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Tools", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Top.
         /// </summary>
@@ -6233,7 +6233,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Top", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Transform.
         /// </summary>
@@ -6242,7 +6242,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Transform", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Transform Origin.
         /// </summary>
@@ -6251,7 +6251,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("TransformOrigin", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Translate.
         /// </summary>
@@ -6260,7 +6260,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Translate", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Transparent Material.
         /// </summary>
@@ -6269,7 +6269,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("TransparentMaterial", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Tree View.
         /// </summary>
@@ -6278,7 +6278,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("TreeView", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Tutorials.
         /// </summary>
@@ -6287,7 +6287,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Tutorials", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Undo.
         /// </summary>
@@ -6296,7 +6296,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Undo", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Undo the last operation.
         /// </summary>
@@ -6305,7 +6305,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Undo_Description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Ungroup selected elements.
         /// </summary>
@@ -6314,7 +6314,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("UngroupSelectedElements", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Uniform value.
         /// </summary>
@@ -6323,7 +6323,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("UniformValue", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Unknown.
         /// </summary>
@@ -6332,7 +6332,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Unknown", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Unlock.
         /// </summary>
@@ -6341,7 +6341,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Unlock", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Unlocked.
         /// </summary>
@@ -6350,7 +6350,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Unlocked", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Unsupported.
         /// </summary>
@@ -6359,7 +6359,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Unsupported", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Up.
         /// </summary>
@@ -6368,7 +6368,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Up", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Update.
         /// </summary>
@@ -6377,7 +6377,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Update", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Use the Global Clock.
         /// </summary>
@@ -6386,7 +6386,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("UseGlobalClock", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to UseNode.
         /// </summary>
@@ -6395,7 +6395,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("UseNode", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Vectorscope.
         /// </summary>
@@ -6404,7 +6404,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Vectorscope", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Vertical divisions.
         /// </summary>
@@ -6413,7 +6413,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("VerticalDivisions", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Vertical spacing.
         /// </summary>
@@ -6422,7 +6422,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("VerticalSpacing", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Vertices.
         /// </summary>
@@ -6431,7 +6431,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Vertices", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Vibrance.
         /// </summary>
@@ -6440,7 +6440,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Vibrance", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Video.
         /// </summary>
@@ -6449,7 +6449,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Video", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to View.
         /// </summary>
@@ -6458,7 +6458,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("View", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Vulkan Version.
         /// </summary>
@@ -6467,7 +6467,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("VulkanVersion", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Waveform.
         /// </summary>
@@ -6476,7 +6476,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Waveform", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Website.
         /// </summary>
@@ -6485,7 +6485,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Website", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Weight.
         /// </summary>
@@ -6494,7 +6494,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Weight", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Wet Mix (%).
         /// </summary>
@@ -6503,7 +6503,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("WetMix", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Width.
         /// </summary>
@@ -6512,7 +6512,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Width", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Width Segments.
         /// </summary>
@@ -6521,7 +6521,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("WidthSegments", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to X.
         /// </summary>
@@ -6530,7 +6530,7 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("X", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Y.
         /// </summary>
@@ -6539,13 +6539,43 @@ namespace Beutl.Language {
                 return ResourceManager.GetString("Y", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Yes.
         /// </summary>
         public static string Yes {
             get {
                 return ResourceManager.GetString("Yes", resourceCulture);
+            }
+        }
+
+        public static string BpmGrid {
+            get {
+                return ResourceManager.GetString("BpmGrid", resourceCulture);
+            }
+        }
+
+        public static string ShowBpmGrid {
+            get {
+                return ResourceManager.GetString("ShowBpmGrid", resourceCulture);
+            }
+        }
+
+        public static string BpmValue {
+            get {
+                return ResourceManager.GetString("BpmValue", resourceCulture);
+            }
+        }
+
+        public static string BeatSubdivisions {
+            get {
+                return ResourceManager.GetString("BeatSubdivisions", resourceCulture);
+            }
+        }
+
+        public static string BpmOffset {
+            get {
+                return ResourceManager.GetString("BpmOffset", resourceCulture);
             }
         }
     }

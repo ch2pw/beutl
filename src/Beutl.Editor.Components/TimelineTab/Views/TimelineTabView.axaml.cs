@@ -620,6 +620,26 @@ public sealed partial class TimelineTabView : UserControl
             ctr.DataContext is ElementViewModel vm && vm.Model == element) as ElementView;
     }
 
+    private void ShowBpmGridFlyout(object? sender, RoutedEventArgs e)
+    {
+        if (ViewModel == null) return;
+
+        var bpmGrid = ViewModel.Options.Value.BpmGrid;
+        var flyout = new Editor.Components.Views.BpmGridFlyout
+        {
+            IsEnabledChecked = bpmGrid.IsEnabled,
+            Bpm = (decimal)bpmGrid.Bpm,
+            Subdivisions = bpmGrid.Subdivisions,
+            OffsetSeconds = (decimal)bpmGrid.Offset.TotalSeconds,
+        };
+        flyout.OptionsChanged += (_, options) =>
+        {
+            ViewModel.Options.Value = ViewModel.Options.Value with { BpmGrid = options };
+        };
+
+        flyout.ShowAt(TimelinePanel, true);
+    }
+
     private void ZoomClick(object? sender, RoutedEventArgs e)
     {
         if (e.Source is MenuFlyoutItem menuItem && ViewModel != null)

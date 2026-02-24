@@ -1,5 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Collections.Specialized;
+using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using System.Text.Json.Nodes;
 using Avalonia;
@@ -367,7 +368,7 @@ public sealed class TimelineTabViewModel : IToolContext, IContextCommandHandler
 
     public HashSet<ElementViewModel> SelectedElements { get; } = [];
 
-    
+
 
     public ToolTabExtension Extension => TimelineTabExtension.Instance;
 

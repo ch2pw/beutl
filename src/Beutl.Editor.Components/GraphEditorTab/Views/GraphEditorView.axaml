@@ -29,9 +29,9 @@
     </UserControl.Resources>
 
     <Grid x:Name="grid"
+          Background="{DynamicResource GraphEditorBackgroundBrush}"
           ColumnDefinitions="Auto,*"
-          RowDefinitions="Auto,*"
-          Background="{DynamicResource GraphEditorBackgroundBrush}">
+          RowDefinitions="Auto,*">
 
         <views:TimelineScale x:Name="scale"
                              Grid.Column="1"
@@ -125,6 +125,11 @@
                                 </DataTemplate>
                             </MenuItem.DataTemplates>
                         </MenuItem>
+                        <MenuItem Click="ShowBpmGridFlyout" Header="{x:Static lang:Strings.BpmGrid}">
+                            <MenuItem.Icon>
+                                <icons:SymbolIcon Symbol="MusicNote1" />
+                            </MenuItem.Icon>
+                        </MenuItem>
                         <MenuItem Classes.checked="{Binding UseGlobalClock.Value}"
                                   Click="UseGlobalClock_Click"
                                   Header="{x:Static lang:Strings.UseGlobalClock}">
@@ -150,6 +155,16 @@
                                              Scale="{Binding ScaleY.Value}"
                                              Viewport="{Binding #scroll.Viewport, Mode=OneWay}"
                                              Offset="{Binding #scroll.Offset, Mode=OneWay}" />
+
+                <views:BpmGridOverlay x:Name="BpmGrid"
+                                      VerticalAlignment="Stretch"
+                                      BeatBrush="{DynamicResource TextFillColorSecondaryBrush}"
+                                      BpmOptions="{Binding Options.Value.BpmGrid}"
+                                      Scale="{Binding Options.Value.Scale}"
+                                      SubdivisionBrush="{DynamicResource TextFillColorTertiaryBrush}"
+                                      Viewport="{Binding #scroll.Viewport, Mode=OneWay}"
+                                      ZIndex="1"
+                                      Offset="{Binding #scroll.Offset, Mode=OneWay}" />
 
                 <!--  Vector, Pointなど複数の値を持つ型のためにビューを分ける  -->
                 <ItemsControl x:Name="views"
