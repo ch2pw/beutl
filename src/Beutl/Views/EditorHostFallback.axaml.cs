@@ -150,16 +150,15 @@ public partial class EditorHostFallback : UserControl
     {
         ExecuteMainViewModelCommand(viewModel =>
         {
-            using Activity? activity = Telemetry.StartActivity("EditPageFallback.OpenRecentFile");
+            Activity? activity = Telemetry.StartActivity("EditPageFallback.OpenRecentFile");
 
-            ITimer? timer = null;
+            using var ct = new CancellationTokenSource();
             IDisposable? closeDialog = null;
-            timer = TimeProvider.System.CreateTimer(_ =>
+            Task.Delay(3000, ct.Token).ContinueWith(_ =>
             {
-                timer?.Dispose();
                 closeDialog = ShowWaitDialog(fileName);
                 activity?.AddEvent(new("WaitDialogShown"));
-            }, null, TimeSpan.FromSeconds(3), TimeSpan.FromSeconds(3));
+            }, ct.Token);
 
             try
             {
@@ -174,10 +173,11 @@ public partial class EditorHostFallback : UserControl
             }
             finally
             {
+                ct.Cancel();
                 Dispatcher.UIThread.Invoke(() =>
                 {
                     activity?.AddEvent(new("InputResumed"));
-                    timer?.Dispose();
+                    activity?.Dispose();
                     closeDialog?.Dispose();
                 }, DispatcherPriority.Input);
             }
