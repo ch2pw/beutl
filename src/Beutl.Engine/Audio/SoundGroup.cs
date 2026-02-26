@@ -1,14 +1,12 @@
 using System.ComponentModel.DataAnnotations;
-using Beutl.Audio.Effects;
 using Beutl.Audio.Graph;
-using Beutl.Audio.Graph.Nodes;
 using Beutl.Engine;
 using Beutl.Language;
 using Beutl.Media.Source;
 
 namespace Beutl.Audio;
 
-[Display(Name = nameof(Strings.Group), ResourceType = typeof(Strings))]
+[Display(Name = nameof(Strings.SoundGroup), ResourceType = typeof(Strings))]
 public sealed partial class SoundGroup : Sound
 {
     public SoundGroup()
