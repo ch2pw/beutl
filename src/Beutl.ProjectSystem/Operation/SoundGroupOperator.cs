@@ -27,6 +27,7 @@ public sealed class SoundGroupOperator : PublishOperator<SoundGroup>
 
         Sound[] items = context.FlowRenderables.OfType<Sound>().ToArray();
         context.FlowRenderables.Clear();
+        // Editedが発生してしまい、Graph構造の更新が必要になってしまう
         Value.Children.Replace(items);
         base.Evaluate(context);
     }

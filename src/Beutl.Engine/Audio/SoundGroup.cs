@@ -26,19 +26,66 @@ public sealed partial class SoundGroup : Sound
             return;
         }
 
-        // 複数の子要素をMixerNodeでミックス
+        // このSoundGroupが1-5秒で、処理範囲が0-2秒の場合、0-1秒はそのまま通して、1-2秒はSoundGroupの処理を加える必要がある
+        // そのまま通す
+        foreach (var child in Children)
+        {
+            if (child.TimeRange.Start < TimeRange.Start)
+            {
+                var internalContext = new AudioContext(context.SampleRate, context.ChannelCount);
+                child.Compose(internalContext);
+                foreach (AudioNode node in internalContext.Nodes)
+                {
+                    context.AddNode(node);
+                }
+                foreach (var outputNode in internalContext.GetOutputNodes())
+                {
+                    var shiftNode = context.CreateShiftNode(child.TimeRange.Start);
+                    var clipNode2 = context.CreateClipNode(
+                        child.TimeRange.Start, TimeRange.Start - child.TimeRange.Start);
+                    context.Connect(outputNode, shiftNode);
+                    context.Connect(shiftNode, clipNode2);
+                    context.MarkAsOutput(clipNode2);
+                }
+            }
+
+            if (child.TimeRange.End > TimeRange.End)
+            {
+                var internalContext = new AudioContext(context.SampleRate, context.ChannelCount);
+                child.Compose(internalContext);
+                foreach (AudioNode node in internalContext.Nodes)
+                {
+                    context.AddNode(node);
+                }
+                foreach (var outputNode in internalContext.GetOutputNodes())
+                {
+                    var shiftNode = context.CreateShiftNode(TimeRange.End);
+                    var clipNode2 = context.CreateClipNode(
+                        TimeRange.End, child.TimeRange.End - TimeRange.End);
+                    context.Connect(outputNode, shiftNode);
+                    context.Connect(shiftNode, clipNode2);
+                    context.MarkAsOutput(clipNode2);
+                }
+            }
+        }
+
+        // SoundGroupの処理を加える
         var mixerNode = context.CreateMixerNode();
 
         foreach (var child in Children)
         {
-            child.Compose(context);
-
+            var internalContext = new AudioContext(context.SampleRate, context.ChannelCount);
+            child.Compose(internalContext);
+            foreach (AudioNode node in internalContext.Nodes)
+            {
+                context.AddNode(node);
+            }
             // 各子要素の出力ノードにShiftNodeを挿入してMixerに接続
-            foreach (var outputNode in context.GetOutputNodes().ToArray())
+            foreach (var outputNode in internalContext.GetOutputNodes())
             {
                 // ShiftNodeでSoundGroupのStartを加算して打ち消す
                 var shiftNode = context.CreateShiftNode(TimeRange.Start);
-                context.Connect(outputNode, shiftNode); // ここでoutputNodeはAudioContext._outputNodesから削除される
+                context.Connect(outputNode, shiftNode);
                 context.Connect(shiftNode, mixerNode);
             }
         }
