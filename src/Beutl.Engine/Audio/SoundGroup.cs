@@ -26,40 +26,24 @@ public sealed partial class SoundGroup : Sound
             return;
         }
 
-        AudioNode currentNode;
+        // 複数の子要素をMixerNodeでミックス
+        var mixerNode = context.CreateMixerNode();
 
-        if (Children.Count == 1)
+        foreach (var child in Children)
         {
-            // 子要素が1つの場合
-            Children[0].Compose(context);
-            var childOutput = context.GetOutputNodes().First();
+            child.Compose(context);
 
-            // ShiftNodeでSoundGroupのStartを加算して打ち消す
-            var shiftNode = context.CreateShiftNode(TimeRange.Start);
-            context.Connect(childOutput, shiftNode);
-            currentNode = shiftNode;
-        }
-        else
-        {
-            // 複数の子要素をMixerNodeでミックス
-            var mixerNode = context.CreateMixerNode();
-
-            foreach (var child in Children)
+            // 各子要素の出力ノードにShiftNodeを挿入してMixerに接続
+            foreach (var outputNode in context.GetOutputNodes().ToArray())
             {
-                child.Compose(context);
-
-                // 各子要素の出力ノードにShiftNodeを挿入してMixerに接続
-                foreach (var outputNode in context.GetOutputNodes().ToArray())
-                {
-                    // ShiftNodeでSoundGroupのStartを加算して打ち消す
-                    var shiftNode = context.CreateShiftNode(TimeRange.Start);
-                    context.Connect(outputNode, shiftNode);
-                    context.Connect(shiftNode, mixerNode);
-                }
+                // ShiftNodeでSoundGroupのStartを加算して打ち消す
+                var shiftNode = context.CreateShiftNode(TimeRange.Start);
+                context.Connect(outputNode, shiftNode); // ここでoutputNodeはAudioContext._outputNodesから削除される
+                context.Connect(shiftNode, mixerNode);
             }
-
-            currentNode = mixerNode;
         }
+
+        AudioNode currentNode = mixerNode;
 
         // SoundGroup全体のGainを適用
         var gainNode = context.CreateGainNode(Gain);
