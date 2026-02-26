@@ -34,6 +34,12 @@ public abstract class Sound : EngineObject
 
     public virtual void Compose(AudioContext context)
     {
+        if (!IsEnabled)
+        {
+            context.Clear();
+            return;
+        }
+
         var soundSource = GetSoundSource();
         if (soundSource == null)
         {
