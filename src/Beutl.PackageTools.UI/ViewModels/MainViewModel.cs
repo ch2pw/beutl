@@ -135,37 +135,37 @@ public class MainViewModel
     private static (string[] InstallItems, string[] UninstallItems, string[] UpdateItems, bool LaunchDebugger) ParseArgs()
     {
         var command = new RootCommand();
-        var installs = new Option<string[]>(["--installs", "-i"], () => [])
+        var installs = new Option<string[]>("--installs", "-i")
         {
             AllowMultipleArgumentsPerToken = true,
         };
-        var uninstalls = new Option<string[]>(["--uninstalls", "-r"], () => [])
+        var uninstalls = new Option<string[]>("--uninstalls", "-r")
         {
             AllowMultipleArgumentsPerToken = true,
         };
-        var updates = new Option<string[]>(["--updates", "-u"], () => [])
+        var updates = new Option<string[]>("--updates", "-u")
         {
             AllowMultipleArgumentsPerToken = true,
         };
-        var launchDebugger = new Option<bool>("--launch-debugger", () => false)
+        var launchDebugger = new Option<bool>("--launch-debugger")
         {
-            IsHidden = true,
+            Hidden = true
         };
-        var sessionId = new Option<string?>("--session-id", () => null)
+        var sessionId = new Option<string?>("--session-id")
         {
-            IsHidden = true,
+            Hidden = true,
         };
-        command.AddOption(installs);
-        command.AddOption(uninstalls);
-        command.AddOption(updates);
-        command.AddOption(launchDebugger);
-        command.AddOption(sessionId);
+        command.Add(installs);
+        command.Add(uninstalls);
+        command.Add(updates);
+        command.Add(launchDebugger);
+        command.Add(sessionId);
 
         ParseResult parseResult = command.Parse(Environment.GetCommandLineArgs());
-        string[] installItems = parseResult.GetValueForOption(installs)!;
-        string[] uninstallItems = parseResult.GetValueForOption(uninstalls)!;
-        string[] updateItems = parseResult.GetValueForOption(updates)!;
-        bool launchDebuggerValue = parseResult.GetValueForOption(launchDebugger);
+        string[] installItems = parseResult.GetValue(installs) ?? [];
+        string[] uninstallItems = parseResult.GetValue(uninstalls) ?? [];
+        string[] updateItems = parseResult.GetValue(updates) ?? [];
+        bool launchDebuggerValue = parseResult.GetValue(launchDebugger);
 
         return (installItems, uninstallItems, updateItems, launchDebuggerValue);
     }

@@ -28,14 +28,14 @@ public partial class MainWindow : AppWindow
 #if DEBUG
         this.AttachDevTools();
 #endif
-        var titleOption = new Option<string?>("--title", () => null);
-        var subtitleOption = new Option<string?>("--subtitle", () => null);
-        var iconOption = new Option<string?>("--icon", () => null);
-        var contentOption = new Option<string?>("--content", () => null);
-        var progressOption = new Option<bool>("--progress", () => false);
-        var closableOption = new Option<bool>("--closable", () => false);
-        var themeOption = new Option<string?>("--theme", () => null);
-        var parentProcecss = new Option<int?>("--parent", () => null);
+        var titleOption = new Option<string?>("--title");
+        var subtitleOption = new Option<string?>("--subtitle");
+        var iconOption = new Option<string?>("--icon");
+        var contentOption = new Option<string?>("--content");
+        var progressOption = new Option<bool>("--progress");
+        var closableOption = new Option<bool>("--closable");
+        var themeOption = new Option<string?>("--theme");
+        var parentProcecss = new Option<int?>("--parent");
         var command = new RootCommand()
         {
             titleOption,
@@ -51,21 +51,21 @@ public partial class MainWindow : AppWindow
         string[] args = ((ClassicDesktopStyleApplicationLifetime)Application.Current!.ApplicationLifetime!).Args!;
         ParseResult result = command.Parse(args);
 
-        string? title = result.GetValueForOption(titleOption);
+        string? title = result.GetValue(titleOption);
         if (title != null)
         {
             headerRoot.IsVisible = true;
             header.Text = title;
         }
 
-        string? subtitle = result.GetValueForOption(subtitleOption);
+        string? subtitle = result.GetValue(subtitleOption);
         if (subtitle != null)
         {
             subheaderRoot.IsVisible = true;
             subheader.Text = subtitle;
         }
 
-        string? icon = result.GetValueForOption(iconOption);
+        string? icon = result.GetValue(iconOption);
         if (icon != null && Enum.TryParse(icon, out Symbol iconSymbol))
         {
             subheaderRoot.IsVisible = true;
@@ -76,13 +76,13 @@ public partial class MainWindow : AppWindow
             };
         }
 
-        string? content = result.GetValueForOption(contentOption);
+        string? content = result.GetValue(contentOption);
         if (content != null)
         {
             contentPresenter.Content = content;
         }
 
-        string? theme = result.GetValueForOption(themeOption);
+        string? theme = result.GetValue(themeOption);
         if (theme != null)
         {
             Application.Current.RequestedThemeVariant = theme switch
@@ -94,15 +94,15 @@ public partial class MainWindow : AppWindow
             };
         }
 
-        if (result.GetValueForOption(progressOption))
+        if (result.GetValue(progressOption))
         {
             progress.IsVisible = true;
             progress.IsIndeterminate = true;
         }
 
-        _closable = result.GetValueForOption(closableOption);
+        _closable = result.GetValue(closableOption);
 
-        int? parent = result.GetValueForOption(parentProcecss);
+        int? parent = result.GetValue(parentProcecss);
         if (parent.HasValue)
         {
             try
