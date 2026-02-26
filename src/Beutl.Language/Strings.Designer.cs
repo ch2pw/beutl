@@ -1949,6 +1949,12 @@ namespace Beutl.Language {
             }
         }
 
+        public static string SoundGroup {
+            get {
+                return ResourceManager.GetString("SoundGroup", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Bottom Right.
         /// </summary>

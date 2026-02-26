@@ -3,6 +3,7 @@ using System.Collections.Specialized;
 using System.Diagnostics.CodeAnalysis;
 
 using Beutl.Animation;
+using Beutl.Audio.Composing;
 using Beutl.Collections;
 using Beutl.Collections.Pooled;
 using Beutl.Engine;
@@ -65,9 +66,9 @@ public sealed class SourceOperation : Hierarchical, INotifyEdited
         }
     }
 
-    public PooledList<EngineObject> Evaluate(EvaluationTarget target, IRenderer renderer, Element element)
+    public PooledList<EngineObject> Evaluate(EvaluationTarget target, IRenderer renderer, Element element, IComposer? composer = null)
     {
-        Initialize(renderer);
+        Initialize(renderer, composer);
         var flow = new PooledList<EngineObject>();
 
         try
@@ -79,6 +80,8 @@ public sealed class SourceOperation : Hierarchical, INotifyEdited
                     EvaluationTarget t = item.Operator.GetEvaluationTarget();
                     if (t == EvaluationTarget.Unknown || t == target)
                     {
+                        item.Renderer = renderer;
+                        item.Composer = composer;
                         item.Target = target;
                         item.FlowRenderables = flow;
                         item.Operator.Evaluate(item);
@@ -130,7 +133,7 @@ public sealed class SourceOperation : Hierarchical, INotifyEdited
         }
     }
 
-    private void Initialize(IRenderer renderer)
+    private void Initialize(IRenderer renderer, IComposer? composer = null)
     {
         if (_lastRenderer != renderer)
         {
@@ -149,6 +152,7 @@ public sealed class SourceOperation : Hierarchical, INotifyEdited
                 contexts[index++] = new OperatorEvaluationContext(item)
                 {
                     Renderer = renderer,
+                    Composer = composer,
                     List = _contexts
                 };
             }
