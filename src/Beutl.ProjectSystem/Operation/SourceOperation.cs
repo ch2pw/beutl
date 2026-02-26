@@ -80,6 +80,8 @@ public sealed class SourceOperation : Hierarchical, INotifyEdited
                     EvaluationTarget t = item.Operator.GetEvaluationTarget();
                     if (t == EvaluationTarget.Unknown || t == target)
                     {
+                        item.Renderer = renderer;
+                        item.Composer = composer;
                         item.Target = target;
                         item.FlowRenderables = flow;
                         item.Operator.Evaluate(item);

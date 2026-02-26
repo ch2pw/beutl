@@ -32,7 +32,6 @@ public class EvaluationContext
 
     public EvaluationTarget Target { get; internal set; }
 
-
     public void AddRenderable(EngineObject renderable)
     {
         _renderables?.Add(renderable);
