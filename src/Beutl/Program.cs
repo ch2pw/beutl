@@ -69,7 +69,7 @@ internal static class Program
     {
         return AppBuilder.Configure<App>()
             .UsePlatformDetect()
-            .UseReactiveUI()
+            .UseReactiveUI(_ => { })
             .With(new Win32PlatformOptions()
             {
                 WinUICompositionBackdropCornerRadius = 8f
