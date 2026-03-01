@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Specialized;
 using Beutl.Editor;
 using Beutl.Editor.Services;
